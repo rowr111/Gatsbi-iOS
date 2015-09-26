@@ -1,17 +1,18 @@
 //
-//  ViewController.swift
+//  LoginViewController.swift
 //  Gatsbi_iOS
 //
 //  Created by Jeanie Conner on 6/7/15.
-//  Copyright (c) 2015 Gatsbi. All rights reserved.
+//  Copyright (c) 2015 Gatsbi. All rights reserve
 //
 
 import UIKit
-
 class LoginViewController: UIViewController {
     
     let permissions = ["public_profile", "email", "user_friends"]
 
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -22,7 +23,7 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func fbLoginClick(sender: AnyObject) {
+    @IBAction func fbLoginClick(sender: UIButton) {
         if let accessToken: FBSDKAccessToken = FBSDKAccessToken.currentAccessToken() {
             PFFacebookUtils.logInInBackgroundWithAccessToken(accessToken, block: {
                 (user: PFUser?, error: NSError?) -> Void in

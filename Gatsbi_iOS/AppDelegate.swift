@@ -27,6 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let currentUser = PFUser.currentUser()
         {
             println("user is logged in already!")
+            self.window?.rootViewController = storyboard.instantiateViewControllerWithIdentifier("InviteNavigationController") as? UIViewController
 
         }
         else

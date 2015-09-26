@@ -7,8 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		437FB9411BB67AF400BCEEA8 /* InviteHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FB9401BB67AF400BCEEA8 /* InviteHomeViewController.swift */; };
+		437FB9431BB6808A00BCEEA8 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FB9421BB6808A00BCEEA8 /* Helpers.swift */; };
+		437FB94E1BB683E000BCEEA8 /* Images in Resources */ = {isa = PBXBuildFile; fileRef = 437FB9451BB683E000BCEEA8 /* Images */; };
+		437FB94F1BB683E000BCEEA8 /* NSDate+NWCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FB9461BB683E000BCEEA8 /* NSDate+NWCalendarView.swift */; };
+		437FB9501BB683E000BCEEA8 /* NWCalendarCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FB9471BB683E000BCEEA8 /* NWCalendarCache.swift */; };
+		437FB9511BB683E000BCEEA8 /* NWCalendarDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FB9481BB683E000BCEEA8 /* NWCalendarDayView.swift */; };
+		437FB9521BB683E000BCEEA8 /* NWCalendarMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FB9491BB683E000BCEEA8 /* NWCalendarMenuView.swift */; };
+		437FB9531BB683E000BCEEA8 /* NWCalendarMonthContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FB94A1BB683E000BCEEA8 /* NWCalendarMonthContentView.swift */; };
+		437FB9541BB683E000BCEEA8 /* NWCalendarMonthSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FB94B1BB683E000BCEEA8 /* NWCalendarMonthSelectorView.swift */; };
+		437FB9551BB683E000BCEEA8 /* NWCalendarMonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FB94C1BB683E000BCEEA8 /* NWCalendarMonthView.swift */; };
+		437FB9561BB683E000BCEEA8 /* NWCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FB94D1BB683E000BCEEA8 /* NWCalendarView.swift */; };
 		43D745671B25655E00EE09DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D745661B25655E00EE09DD /* AppDelegate.swift */; };
-		43D745691B25655E00EE09DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D745681B25655E00EE09DD /* ViewController.swift */; };
+		43D745691B25655E00EE09DD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D745681B25655E00EE09DD /* LoginViewController.swift */; };
 		43D7456C1B25655E00EE09DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43D7456A1B25655E00EE09DD /* Main.storyboard */; };
 		43D7456E1B25655E00EE09DD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43D7456D1B25655E00EE09DD /* Images.xcassets */; };
 		43D745711B25655E00EE09DD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43D7456F1B25655E00EE09DD /* LaunchScreen.xib */; };
@@ -50,10 +61,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		437FB9401BB67AF400BCEEA8 /* InviteHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteHomeViewController.swift; sourceTree = "<group>"; };
+		437FB9421BB6808A00BCEEA8 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		437FB9451BB683E000BCEEA8 /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Images; path = NWCalendar/Images; sourceTree = "<group>"; };
+		437FB9461BB683E000BCEEA8 /* NSDate+NWCalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSDate+NWCalendarView.swift"; path = "NWCalendar/NSDate+NWCalendarView.swift"; sourceTree = "<group>"; };
+		437FB9471BB683E000BCEEA8 /* NWCalendarCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NWCalendarCache.swift; path = NWCalendar/NWCalendarCache.swift; sourceTree = "<group>"; };
+		437FB9481BB683E000BCEEA8 /* NWCalendarDayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NWCalendarDayView.swift; path = NWCalendar/NWCalendarDayView.swift; sourceTree = "<group>"; };
+		437FB9491BB683E000BCEEA8 /* NWCalendarMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NWCalendarMenuView.swift; path = NWCalendar/NWCalendarMenuView.swift; sourceTree = "<group>"; };
+		437FB94A1BB683E000BCEEA8 /* NWCalendarMonthContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NWCalendarMonthContentView.swift; path = NWCalendar/NWCalendarMonthContentView.swift; sourceTree = "<group>"; };
+		437FB94B1BB683E000BCEEA8 /* NWCalendarMonthSelectorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NWCalendarMonthSelectorView.swift; path = NWCalendar/NWCalendarMonthSelectorView.swift; sourceTree = "<group>"; };
+		437FB94C1BB683E000BCEEA8 /* NWCalendarMonthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NWCalendarMonthView.swift; path = NWCalendar/NWCalendarMonthView.swift; sourceTree = "<group>"; };
+		437FB94D1BB683E000BCEEA8 /* NWCalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NWCalendarView.swift; path = NWCalendar/NWCalendarView.swift; sourceTree = "<group>"; };
 		43D745611B25655E00EE09DD /* Gatsbi_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gatsbi_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43D745651B25655E00EE09DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43D745661B25655E00EE09DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		43D745681B25655E00EE09DD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		43D745681B25655E00EE09DD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		43D7456B1B25655E00EE09DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		43D7456D1B25655E00EE09DD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		43D745701B25655E00EE09DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -130,6 +152,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		437FB9441BB6837E00BCEEA8 /* NWCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				437FB9451BB683E000BCEEA8 /* Images */,
+				437FB9461BB683E000BCEEA8 /* NSDate+NWCalendarView.swift */,
+				437FB9471BB683E000BCEEA8 /* NWCalendarCache.swift */,
+				437FB9481BB683E000BCEEA8 /* NWCalendarDayView.swift */,
+				437FB9491BB683E000BCEEA8 /* NWCalendarMenuView.swift */,
+				437FB94A1BB683E000BCEEA8 /* NWCalendarMonthContentView.swift */,
+				437FB94B1BB683E000BCEEA8 /* NWCalendarMonthSelectorView.swift */,
+				437FB94C1BB683E000BCEEA8 /* NWCalendarMonthView.swift */,
+				437FB94D1BB683E000BCEEA8 /* NWCalendarView.swift */,
+			);
+			name = NWCalendar;
+			sourceTree = "<group>";
+		};
 		43D745581B25655E00EE09DD = {
 			isa = PBXGroup;
 			children = (
@@ -153,11 +191,14 @@
 		43D745631B25655E00EE09DD /* Gatsbi_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				437FB9441BB6837E00BCEEA8 /* NWCalendar */,
 				43D745661B25655E00EE09DD /* AppDelegate.swift */,
-				43D745681B25655E00EE09DD /* ViewController.swift */,
+				43D745681B25655E00EE09DD /* LoginViewController.swift */,
 				43D7456A1B25655E00EE09DD /* Main.storyboard */,
 				43D7456F1B25655E00EE09DD /* LaunchScreen.xib */,
 				43D745641B25655E00EE09DD /* Supporting Files */,
+				437FB9401BB67AF400BCEEA8 /* InviteHomeViewController.swift */,
+				437FB9421BB6808A00BCEEA8 /* Helpers.swift */,
 			);
 			path = Gatsbi_iOS;
 			sourceTree = "<group>";
@@ -308,6 +349,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				437FB94E1BB683E000BCEEA8 /* Images in Resources */,
 				43D7456C1B25655E00EE09DD /* Main.storyboard in Resources */,
 				43D745711B25655E00EE09DD /* LaunchScreen.xib in Resources */,
 				43D7456E1B25655E00EE09DD /* Images.xcassets in Resources */,
@@ -328,8 +370,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43D745691B25655E00EE09DD /* ViewController.swift in Sources */,
+				43D745691B25655E00EE09DD /* LoginViewController.swift in Sources */,
+				437FB9551BB683E000BCEEA8 /* NWCalendarMonthView.swift in Sources */,
+				437FB9501BB683E000BCEEA8 /* NWCalendarCache.swift in Sources */,
+				437FB9521BB683E000BCEEA8 /* NWCalendarMenuView.swift in Sources */,
+				437FB9411BB67AF400BCEEA8 /* InviteHomeViewController.swift in Sources */,
+				437FB9561BB683E000BCEEA8 /* NWCalendarView.swift in Sources */,
+				437FB9511BB683E000BCEEA8 /* NWCalendarDayView.swift in Sources */,
 				43D745671B25655E00EE09DD /* AppDelegate.swift in Sources */,
+				437FB9431BB6808A00BCEEA8 /* Helpers.swift in Sources */,
+				437FB9541BB683E000BCEEA8 /* NWCalendarMonthSelectorView.swift in Sources */,
+				437FB94F1BB683E000BCEEA8 /* NSDate+NWCalendarView.swift in Sources */,
+				437FB9531BB683E000BCEEA8 /* NWCalendarMonthContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
