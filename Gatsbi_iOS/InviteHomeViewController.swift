@@ -8,9 +8,14 @@
 
 import UIKit
 class InviteHomeViewController: UIViewController {
-    
-        // Do any additional setup after loading the view, typically from a nib.
+
+// Do any additional setup after loading the view, typically from a nib.
         
+    @IBAction func LogOutButton(sender: UIBarButtonItem) {
+        PFUser.logOut()
+        self.loginSetup()
+       
+    }
 @IBOutlet weak var calendarView: NWCalendarView!
         
         override func viewDidLoad() {
@@ -21,7 +26,7 @@ class InviteHomeViewController: UIViewController {
             calendarView.backgroundColor = UIColor.whiteColor()
             
             
-            var date = NSDate()
+            let date = NSDate()
             let newDate = date.dateByAddingTimeInterval(60*60*24*8)
             let newDate2 = date.dateByAddingTimeInterval(60*60*24*9)
             let newDate3 = date.dateByAddingTimeInterval(60*60*24*30)
@@ -36,15 +41,30 @@ class InviteHomeViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+   
+    func loginSetup() {
+        if (PFUser.currentUser() == nil) {
+            let setViewController = storyboard!.instantiateViewControllerWithIdentifier("LoginViewController")
+            self.presentViewController(setViewController, animated: false, completion: nil)
+        }
+        
+        
+    }
     
     
 }
 extension InviteHomeViewController: NWCalendarViewDelegate {
     func didChangeFromMonthToMonth(fromMonth: NSDateComponents, toMonth: NSDateComponents) {
-        println("Change From month \(fromMonth) to month \(toMonth)")
+        print("Change From month \(fromMonth) to month \(toMonth)")
     }
     
     func didSelectDate(fromDate: NSDateComponents, toDate: NSDateComponents) {
-        println("Selected date \(fromDate.date!) to date \(toDate.date!)")
+        print("Selected date \(fromDate.date!) to date \(toDate.date!)")
+        performSegueWithIdentifier("segueThemes", sender: nil)
     }
 }
+
+
+
+
+

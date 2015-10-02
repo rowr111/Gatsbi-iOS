@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43703BD71BBBB4D8005012AA /* ionicons in Resources */ = {isa = PBXBuildFile; fileRef = 43703BD61BBBB4D8005012AA /* ionicons */; settings = {ASSET_TAGS = (); }; };
+		43703BD91BBBB911005012AA /* DropdownMenu in Resources */ = {isa = PBXBuildFile; fileRef = 43703BD81BBBB911005012AA /* DropdownMenu */; settings = {ASSET_TAGS = (); }; };
+		43703BDB1BBE60E0005012AA /* InviteThemesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43703BDA1BBE60E0005012AA /* InviteThemesViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		437FB9411BB67AF400BCEEA8 /* InviteHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FB9401BB67AF400BCEEA8 /* InviteHomeViewController.swift */; };
 		437FB9431BB6808A00BCEEA8 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FB9421BB6808A00BCEEA8 /* Helpers.swift */; };
 		437FB94E1BB683E000BCEEA8 /* Images in Resources */ = {isa = PBXBuildFile; fileRef = 437FB9451BB683E000BCEEA8 /* Images */; };
@@ -61,6 +64,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		43703BD61BBBB4D8005012AA /* ionicons */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ionicons; sourceTree = "<group>"; };
+		43703BD81BBBB911005012AA /* DropdownMenu */ = {isa = PBXFileReference; lastKnownFileType = folder; path = DropdownMenu; sourceTree = "<group>"; };
+		43703BDA1BBE60E0005012AA /* InviteThemesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteThemesViewController.swift; sourceTree = "<group>"; };
 		437FB9401BB67AF400BCEEA8 /* InviteHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteHomeViewController.swift; sourceTree = "<group>"; };
 		437FB9421BB6808A00BCEEA8 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		437FB9451BB683E000BCEEA8 /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Images; path = NWCalendar/Images; sourceTree = "<group>"; };
@@ -191,6 +197,7 @@
 		43D745631B25655E00EE09DD /* Gatsbi_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				43703BD81BBBB911005012AA /* DropdownMenu */,
 				437FB9441BB6837E00BCEEA8 /* NWCalendar */,
 				43D745661B25655E00EE09DD /* AppDelegate.swift */,
 				43D745681B25655E00EE09DD /* LoginViewController.swift */,
@@ -199,6 +206,7 @@
 				43D745641B25655E00EE09DD /* Supporting Files */,
 				437FB9401BB67AF400BCEEA8 /* InviteHomeViewController.swift */,
 				437FB9421BB6808A00BCEEA8 /* Helpers.swift */,
+				43703BDA1BBE60E0005012AA /* InviteThemesViewController.swift */,
 			);
 			path = Gatsbi_iOS;
 			sourceTree = "<group>";
@@ -206,6 +214,7 @@
 		43D745641B25655E00EE09DD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				43703BD61BBBB4D8005012AA /* ionicons */,
 				43D7456D1B25655E00EE09DD /* Images.xcassets */,
 				43D745C61B2EA1FF00EE09DD /* images */,
 				43D745651B25655E00EE09DD /* Info.plist */,
@@ -313,7 +322,9 @@
 		43D745591B25655E00EE09DD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Gatsbi;
 				TargetAttributes = {
 					43D745601B25655E00EE09DD = {
@@ -350,6 +361,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				437FB94E1BB683E000BCEEA8 /* Images in Resources */,
+				43703BD71BBBB4D8005012AA /* ionicons in Resources */,
+				43703BD91BBBB911005012AA /* DropdownMenu in Resources */,
 				43D7456C1B25655E00EE09DD /* Main.storyboard in Resources */,
 				43D745711B25655E00EE09DD /* LaunchScreen.xib in Resources */,
 				43D7456E1B25655E00EE09DD /* Images.xcassets in Resources */,
@@ -377,6 +390,7 @@
 				437FB9411BB67AF400BCEEA8 /* InviteHomeViewController.swift in Sources */,
 				437FB9561BB683E000BCEEA8 /* NWCalendarView.swift in Sources */,
 				437FB9511BB683E000BCEEA8 /* NWCalendarDayView.swift in Sources */,
+				43703BDB1BBE60E0005012AA /* InviteThemesViewController.swift in Sources */,
 				43D745671B25655E00EE09DD /* AppDelegate.swift in Sources */,
 				437FB9431BB6808A00BCEEA8 /* Helpers.swift in Sources */,
 				437FB9541BB683E000BCEEA8 /* NWCalendarMonthSelectorView.swift in Sources */,
@@ -444,6 +458,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -459,7 +474,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -498,7 +513,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -519,6 +534,7 @@
 				INFOPLIST_FILE = Gatsbi_iOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "Gatsbi.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Gatsbi-Bridging-Header.h";
 				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "Gatsbi-Bridging-Header.h";
@@ -538,6 +554,7 @@
 				INFOPLIST_FILE = Gatsbi_iOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "Gatsbi.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Gatsbi-Bridging-Header.h";
 			};
@@ -557,6 +574,7 @@
 				);
 				INFOPLIST_FILE = Gatsbi_iOSTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Gatsbi.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gatsbi_iOS.app/Gatsbi_iOS";
 			};
@@ -572,6 +590,7 @@
 				);
 				INFOPLIST_FILE = Gatsbi_iOSTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Gatsbi.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gatsbi_iOS.app/Gatsbi_iOS";
 			};

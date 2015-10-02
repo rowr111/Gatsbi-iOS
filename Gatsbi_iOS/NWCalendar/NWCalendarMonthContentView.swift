@@ -16,7 +16,7 @@ protocol NWCalendarMonthContentViewDelegate {
 }
 
 class NWCalendarMonthContentView: UIScrollView {
-  private let unitFlags: NSCalendarUnit = .CalendarUnitYear | .CalendarUnitMonth | .CalendarUnitDay | .CalendarUnitWeekday | .CalendarUnitCalendar
+  private let unitFlags: NSCalendarUnit = [.Year, .Month, .Day, .Weekday, .Calendar]
   private let kCurrentMonthOffset = 4
   
   var monthContentViewDelegate:NWCalendarMonthContentViewDelegate?
@@ -36,7 +36,7 @@ class NWCalendarMonthContentView: UIScrollView {
   var maxMonths           : Int! = 0 {
     didSet {
       if maxMonths > 0 {
-        let date = NSCalendar.currentCalendar().dateByAddingUnit(.CalendarUnitMonth, value: maxMonths, toDate: presentMonth.date!, options: nil)!
+        let date = NSCalendar.currentCalendar().dateByAddingUnit(.Month, value: maxMonths, toDate: presentMonth.date!, options: [])!
         let month = date.nwCalendarView_monthWithCalendar(presentMonth.calendar!)
         maxMonth = month
       }
@@ -51,7 +51,7 @@ class NWCalendarMonthContentView: UIScrollView {
     didSet {
       if let dates = disabledDates {
         for date in dates {
-          let comp = NSCalendar.currentCalendar().components(.CalendarUnitYear | .CalendarUnitMonth | .CalendarUnitDay | .CalendarUnitWeekday | .CalendarUnitCalendar, fromDate: date)
+          let comp = NSCalendar.currentCalendar().components([.Year, .Month, .Day, .Weekday, .Calendar], fromDate: date)
           let key = monthViewKeyForMonth(comp)
           if var compArray = disabledDatesDict[key] {
             compArray.append(comp)
@@ -70,7 +70,7 @@ class NWCalendarMonthContentView: UIScrollView {
     didSet {
       if let dates = selectedDates {
         for date in dates {
-          let comp = NSCalendar.currentCalendar().components(.CalendarUnitYear | .CalendarUnitMonth | .CalendarUnitDay | .CalendarUnitWeekday | .CalendarUnitCalendar, fromDate: date)
+          let comp = NSCalendar.currentCalendar().components([.Year, .Month, .Day, .Weekday, .Calendar], fromDate: date)
           let key = monthViewKeyForMonth(comp)
           if var compArray = selectedDatesDict[key] {
             compArray.append(comp)
@@ -91,7 +91,7 @@ class NWCalendarMonthContentView: UIScrollView {
       if let dates = availableDates {
         showOnlyAvailableDates = true
         for date in dates {
-          let comp = NSCalendar.currentCalendar().components(.CalendarUnitYear | .CalendarUnitMonth | .CalendarUnitDay | .CalendarUnitWeekday | .CalendarUnitCalendar, fromDate: date)
+          let comp = NSCalendar.currentCalendar().components([.Year, .Month, .Day, .Weekday, .Calendar], fromDate: date)
           let key = monthViewKeyForMonth(comp)
           if var compArray = availableDatesDict[key] {
             compArray.append(comp)
@@ -130,7 +130,7 @@ class NWCalendarMonthContentView: UIScrollView {
     }
   }
   
-  required init(coder aDecoder: NSCoder) {
+  required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
   
@@ -181,7 +181,7 @@ extension NWCalendarMonthContentView {
         scrollToOffset(monthViewOrigins[currentPage], animated:true)
       }
     } else {
-      var totalMonths = monthViews.count-1
+      let totalMonths = monthViews.count-1
       currentPage = min(currentPage+1, totalMonths)
       scrollToOffset(monthViewOrigins[currentPage], animated:true)
     }
@@ -201,7 +201,7 @@ extension NWCalendarMonthContentView {
     let key = monthViewKeyForMonth(dateComps)
     
     if let monthView = monthViewsDict[key] {
-      if let index = find(monthViews, monthView) {
+      if let index = monthViews.indexOf(monthView) {
         if monthViewOrigins[index] <= lastMonthOrigin {
           currentPage = index
           scrollToOffset(monthViewOrigins[currentPage], animated: animated)
@@ -295,7 +295,7 @@ extension NWCalendarMonthContentView {
   }
   
   func monthViewKeyForMonth(month: NSDateComponents) -> String {
-    let month = month.calendar?.components(.CalendarUnitYear | .CalendarUnitMonth, fromDate: month.date!)
+    let month = month.calendar?.components([.Year, .Month], fromDate: month.date!)
     return "\(month!.year).\(month!.month)"
   }
   

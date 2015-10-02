@@ -21,19 +21,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions)
         
-        var storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle());
+        let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle());
         
 
         if let currentUser = PFUser.currentUser()
         {
-            println("user is logged in already!")
+            print("user is logged in already!")
             self.window?.rootViewController = storyboard.instantiateViewControllerWithIdentifier("InviteNavigationController") as? UIViewController
 
         }
         else
         {
-            var setViewController = storyboard.instantiateViewControllerWithIdentifier("LoginViewController") as! UIViewController
-            var rootViewController = self.window!.rootViewController
+            let setViewController = storyboard.instantiateViewControllerWithIdentifier("LoginViewController") 
+            let rootViewController = self.window!.rootViewController
             rootViewController?.presentViewController(setViewController, animated: false, completion: nil)
         
         }
@@ -45,7 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication,
         openURL url: NSURL,
         sourceApplication: String?,
-        annotation: AnyObject?) -> Bool {
+        annotation: AnyObject) -> Bool {
             return FBSDKApplicationDelegate.sharedInstance().application(application,
                 openURL: url,
                 sourceApplication: sourceApplication,

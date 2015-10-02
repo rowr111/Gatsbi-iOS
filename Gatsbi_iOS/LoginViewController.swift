@@ -11,7 +11,6 @@ class LoginViewController: UIViewController {
     
     let permissions = ["public_profile", "email", "user_friends"]
 
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,9 +27,11 @@ class LoginViewController: UIViewController {
             PFFacebookUtils.logInInBackgroundWithAccessToken(accessToken, block: {
                 (user: PFUser?, error: NSError?) -> Void in
                 if user != nil {
-                    println("User logged in through Facebook!")
+                    print("User logged in through Facebook!")
+                    let setViewController = self.storyboard!.instantiateViewControllerWithIdentifier("InviteNavigationController")
+                    self.presentViewController(setViewController, animated: false, completion: nil)
                 } else {
-                    println("Uh oh. There was an error logging in.")
+                    print("Uh oh. There was an error logging in.")
                 }
             })
         } else {
@@ -38,12 +39,14 @@ class LoginViewController: UIViewController {
             (user: PFUser?, error: NSError?) -> Void in
             if let user = user {
                 if user.isNew {
-                    println("User signed up and logged in through Facebook!")
+                    print("User signed up and logged in through Facebook!")
                 } else {
-                    println("User logged in through Facebook!")
+                    print("User logged in through Facebook!")
+                    let setViewController = self.storyboard!.instantiateViewControllerWithIdentifier("InviteNavigationController")
+                    self.presentViewController(setViewController, animated: false, completion: nil)
                 }
             } else {
-                println("Uh oh. The user cancelled the Facebook login.")
+                print("Uh oh. The user cancelled the Facebook login.")
             }
         }
         }
