@@ -10,6 +10,7 @@
 		43703BD71BBBB4D8005012AA /* ionicons in Resources */ = {isa = PBXBuildFile; fileRef = 43703BD61BBBB4D8005012AA /* ionicons */; settings = {ASSET_TAGS = (); }; };
 		43703BD91BBBB911005012AA /* DropdownMenu in Resources */ = {isa = PBXBuildFile; fileRef = 43703BD81BBBB911005012AA /* DropdownMenu */; settings = {ASSET_TAGS = (); }; };
 		43703BDB1BBE60E0005012AA /* InviteThemesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43703BDA1BBE60E0005012AA /* InviteThemesViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		43703BDD1BC23636005012AA /* InviteThemesCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43703BDC1BC23636005012AA /* InviteThemesCustomCell.swift */; settings = {ASSET_TAGS = (); }; };
 		437FB9411BB67AF400BCEEA8 /* InviteHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FB9401BB67AF400BCEEA8 /* InviteHomeViewController.swift */; };
 		437FB9431BB6808A00BCEEA8 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FB9421BB6808A00BCEEA8 /* Helpers.swift */; };
 		437FB94E1BB683E000BCEEA8 /* Images in Resources */ = {isa = PBXBuildFile; fileRef = 437FB9451BB683E000BCEEA8 /* Images */; };
@@ -67,6 +68,7 @@
 		43703BD61BBBB4D8005012AA /* ionicons */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ionicons; sourceTree = "<group>"; };
 		43703BD81BBBB911005012AA /* DropdownMenu */ = {isa = PBXFileReference; lastKnownFileType = folder; path = DropdownMenu; sourceTree = "<group>"; };
 		43703BDA1BBE60E0005012AA /* InviteThemesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteThemesViewController.swift; sourceTree = "<group>"; };
+		43703BDC1BC23636005012AA /* InviteThemesCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteThemesCustomCell.swift; sourceTree = "<group>"; };
 		437FB9401BB67AF400BCEEA8 /* InviteHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteHomeViewController.swift; sourceTree = "<group>"; };
 		437FB9421BB6808A00BCEEA8 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		437FB9451BB683E000BCEEA8 /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Images; path = NWCalendar/Images; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				437FB9401BB67AF400BCEEA8 /* InviteHomeViewController.swift */,
 				437FB9421BB6808A00BCEEA8 /* Helpers.swift */,
 				43703BDA1BBE60E0005012AA /* InviteThemesViewController.swift */,
+				43703BDC1BC23636005012AA /* InviteThemesCustomCell.swift */,
 			);
 			path = Gatsbi_iOS;
 			sourceTree = "<group>";
@@ -394,6 +397,7 @@
 				43D745671B25655E00EE09DD /* AppDelegate.swift in Sources */,
 				437FB9431BB6808A00BCEEA8 /* Helpers.swift in Sources */,
 				437FB9541BB683E000BCEEA8 /* NWCalendarMonthSelectorView.swift in Sources */,
+				43703BDD1BC23636005012AA /* InviteThemesCustomCell.swift in Sources */,
 				437FB94F1BB683E000BCEEA8 /* NSDate+NWCalendarView.swift in Sources */,
 				437FB9531BB683E000BCEEA8 /* NWCalendarMonthContentView.swift in Sources */,
 			);
