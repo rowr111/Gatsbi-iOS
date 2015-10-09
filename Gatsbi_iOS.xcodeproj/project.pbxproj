@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		43703BD71BBBB4D8005012AA /* ionicons in Resources */ = {isa = PBXBuildFile; fileRef = 43703BD61BBBB4D8005012AA /* ionicons */; settings = {ASSET_TAGS = (); }; };
-		43703BD91BBBB911005012AA /* DropdownMenu in Resources */ = {isa = PBXBuildFile; fileRef = 43703BD81BBBB911005012AA /* DropdownMenu */; settings = {ASSET_TAGS = (); }; };
+		434E4AA71BC799FE00242CBF /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434E4AA61BC799FE00242CBF /* MenuViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		43703BDB1BBE60E0005012AA /* InviteThemesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43703BDA1BBE60E0005012AA /* InviteThemesViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		43703BDD1BC23636005012AA /* InviteThemesCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43703BDC1BC23636005012AA /* InviteThemesCustomCell.swift */; settings = {ASSET_TAGS = (); }; };
 		437FB9411BB67AF400BCEEA8 /* InviteHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FB9401BB67AF400BCEEA8 /* InviteHomeViewController.swift */; };
@@ -22,6 +21,7 @@
 		437FB9541BB683E000BCEEA8 /* NWCalendarMonthSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FB94B1BB683E000BCEEA8 /* NWCalendarMonthSelectorView.swift */; };
 		437FB9551BB683E000BCEEA8 /* NWCalendarMonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FB94C1BB683E000BCEEA8 /* NWCalendarMonthView.swift */; };
 		437FB9561BB683E000BCEEA8 /* NWCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FB94D1BB683E000BCEEA8 /* NWCalendarView.swift */; };
+		439B1D671BC77A2F000709C2 /* menuPopover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439B1D661BC77A2F000709C2 /* menuPopover.swift */; settings = {ASSET_TAGS = (); }; };
 		43D745671B25655E00EE09DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D745661B25655E00EE09DD /* AppDelegate.swift */; };
 		43D745691B25655E00EE09DD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D745681B25655E00EE09DD /* LoginViewController.swift */; };
 		43D7456C1B25655E00EE09DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43D7456A1B25655E00EE09DD /* Main.storyboard */; };
@@ -52,6 +52,7 @@
 		43D745BF1B257D0A00EE09DD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D745BE1B257D0A00EE09DD /* Foundation.framework */; };
 		43D745C11B257D6300EE09DD /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D745C01B257D6300EE09DD /* libstdc++.6.0.9.dylib */; };
 		43D745C31B257D6D00EE09DD /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D745C21B257D6D00EE09DD /* libsqlite3.0.dylib */; };
+		9A002100B822E7F50B00C792 /* libPods-Gatsbi_iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B3E761140824F00E82ADB3C /* libPods-Gatsbi_iOS.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,8 +66,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		43703BD61BBBB4D8005012AA /* ionicons */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ionicons; sourceTree = "<group>"; };
-		43703BD81BBBB911005012AA /* DropdownMenu */ = {isa = PBXFileReference; lastKnownFileType = folder; path = DropdownMenu; sourceTree = "<group>"; };
+		2CD6E6B413295BDCDBADB4F3 /* Pods-Gatsbi_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gatsbi_iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gatsbi_iOS/Pods-Gatsbi_iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		434E4AA61BC799FE00242CBF /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		43703BDA1BBE60E0005012AA /* InviteThemesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteThemesViewController.swift; sourceTree = "<group>"; };
 		43703BDC1BC23636005012AA /* InviteThemesCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteThemesCustomCell.swift; sourceTree = "<group>"; };
 		437FB9401BB67AF400BCEEA8 /* InviteHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteHomeViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +81,7 @@
 		437FB94B1BB683E000BCEEA8 /* NWCalendarMonthSelectorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NWCalendarMonthSelectorView.swift; path = NWCalendar/NWCalendarMonthSelectorView.swift; sourceTree = "<group>"; };
 		437FB94C1BB683E000BCEEA8 /* NWCalendarMonthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NWCalendarMonthView.swift; path = NWCalendar/NWCalendarMonthView.swift; sourceTree = "<group>"; };
 		437FB94D1BB683E000BCEEA8 /* NWCalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NWCalendarView.swift; path = NWCalendar/NWCalendarView.swift; sourceTree = "<group>"; };
+		439B1D661BC77A2F000709C2 /* menuPopover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = menuPopover.swift; sourceTree = "<group>"; };
 		43D745611B25655E00EE09DD /* Gatsbi_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gatsbi_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43D745651B25655E00EE09DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43D745661B25655E00EE09DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +118,8 @@
 		43D745BE1B257D0A00EE09DD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		43D745C01B257D6300EE09DD /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "usr/lib/libstdc++.6.0.9.dylib"; sourceTree = SDKROOT; };
 		43D745C21B257D6D00EE09DD /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		6B3E761140824F00E82ADB3C /* libPods-Gatsbi_iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Gatsbi_iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		720144B8E04B7E5D51EA892F /* Pods-Gatsbi_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gatsbi_iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gatsbi_iOS/Pods-Gatsbi_iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +151,7 @@
 				43D7458E1B25677000EE09DD /* Parse.framework in Frameworks */,
 				43D745901B25677600EE09DD /* Bolts.framework in Frameworks */,
 				43D745971B25678800EE09DD /* ParseFacebookUtilsV4.framework in Frameworks */,
+				9A002100B822E7F50B00C792 /* libPods-Gatsbi_iOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,6 +189,7 @@
 				43D745631B25655E00EE09DD /* Gatsbi_iOS */,
 				43D745791B25655E00EE09DD /* Gatsbi_iOSTests */,
 				43D745621B25655E00EE09DD /* Products */,
+				CBBAF438FF7211497F7FFCDC /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -199,7 +205,7 @@
 		43D745631B25655E00EE09DD /* Gatsbi_iOS */ = {
 			isa = PBXGroup;
 			children = (
-				43703BD81BBBB911005012AA /* DropdownMenu */,
+				439B1D661BC77A2F000709C2 /* menuPopover.swift */,
 				437FB9441BB6837E00BCEEA8 /* NWCalendar */,
 				43D745661B25655E00EE09DD /* AppDelegate.swift */,
 				43D745681B25655E00EE09DD /* LoginViewController.swift */,
@@ -210,6 +216,7 @@
 				437FB9421BB6808A00BCEEA8 /* Helpers.swift */,
 				43703BDA1BBE60E0005012AA /* InviteThemesViewController.swift */,
 				43703BDC1BC23636005012AA /* InviteThemesCustomCell.swift */,
+				434E4AA61BC799FE00242CBF /* MenuViewController.swift */,
 			);
 			path = Gatsbi_iOS;
 			sourceTree = "<group>";
@@ -217,7 +224,6 @@
 		43D745641B25655E00EE09DD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				43703BD61BBBB4D8005012AA /* ionicons */,
 				43D7456D1B25655E00EE09DD /* Images.xcassets */,
 				43D745C61B2EA1FF00EE09DD /* images */,
 				43D745651B25655E00EE09DD /* Info.plist */,
@@ -270,6 +276,7 @@
 				43D745941B25678800EE09DD /* ParseUI.framework */,
 				43D7458F1B25677600EE09DD /* Bolts.framework */,
 				43D7458D1B25677000EE09DD /* Parse.framework */,
+				6B3E761140824F00E82ADB3C /* libPods-Gatsbi_iOS.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -281,6 +288,15 @@
 			name = images;
 			sourceTree = "<group>";
 		};
+		CBBAF438FF7211497F7FFCDC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2CD6E6B413295BDCDBADB4F3 /* Pods-Gatsbi_iOS.debug.xcconfig */,
+				720144B8E04B7E5D51EA892F /* Pods-Gatsbi_iOS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -288,9 +304,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 43D745801B25655E00EE09DD /* Build configuration list for PBXNativeTarget "Gatsbi_iOS" */;
 			buildPhases = (
+				6956CAA4E1D29C7F80CE5BCB /* Check Pods Manifest.lock */,
 				43D7455D1B25655E00EE09DD /* Sources */,
 				43D7455E1B25655E00EE09DD /* Frameworks */,
 				43D7455F1B25655E00EE09DD /* Resources */,
+				7360A9D1C9B5D9B4E6994D94 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -364,8 +382,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				437FB94E1BB683E000BCEEA8 /* Images in Resources */,
-				43703BD71BBBB4D8005012AA /* ionicons in Resources */,
-				43703BD91BBBB911005012AA /* DropdownMenu in Resources */,
 				43D7456C1B25655E00EE09DD /* Main.storyboard in Resources */,
 				43D745711B25655E00EE09DD /* LaunchScreen.xib in Resources */,
 				43D7456E1B25655E00EE09DD /* Images.xcassets in Resources */,
@@ -381,6 +397,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6956CAA4E1D29C7F80CE5BCB /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7360A9D1C9B5D9B4E6994D94 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gatsbi_iOS/Pods-Gatsbi_iOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		43D7455D1B25655E00EE09DD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -393,6 +442,8 @@
 				437FB9411BB67AF400BCEEA8 /* InviteHomeViewController.swift in Sources */,
 				437FB9561BB683E000BCEEA8 /* NWCalendarView.swift in Sources */,
 				437FB9511BB683E000BCEEA8 /* NWCalendarDayView.swift in Sources */,
+				434E4AA71BC799FE00242CBF /* MenuViewController.swift in Sources */,
+				439B1D671BC77A2F000709C2 /* menuPopover.swift in Sources */,
 				43703BDB1BBE60E0005012AA /* InviteThemesViewController.swift in Sources */,
 				43D745671B25655E00EE09DD /* AppDelegate.swift in Sources */,
 				437FB9431BB6808A00BCEEA8 /* Helpers.swift in Sources */,
@@ -527,6 +578,7 @@
 		};
 		43D745811B25655E00EE09DD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CD6E6B413295BDCDBADB4F3 /* Pods-Gatsbi_iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -537,7 +589,13 @@
 				);
 				INFOPLIST_FILE = Gatsbi_iOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-ObjC";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					$inherited,
+					"-ObjC",
+					"-all_load",
+					"-lc++",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Gatsbi.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Gatsbi-Bridging-Header.h";
@@ -547,6 +605,7 @@
 		};
 		43D745821B25655E00EE09DD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 720144B8E04B7E5D51EA892F /* Pods-Gatsbi_iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -557,7 +616,13 @@
 				);
 				INFOPLIST_FILE = Gatsbi_iOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-ObjC";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = (
+					$inherited,
+					"-ObjC",
+					"-all_load",
+					"-lc++",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Gatsbi.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Gatsbi-Bridging-Header.h";

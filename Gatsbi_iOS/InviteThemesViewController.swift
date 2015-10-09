@@ -88,4 +88,6 @@ class InviteThemesViewController : PFQueryTableViewController {
         orderByColumn = "PricePP"
         self.loadObjects()
     }
+    
+
 }

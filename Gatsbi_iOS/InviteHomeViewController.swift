@@ -7,16 +7,13 @@
 //
 
 import UIKit
-class InviteHomeViewController: UIViewController {
+
+class InviteHomeViewController: UIViewController, UIPopoverPresentationControllerDelegate {
 
 // Do any additional setup after loading the view, typically from a nib.
         
-    @IBAction func LogOutButton(sender: UIBarButtonItem) {
-        PFUser.logOut()
-        self.loginSetup()
-       
-    }
 @IBOutlet weak var calendarView: NWCalendarView!
+@IBOutlet weak var menuPopoverButton: UIBarButtonItem!
         
         override func viewDidLoad() {
             super.viewDidLoad()
@@ -35,24 +32,22 @@ class InviteHomeViewController: UIViewController {
             calendarView.maxMonths = 6
             calendarView.delegate = self
             calendarView.createCalendar()
+            
+            //set the popover button's image
+            
+            menuPopoverButton.image = IonIcons.imageWithIcon(ion_navicon_round, iconColor: UIColor.whiteColor(), iconSize: 40.0, imageSize: CGSizeMake(70.0, 70.0))
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-   
-    func loginSetup() {
-        if (PFUser.currentUser() == nil) {
-            let setViewController = storyboard!.instantiateViewControllerWithIdentifier("LoginViewController")
-            self.presentViewController(setViewController, animated: false, completion: nil)
-        }
         
-        
+
+    
+    
     }
-    
-    
-}
+
 extension InviteHomeViewController: NWCalendarViewDelegate {
     func didChangeFromMonthToMonth(fromMonth: NSDateComponents, toMonth: NSDateComponents) {
         print("Change From month \(fromMonth) to month \(toMonth)")
@@ -62,6 +57,33 @@ extension InviteHomeViewController: NWCalendarViewDelegate {
         print("Selected date \(fromDate.date!) to date \(toDate.date!)")
         performSegueWithIdentifier("segueThemes", sender: nil)
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let identifier = segue.identifier
+        {
+            switch identifier
+            {
+            case "menuPopoverSegue":
+                if let vc = segue.destinationViewController as? menuPopover{
+                    vc.preferredContentSize = CGSizeMake(150, 150)
+                    if let ppc = vc.popoverPresentationController {
+                        ppc.permittedArrowDirections = UIPopoverArrowDirection.Any
+                        ppc.delegate = self
+                    }
+                }
+            default: break
+                
+            }
+        }
+    }
+    
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
+        return UIModalPresentationStyle.None
+    }
+    
+    
+    
+    
 }
 
 

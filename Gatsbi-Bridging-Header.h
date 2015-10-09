@@ -11,5 +11,4 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <ParseFacebookUtilsV4/PFFacebookUtils.h>
-#import "Gatsbi_iOS/DropdownMenu/DropdownMenuController.h"
-#import "Gatsbi_iOS/DropdownMenu/DropdownMenuSegue.h"
+#import "Pods/Headers/Public/ionicons/IonIcons.h"
