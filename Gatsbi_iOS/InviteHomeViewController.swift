@@ -14,6 +14,8 @@ class InviteHomeViewController: UIViewController, UIPopoverPresentationControlle
         
 @IBOutlet weak var calendarView: NWCalendarView!
 @IBOutlet weak var menuPopoverButton: UIBarButtonItem!
+    
+    var inviteDate: NSDate?
         
         override func viewDidLoad() {
             super.viewDidLoad()
@@ -23,11 +25,11 @@ class InviteHomeViewController: UIViewController, UIPopoverPresentationControlle
             calendarView.backgroundColor = UIColor.whiteColor()
             
             
-            let date = NSDate()
-            let newDate = date.dateByAddingTimeInterval(60*60*24*8)
-            let newDate2 = date.dateByAddingTimeInterval(60*60*24*9)
-            let newDate3 = date.dateByAddingTimeInterval(60*60*24*30)
-            calendarView.disabledDates = [newDate, newDate2, newDate3]
+            //let date = NSDate()
+            //let newDate = date.dateByAddingTimeInterval(60*60*24*8)
+            //let newDate2 = date.dateByAddingTimeInterval(60*60*24*9)
+            //let newDate3 = date.dateByAddingTimeInterval(60*60*24*30)
+            //calendarView.disabledDates = [newDate, newDate2, newDate3]
             calendarView.selectionRangeLength = 1
             calendarView.maxMonths = 6
             calendarView.delegate = self
@@ -54,7 +56,8 @@ extension InviteHomeViewController: NWCalendarViewDelegate {
     }
     
     func didSelectDate(fromDate: NSDateComponents, toDate: NSDateComponents) {
-        print("Selected date \(fromDate.date!) to date \(toDate.date!)")
+        print("Selected date \(fromDate.date!)")
+        inviteDate = fromDate.date!
         performSegueWithIdentifier("segueThemes", sender: nil)
     }
     
@@ -70,6 +73,12 @@ extension InviteHomeViewController: NWCalendarViewDelegate {
                         ppc.permittedArrowDirections = UIPopoverArrowDirection.Any
                         ppc.delegate = self
                     }
+                }
+            case "segueThemes":
+                    if let themes = segue.destinationViewController as? InviteThemesViewController{
+                        //create a new invite, hooray!
+                        themes.myInvite = Invite()
+                        themes.myInvite!.Date = inviteDate!
                 }
             default: break
                 

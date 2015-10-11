@@ -14,7 +14,8 @@ class InviteThemesCustomCell:  PFTableViewCell {
     @IBOutlet weak var menuDescription: UILabel!
     @IBOutlet weak var menuPrice: UILabel!
     @IBOutlet weak var menuImage: PFImageView!
-    
+    var menuID: String = ""
+    var RecipeList: [String] = []
        
     @IBOutlet weak var menuButton: UIButton!
 }

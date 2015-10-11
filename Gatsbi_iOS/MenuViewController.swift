@@ -9,45 +9,51 @@
 import Foundation
 import UIKit
 
-class MenuViewController : PFQueryTableViewController {
+class MenuViewController : UIViewController {
     
-    var menuID: String
-    var recipeList: [String]
+    var myInvite:Invite?
     
-    // Initialise the PFQueryTable tableview
-    override init(style: UITableViewStyle, className: String!) {
-        super.init(style: style, className: className)
-    }
+    @IBOutlet weak var menuImage: UIImageView!
+    @IBOutlet weak var menuDescription: UILabel!
+    @IBOutlet weak var pricePP: UILabel!
+    @IBOutlet weak var recipeList: UITextView!
     
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        menuImage.image = myInvite?.MenuImage
+        menuDescription.text = myInvite?.MenuDescription
+        pricePP.text = myInvite?.PricePP
         
-        // Configure the PFQueryTableView
-        self.parseClassName = "Recipe"
-        self.pullToRefreshEnabled = false
-        self.paginationEnabled = false
-    }
-    
-    override func queryForTable() -> PFQuery {
-        let query:PFQuery = PFQuery(className:self.parseClassName!)
+       populateMenuInfo()
         
-        if(objects?.count == 0)
+       //recipeList.text = "test"
+       // recipeList.text = String(getRecipeList("test").count)
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+    func populateMenuInfo() {
+        
+        for recipe in myInvite!.RecipeList
         {
-            query.cachePolicy = PFCachePolicy.CacheThenNetwork
+            let query = PFQuery(className:"Recipe")
+            query.getObjectInBackgroundWithId(recipe)
+            {
+                (myRecipe: PFObject?, error: NSError?) -> Void in
+                if error == nil && myRecipe != nil {
+                    let myRecipeName = myRecipe!["Name"] as! String
+                    self.recipeList.text = self.recipeList.text + myRecipeName
+                    self.recipeList.text = self.recipeList.text + "\r\r"
+                    print(self.recipeList.text)
+                }
+                else {
+                    print(error)
+                }
+            }
         }
-        
-        return query
-    }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath, object: PFObject?) -> PFTableViewCell? {
-        
-        //let cellIdentifier:String = "Cell"
-       // let cell =
-        
-       // if let pfObject = object {
-          //  celltext = pfObject["Name"] as? String
-          //  print(cell?.menuPrice?.text)
-       // }
-       // return cell;
     }
 }

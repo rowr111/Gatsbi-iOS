@@ -14,6 +14,7 @@ class InviteThemesViewController : PFQueryTableViewController {
     
     var orderByAscending: Bool = true
     var orderByColumn: String = "Name"
+    var myInvite:Invite?
     
     
     
@@ -61,7 +62,13 @@ class InviteThemesViewController : PFQueryTableViewController {
         
         if let pfObject = object {
             cell?.menuDescription?.text = pfObject["Name"] as? String
-            if let pricePP = pfObject["PricePP"] as? Double
+            cell?.menuID = pfObject.objectId!
+            if let recipeList = pfObject["Recipes"] as? [String]
+            {
+                cell?.RecipeList = recipeList
+
+            }
+                        if let pricePP = pfObject["PricePP"] as? Double
             {
                 let formatter = NSNumberFormatter()
                 formatter.numberStyle = .CurrencyStyle
@@ -87,6 +94,34 @@ class InviteThemesViewController : PFQueryTableViewController {
     @IBAction func sortByPrice(sender: UIButton) {
         orderByColumn = "PricePP"
         self.loadObjects()
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let identifier = segue.identifier
+        {
+            switch identifier
+            {
+            case "menuSegue":
+                print("trying to segue")
+                if let menu = segue.destinationViewController as? MenuViewController{
+                    //pass along the invite, including the date and selected menu, hooray!
+                    menu.myInvite = myInvite!
+                    let button = sender as! UIButton
+                    let view = button.superview!
+                    let cell = view.superview as! InviteThemesCustomCell
+                    menu.myInvite?.MenuID = cell.menuID
+                    menu.myInvite?.MenuDescription = cell.menuDescription.text!
+                    menu.myInvite?.PricePP = cell.menuPrice.text!
+                    menu.myInvite?.RecipeList = cell.RecipeList
+                    menu.myInvite?.MenuImage = cell.menuImage?.image
+                    print(menu.myInvite?.MenuID)
+                    print(menu.myInvite?.Date)
+                }
+                
+            default: break
+    
+            }
+        }
     }
     
 
