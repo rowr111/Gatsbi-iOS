@@ -25,9 +25,6 @@ class MenuViewController : UIViewController {
         pricePP.text = myInvite?.PricePP
         
        populateMenuInfo()
-        
-       //recipeList.text = "test"
-       // recipeList.text = String(getRecipeList("test").count)
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,7 +44,7 @@ class MenuViewController : UIViewController {
                     let myRecipeName = myRecipe!["Name"] as! String
                     self.recipeList.text = self.recipeList.text + myRecipeName
                     self.recipeList.text = self.recipeList.text + "\r\r"
-                    print(self.recipeList.text)
+                    //print(self.recipeList.text)
                 }
                 else {
                     print(error)
