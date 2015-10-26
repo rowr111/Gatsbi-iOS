@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>YES</string>
+	<string>Your location will be used in location searching for the host address.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>ionicons.ttf</string>

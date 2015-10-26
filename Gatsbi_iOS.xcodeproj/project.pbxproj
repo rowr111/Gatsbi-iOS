@@ -10,6 +10,7 @@
 		434E4AA71BC799FE00242CBF /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434E4AA61BC799FE00242CBF /* MenuViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		434E4AA91BCA201A00242CBF /* Invite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434E4AA81BCA201A00242CBF /* Invite.swift */; settings = {ASSET_TAGS = (); }; };
 		434E4AAB1BCF6D3600242CBF /* HostAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434E4AAA1BCF6D3600242CBF /* HostAddressViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		434E4AAD1BD0D8CB00242CBF /* InviteTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434E4AAC1BD0D8CB00242CBF /* InviteTimeViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		43703BDB1BBE60E0005012AA /* InviteThemesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43703BDA1BBE60E0005012AA /* InviteThemesViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		43703BDD1BC23636005012AA /* InviteThemesCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43703BDC1BC23636005012AA /* InviteThemesCustomCell.swift */; settings = {ASSET_TAGS = (); }; };
 		437FB9411BB67AF400BCEEA8 /* InviteHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FB9401BB67AF400BCEEA8 /* InviteHomeViewController.swift */; };
@@ -24,6 +25,7 @@
 		437FB9551BB683E000BCEEA8 /* NWCalendarMonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FB94C1BB683E000BCEEA8 /* NWCalendarMonthView.swift */; };
 		437FB9561BB683E000BCEEA8 /* NWCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FB94D1BB683E000BCEEA8 /* NWCalendarView.swift */; };
 		439B1D671BC77A2F000709C2 /* menuPopover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439B1D661BC77A2F000709C2 /* menuPopover.swift */; settings = {ASSET_TAGS = (); }; };
+		43D0576F1BDE00FD000FBA09 /* InvitePicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D0576E1BDE00FD000FBA09 /* InvitePicViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		43D745671B25655E00EE09DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D745661B25655E00EE09DD /* AppDelegate.swift */; };
 		43D745691B25655E00EE09DD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D745681B25655E00EE09DD /* LoginViewController.swift */; };
 		43D7456C1B25655E00EE09DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43D7456A1B25655E00EE09DD /* Main.storyboard */; };
@@ -72,6 +74,7 @@
 		434E4AA61BC799FE00242CBF /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		434E4AA81BCA201A00242CBF /* Invite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Invite.swift; sourceTree = "<group>"; };
 		434E4AAA1BCF6D3600242CBF /* HostAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostAddressViewController.swift; sourceTree = "<group>"; };
+		434E4AAC1BD0D8CB00242CBF /* InviteTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteTimeViewController.swift; sourceTree = "<group>"; };
 		43703BDA1BBE60E0005012AA /* InviteThemesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteThemesViewController.swift; sourceTree = "<group>"; };
 		43703BDC1BC23636005012AA /* InviteThemesCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteThemesCustomCell.swift; sourceTree = "<group>"; };
 		437FB9401BB67AF400BCEEA8 /* InviteHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteHomeViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +89,7 @@
 		437FB94C1BB683E000BCEEA8 /* NWCalendarMonthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NWCalendarMonthView.swift; path = NWCalendar/NWCalendarMonthView.swift; sourceTree = "<group>"; };
 		437FB94D1BB683E000BCEEA8 /* NWCalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NWCalendarView.swift; path = NWCalendar/NWCalendarView.swift; sourceTree = "<group>"; };
 		439B1D661BC77A2F000709C2 /* menuPopover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = menuPopover.swift; sourceTree = "<group>"; };
+		43D0576E1BDE00FD000FBA09 /* InvitePicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvitePicViewController.swift; sourceTree = "<group>"; };
 		43D745611B25655E00EE09DD /* Gatsbi_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gatsbi_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43D745651B25655E00EE09DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43D745661B25655E00EE09DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -223,6 +227,8 @@
 				434E4AA61BC799FE00242CBF /* MenuViewController.swift */,
 				434E4AA81BCA201A00242CBF /* Invite.swift */,
 				434E4AAA1BCF6D3600242CBF /* HostAddressViewController.swift */,
+				434E4AAC1BD0D8CB00242CBF /* InviteTimeViewController.swift */,
+				43D0576E1BDE00FD000FBA09 /* InvitePicViewController.swift */,
 			);
 			path = Gatsbi_iOS;
 			sourceTree = "<group>";
@@ -356,6 +362,7 @@
 				TargetAttributes = {
 					43D745601B25655E00EE09DD = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = E33K2LR8LP;
 					};
 					43D745751B25655E00EE09DD = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -443,6 +450,8 @@
 			files = (
 				43D745691B25655E00EE09DD /* LoginViewController.swift in Sources */,
 				437FB9551BB683E000BCEEA8 /* NWCalendarMonthView.swift in Sources */,
+				43D0576F1BDE00FD000FBA09 /* InvitePicViewController.swift in Sources */,
+				434E4AAD1BD0D8CB00242CBF /* InviteTimeViewController.swift in Sources */,
 				437FB9501BB683E000BCEEA8 /* NWCalendarCache.swift in Sources */,
 				437FB9521BB683E000BCEEA8 /* NWCalendarMenuView.swift in Sources */,
 				437FB9411BB67AF400BCEEA8 /* InviteHomeViewController.swift in Sources */,
@@ -589,6 +598,7 @@
 			baseConfigurationReference = 2CD6E6B413295BDCDBADB4F3 /* Pods-Gatsbi_iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/jeanieconner/Downloads/parse-library-1.7.4",
@@ -608,6 +618,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Gatsbi-Bridging-Header.h";
 				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "Gatsbi-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -616,6 +627,7 @@
 			baseConfigurationReference = 720144B8E04B7E5D51EA892F /* Pods-Gatsbi_iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/jeanieconner/Downloads/parse-library-1.7.4",
@@ -634,6 +646,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Gatsbi.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Gatsbi-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

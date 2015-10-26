@@ -11,6 +11,7 @@ import Foundation
 class Invite {
 
     var Date = NSDate()
+    var EndDate = NSDate()
     var MenuID: String = ""
     var MenuDescription: String = ""
     var PricePP: String = ""

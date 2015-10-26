@@ -53,4 +53,22 @@ class MenuViewController : UIViewController {
         }
     
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let identifier = segue.identifier
+        {
+            switch identifier
+            {
+            case "addressSegue":
+                print("trying to segue to da address view controller")
+                if let address = segue.destinationViewController as? HostAddressViewController{
+                    //pass along the invite, including the date and selected menu, hooray!
+                    address.myInvite = myInvite!
+                }
+                
+            default: break
+                
+            }
+        }
+    }
 }
