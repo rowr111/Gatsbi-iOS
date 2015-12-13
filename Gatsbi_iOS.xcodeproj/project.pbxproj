@@ -24,6 +24,9 @@
 		437FB9541BB683E000BCEEA8 /* NWCalendarMonthSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FB94B1BB683E000BCEEA8 /* NWCalendarMonthSelectorView.swift */; };
 		437FB9551BB683E000BCEEA8 /* NWCalendarMonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FB94C1BB683E000BCEEA8 /* NWCalendarMonthView.swift */; };
 		437FB9561BB683E000BCEEA8 /* NWCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FB94D1BB683E000BCEEA8 /* NWCalendarView.swift */; };
+		4395E1A11BEB51A800EFADA3 /* InviteTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4395E1A01BEB51A800EFADA3 /* InviteTitleViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		4395E1A31BF5B57B00EFADA3 /* InviteContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4395E1A21BF5B57B00EFADA3 /* InviteContactsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		4395E1A51BFC53EA00EFADA3 /* InvitePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4395E1A41BFC53EA00EFADA3 /* InvitePreviewViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		439B1D671BC77A2F000709C2 /* menuPopover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439B1D661BC77A2F000709C2 /* menuPopover.swift */; settings = {ASSET_TAGS = (); }; };
 		43D0576F1BDE00FD000FBA09 /* InvitePicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D0576E1BDE00FD000FBA09 /* InvitePicViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		43D745671B25655E00EE09DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D745661B25655E00EE09DD /* AppDelegate.swift */; };
@@ -45,7 +48,6 @@
 		43D745A61B25680300EE09DD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D745A51B25680300EE09DD /* QuartzCore.framework */; };
 		43D745A81B25680C00EE09DD /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D745A71B25680C00EE09DD /* Security.framework */; };
 		43D745AA1B25681400EE09DD /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D745A91B25681400EE09DD /* Social.framework */; };
-		43D745AC1B25681C00EE09DD /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D745AB1B25681C00EE09DD /* StoreKit.framework */; };
 		43D745AE1B25682B00EE09DD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D745AD1B25682B00EE09DD /* SystemConfiguration.framework */; };
 		43D745B01B25683400EE09DD /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D745AF1B25683400EE09DD /* libz.dylib */; };
 		43D745B21B25684000EE09DD /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D745B11B25684000EE09DD /* libsqlite3.dylib */; };
@@ -56,6 +58,7 @@
 		43D745BF1B257D0A00EE09DD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D745BE1B257D0A00EE09DD /* Foundation.framework */; };
 		43D745C11B257D6300EE09DD /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D745C01B257D6300EE09DD /* libstdc++.6.0.9.dylib */; };
 		43D745C31B257D6D00EE09DD /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D745C21B257D6D00EE09DD /* libsqlite3.0.dylib */; };
+		43DC08B81C012949001C138E /* InviteConfirmPayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC08B71C012949001C138E /* InviteConfirmPayViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		9A002100B822E7F50B00C792 /* libPods-Gatsbi_iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B3E761140824F00E82ADB3C /* libPods-Gatsbi_iOS.a */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +91,9 @@
 		437FB94B1BB683E000BCEEA8 /* NWCalendarMonthSelectorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NWCalendarMonthSelectorView.swift; path = NWCalendar/NWCalendarMonthSelectorView.swift; sourceTree = "<group>"; };
 		437FB94C1BB683E000BCEEA8 /* NWCalendarMonthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NWCalendarMonthView.swift; path = NWCalendar/NWCalendarMonthView.swift; sourceTree = "<group>"; };
 		437FB94D1BB683E000BCEEA8 /* NWCalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NWCalendarView.swift; path = NWCalendar/NWCalendarView.swift; sourceTree = "<group>"; };
+		4395E1A01BEB51A800EFADA3 /* InviteTitleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteTitleViewController.swift; sourceTree = "<group>"; };
+		4395E1A21BF5B57B00EFADA3 /* InviteContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteContactsViewController.swift; sourceTree = "<group>"; };
+		4395E1A41BFC53EA00EFADA3 /* InvitePreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvitePreviewViewController.swift; sourceTree = "<group>"; };
 		439B1D661BC77A2F000709C2 /* menuPopover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = menuPopover.swift; sourceTree = "<group>"; };
 		43D0576E1BDE00FD000FBA09 /* InvitePicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvitePicViewController.swift; sourceTree = "<group>"; };
 		43D745611B25655E00EE09DD /* Gatsbi_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gatsbi_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,7 +120,6 @@
 		43D745A51B25680300EE09DD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		43D745A71B25680C00EE09DD /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		43D745A91B25681400EE09DD /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
-		43D745AB1B25681C00EE09DD /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		43D745AD1B25682B00EE09DD /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		43D745AF1B25683400EE09DD /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		43D745B11B25684000EE09DD /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -126,6 +131,7 @@
 		43D745BE1B257D0A00EE09DD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		43D745C01B257D6300EE09DD /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "usr/lib/libstdc++.6.0.9.dylib"; sourceTree = SDKROOT; };
 		43D745C21B257D6D00EE09DD /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		43DC08B71C012949001C138E /* InviteConfirmPayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteConfirmPayViewController.swift; sourceTree = "<group>"; };
 		6B3E761140824F00E82ADB3C /* libPods-Gatsbi_iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Gatsbi_iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		720144B8E04B7E5D51EA892F /* Pods-Gatsbi_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gatsbi_iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gatsbi_iOS/Pods-Gatsbi_iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -142,7 +148,6 @@
 				43D745B21B25684000EE09DD /* libsqlite3.dylib in Frameworks */,
 				43D745B01B25683400EE09DD /* libz.dylib in Frameworks */,
 				43D745AE1B25682B00EE09DD /* SystemConfiguration.framework in Frameworks */,
-				43D745AC1B25681C00EE09DD /* StoreKit.framework in Frameworks */,
 				43D745B41B256FC600EE09DD /* FBSDKCoreKit.framework in Frameworks */,
 				43D745B81B256FD300EE09DD /* FBSDKShareKit.framework in Frameworks */,
 				43D745A81B25680C00EE09DD /* Security.framework in Frameworks */,
@@ -229,6 +234,10 @@
 				434E4AAA1BCF6D3600242CBF /* HostAddressViewController.swift */,
 				434E4AAC1BD0D8CB00242CBF /* InviteTimeViewController.swift */,
 				43D0576E1BDE00FD000FBA09 /* InvitePicViewController.swift */,
+				4395E1A01BEB51A800EFADA3 /* InviteTitleViewController.swift */,
+				4395E1A21BF5B57B00EFADA3 /* InviteContactsViewController.swift */,
+				4395E1A41BFC53EA00EFADA3 /* InvitePreviewViewController.swift */,
+				43DC08B71C012949001C138E /* InviteConfirmPayViewController.swift */,
 			);
 			path = Gatsbi_iOS;
 			sourceTree = "<group>";
@@ -273,7 +282,6 @@
 				43D745B11B25684000EE09DD /* libsqlite3.dylib */,
 				43D745AF1B25683400EE09DD /* libz.dylib */,
 				43D745AD1B25682B00EE09DD /* SystemConfiguration.framework */,
-				43D745AB1B25681C00EE09DD /* StoreKit.framework */,
 				43D745A91B25681400EE09DD /* Social.framework */,
 				43D745A71B25680C00EE09DD /* Security.framework */,
 				43D745A51B25680300EE09DD /* QuartzCore.framework */,
@@ -363,6 +371,11 @@
 					43D745601B25655E00EE09DD = {
 						CreatedOnToolsVersion = 6.3.2;
 						DevelopmentTeam = E33K2LR8LP;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+						};
 					};
 					43D745751B25655E00EE09DD = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -452,14 +465,18 @@
 				437FB9551BB683E000BCEEA8 /* NWCalendarMonthView.swift in Sources */,
 				43D0576F1BDE00FD000FBA09 /* InvitePicViewController.swift in Sources */,
 				434E4AAD1BD0D8CB00242CBF /* InviteTimeViewController.swift in Sources */,
+				4395E1A31BF5B57B00EFADA3 /* InviteContactsViewController.swift in Sources */,
 				437FB9501BB683E000BCEEA8 /* NWCalendarCache.swift in Sources */,
+				4395E1A51BFC53EA00EFADA3 /* InvitePreviewViewController.swift in Sources */,
 				437FB9521BB683E000BCEEA8 /* NWCalendarMenuView.swift in Sources */,
 				437FB9411BB67AF400BCEEA8 /* InviteHomeViewController.swift in Sources */,
 				437FB9561BB683E000BCEEA8 /* NWCalendarView.swift in Sources */,
 				437FB9511BB683E000BCEEA8 /* NWCalendarDayView.swift in Sources */,
 				434E4AA71BC799FE00242CBF /* MenuViewController.swift in Sources */,
 				439B1D671BC77A2F000709C2 /* menuPopover.swift in Sources */,
+				43DC08B81C012949001C138E /* InviteConfirmPayViewController.swift in Sources */,
 				43703BDB1BBE60E0005012AA /* InviteThemesViewController.swift in Sources */,
+				4395E1A11BEB51A800EFADA3 /* InviteTitleViewController.swift in Sources */,
 				434E4AA91BCA201A00242CBF /* Invite.swift in Sources */,
 				434E4AAB1BCF6D3600242CBF /* HostAddressViewController.swift in Sources */,
 				43D745671B25655E00EE09DD /* AppDelegate.swift in Sources */,

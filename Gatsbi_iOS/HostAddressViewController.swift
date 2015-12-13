@@ -72,9 +72,17 @@ class HostAddressViewController : UIViewController, CLLocationManagerDelegate, U
             print("restricted")
         }
         locationManager.startUpdatingLocation()
+    
+        var center:CLLocationCoordinate2D!
         
-        let location = locationManager.location
-        let center = CLLocationCoordinate2D(latitude: location!.coordinate.latitude, longitude: location!.coordinate.longitude)
+        if let location = locationManager.location {
+            center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        }
+        else
+        {
+            center = CLLocationCoordinate2D(latitude: 37.787359, longitude: -122.4167)
+        }
+
         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
         self.mapView.setRegion(region, animated: true)
         
@@ -144,6 +152,7 @@ class HostAddressViewController : UIViewController, CLLocationManagerDelegate, U
             case "timeSegue":
                 print("let's do the time warp again")
                 if let timeController = segue.destinationViewController as? InviteTimeViewController{
+                    self.myInvite!.Address = self.myAddress!
                     //pass along the invite, including the date and selected menu, hooray!
                     timeController.myInvite = myInvite!
                 }

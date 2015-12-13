@@ -71,6 +71,21 @@ class NWCalendarDayView: UIView {
       }
     }
   }
+    
+  var isHighlighted = false {
+        didSet {
+            if isHighlighted {
+                backgroundColor = kSelectedColor
+                dayButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+                dayButton.setTitleColor(UIColor.whiteColor(), forState: .Disabled)
+            }
+            else {
+                setNotSelectedBackgroundColor()
+                dayButton.setTitleColor(kAvailableColor, forState: .Normal)
+                dayButton.setTitleColor(kNotAvailableColor, forState: .Disabled)
+            }
+        }
+    }
   
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
@@ -98,7 +113,7 @@ class NWCalendarDayView: UIView {
   }
   
   func setNotSelectedBackgroundColor() {
-    if !isSelected {
+    if !isSelected && !isHighlighted {
       if isActiveMonth {
         backgroundColor = kActiveMonthColor
       } else {

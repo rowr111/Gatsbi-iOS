@@ -17,9 +17,33 @@ class Invite {
     var PricePP: String = ""
     var RecipeList: [String] = []
     var MenuImage: UIImage?
+    var Image: UIImage?
+    var Address: String = ""
+    var Title: String = ""
+    var Message: String = ""
+    var ReplyYesMsg: String = ""
+    var ReplyNoMsg: String = ""
+    var InviteContacts: [InviteContact] = []
     
     init()
     {
     }
     
+    
+}
+
+class InviteContact {
+    var Name: String = ""
+    var Email: String = ""
+}
+
+
+class UserInviteEvent {
+    var objectId: String = ""
+    var InviteObjectID: String = ""
+    var Date = NSDate()
+    var RSVPd:Bool = false
+    var Attending:Bool = false
+    var Paid:Bool = false
+    var Host:Bool = false
 }

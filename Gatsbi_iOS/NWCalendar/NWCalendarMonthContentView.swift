@@ -83,6 +83,25 @@ class NWCalendarMonthContentView: UIScrollView {
       }
     }
   }
+    
+    var highlightedDatesDict: [String: [NSDateComponents]] = [String: [NSDateComponents]]()
+    var highlightedDates: [NSDate]? {
+        didSet {
+            if let dates = highlightedDates {
+                for date in dates {
+                    let comp = NSCalendar.currentCalendar().components([.Year, .Month, .Day, .Weekday, .Calendar], fromDate: date)
+                    let key = monthViewKeyForMonth(comp)
+                    if var compArray = highlightedDatesDict[key] {
+                        compArray.append(comp)
+                        highlightedDatesDict[key] = compArray
+                    } else {
+                        let compArray:[NSDateComponents] = [comp]
+                        highlightedDatesDict[key] = compArray
+                    }
+                }
+            }
+        }
+    }
   
   var showOnlyAvailableDates = false
   var availableDatesDict: [String: [NSDateComponents]] = [String: [NSDateComponents]]()
@@ -262,6 +281,10 @@ extension NWCalendarMonthContentView {
     
     if let selectedArray = selectedDatesDict[key] {
       monthView.selectedDates = selectedArray
+    }
+    
+    if let highlightedArray = highlightedDatesDict[key] {
+        monthView.highlightedDates = highlightedArray
     }
     
   }

@@ -33,6 +33,8 @@ class InviteTimeViewController : UIViewController {
         }
         else
         {
+            myInvite!.Date = startDateTimePicker.date
+            myInvite!.EndDate = endDateTimePicker.date
             performSegueWithIdentifier("invitePicSegue", sender: self)
         }
     }
@@ -52,9 +54,9 @@ class InviteTimeViewController : UIViewController {
             {
             case "invitePicSegue":
                 print("segueing to the invite photo")
-                if let timeController = segue.destinationViewController as? InvitePicViewController{
+                if let picController = segue.destinationViewController as? InvitePicViewController{
                     //pass along the invite, including the date and selected menu, hooray!
-                    timeController.myInvite = myInvite!
+                    picController.myInvite = myInvite!
                 }
                 
             default: break

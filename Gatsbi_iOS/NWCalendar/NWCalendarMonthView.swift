@@ -74,6 +74,21 @@ class NWCalendarMonthView: UIView {
       }
     }
   }
+    
+    var highlightedDates:[NSDateComponents]? {
+        didSet {
+            if let highlightedDates = self.highlightedDates {
+                for dayView in dayViews {
+                    if highlightedDates.contains(dayView.day!) {
+                        dayView.isHighlighted = true
+                    } else {
+                        dayView.isHighlighted = false
+                    }
+                }
+            }
+
+        }
+    }
   
   var selectedDates:[NSDateComponents]? {
     didSet {
