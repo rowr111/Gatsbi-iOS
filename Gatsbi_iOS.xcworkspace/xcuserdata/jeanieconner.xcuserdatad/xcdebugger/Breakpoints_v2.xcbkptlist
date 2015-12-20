@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gatsbi_iOS/InviteHomeViewController.swift"
+            timestampString = "471689887.472427"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
+            landmarkName = "getUserInviteEvents()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gatsbi_iOS/InviteHomeViewController.swift"
+            timestampString = "471689887.472427"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "174"
+            endingLineNumber = "174">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gatsbi_iOS/NWCalendar/NWCalendarDayView.swift"
+            timestampString = "471680400.786472"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "NWCalendarDayView"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gatsbi_iOS/NWCalendar/NWCalendarDayView.swift"
+            timestampString = "471680403.408021"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "NWCalendarDayView"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gatsbi_iOS.NWCalendarDayView.isHighlighted.materializeForSet : Swift.Bool"
+                  moduleName = "Gatsbi_iOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jeanieconner/Desktop/iOS%20projects/Gatsbi_iOS/Gatsbi_iOS/Gatsbi_iOS/NWCalendar/NWCalendarDayView.swift"
+                  timestampString = "471680403.410984"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gatsbi_iOS.NWCalendarDayView.init (Gatsbi_iOS.NWCalendarDayView.Type)(coder : ObjectiveC.NSCoder) -&gt; Swift.Optional&lt;Gatsbi_iOS.NWCalendarDayView&gt;"
+                  moduleName = "Gatsbi_iOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jeanieconner/Desktop/iOS%20projects/Gatsbi_iOS/Gatsbi_iOS/Gatsbi_iOS/NWCalendar/NWCalendarDayView.swift"
+                  timestampString = "471680403.411166"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "75"
+                  endingLineNumber = "75"
+                  offsetFromSymbolStart = "820">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Gatsbi_iOS.NWCalendarDayView.init (Gatsbi_iOS.NWCalendarDayView.Type)(frame : C.CGRect) -&gt; Gatsbi_iOS.NWCalendarDayView"
+                  moduleName = "Gatsbi_iOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jeanieconner/Desktop/iOS%20projects/Gatsbi_iOS/Gatsbi_iOS/Gatsbi_iOS/NWCalendar/NWCalendarDayView.swift"
+                  timestampString = "471680403.411271"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "75"
+                  endingLineNumber = "75"
+                  offsetFromSymbolStart = "914">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gatsbi_iOS/NWCalendar/NWCalendarDayView.swift"
+            timestampString = "471680505.18727"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "NWCalendarDayView"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
