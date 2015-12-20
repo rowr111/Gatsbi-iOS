@@ -51,14 +51,14 @@
 		43D745AE1B25682B00EE09DD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D745AD1B25682B00EE09DD /* SystemConfiguration.framework */; };
 		43D745B01B25683400EE09DD /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D745AF1B25683400EE09DD /* libz.dylib */; };
 		43D745B21B25684000EE09DD /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D745B11B25684000EE09DD /* libsqlite3.dylib */; };
-		43D745B41B256FC600EE09DD /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D745B31B256FC600EE09DD /* FBSDKCoreKit.framework */; };
-		43D745B61B256FCC00EE09DD /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D745B51B256FCC00EE09DD /* FBSDKLoginKit.framework */; };
-		43D745B81B256FD300EE09DD /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D745B71B256FD300EE09DD /* FBSDKShareKit.framework */; };
 		43D745BD1B257CC900EE09DD /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D745BC1B257CC900EE09DD /* ParseCrashReporting.framework */; };
 		43D745BF1B257D0A00EE09DD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D745BE1B257D0A00EE09DD /* Foundation.framework */; };
 		43D745C11B257D6300EE09DD /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D745C01B257D6300EE09DD /* libstdc++.6.0.9.dylib */; };
 		43D745C31B257D6D00EE09DD /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D745C21B257D6D00EE09DD /* libsqlite3.0.dylib */; };
 		43DC08B81C012949001C138E /* InviteConfirmPayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC08B71C012949001C138E /* InviteConfirmPayViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		43E544C11C2679930031D1B3 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43E544C01C2679930031D1B3 /* FBSDKShareKit.framework */; settings = {ASSET_TAGS = (); }; };
+		43E544C31C267A100031D1B3 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43E544C21C267A100031D1B3 /* FBSDKLoginKit.framework */; settings = {ASSET_TAGS = (); }; };
+		43E544C51C267A310031D1B3 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43E544C41C267A310031D1B3 /* FBSDKCoreKit.framework */; settings = {ASSET_TAGS = (); }; };
 		9A002100B822E7F50B00C792 /* libPods-Gatsbi_iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B3E761140824F00E82ADB3C /* libPods-Gatsbi_iOS.a */; };
 /* End PBXBuildFile section */
 
@@ -123,15 +123,15 @@
 		43D745AD1B25682B00EE09DD /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		43D745AF1B25683400EE09DD /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		43D745B11B25684000EE09DD /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		43D745B31B256FC600EE09DD /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		43D745B51B256FCC00EE09DD /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
-		43D745B71B256FD300EE09DD /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../../../Documents/FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
 		43D745BB1B25733E00EE09DD /* Gatsbi-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gatsbi-Bridging-Header.h"; sourceTree = "<group>"; };
 		43D745BC1B257CC900EE09DD /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
 		43D745BE1B257D0A00EE09DD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		43D745C01B257D6300EE09DD /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "usr/lib/libstdc++.6.0.9.dylib"; sourceTree = SDKROOT; };
 		43D745C21B257D6D00EE09DD /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		43DC08B71C012949001C138E /* InviteConfirmPayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteConfirmPayViewController.swift; sourceTree = "<group>"; };
+		43E544C01C2679930031D1B3 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = Gatsbi_iOS/FBSDKShareKit.framework; sourceTree = "<group>"; };
+		43E544C21C267A100031D1B3 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = Gatsbi_iOS/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		43E544C41C267A310031D1B3 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = Gatsbi_iOS/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		6B3E761140824F00E82ADB3C /* libPods-Gatsbi_iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Gatsbi_iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		720144B8E04B7E5D51EA892F /* Pods-Gatsbi_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gatsbi_iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gatsbi_iOS/Pods-Gatsbi_iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -148,15 +148,15 @@
 				43D745B21B25684000EE09DD /* libsqlite3.dylib in Frameworks */,
 				43D745B01B25683400EE09DD /* libz.dylib in Frameworks */,
 				43D745AE1B25682B00EE09DD /* SystemConfiguration.framework in Frameworks */,
-				43D745B41B256FC600EE09DD /* FBSDKCoreKit.framework in Frameworks */,
-				43D745B81B256FD300EE09DD /* FBSDKShareKit.framework in Frameworks */,
+				43E544C11C2679930031D1B3 /* FBSDKShareKit.framework in Frameworks */,
 				43D745A81B25680C00EE09DD /* Security.framework in Frameworks */,
 				43D745A61B25680300EE09DD /* QuartzCore.framework in Frameworks */,
 				43D745BD1B257CC900EE09DD /* ParseCrashReporting.framework in Frameworks */,
 				43D745A41B2567F900EE09DD /* MobileCoreServices.framework in Frameworks */,
 				43D745A21B2567E800EE09DD /* CoreLocation.framework in Frameworks */,
+				43E544C51C267A310031D1B3 /* FBSDKCoreKit.framework in Frameworks */,
+				43E544C31C267A100031D1B3 /* FBSDKLoginKit.framework in Frameworks */,
 				43D745A01B2567DD00EE09DD /* CoreGraphics.framework in Frameworks */,
-				43D745B61B256FCC00EE09DD /* FBSDKLoginKit.framework in Frameworks */,
 				43D7459E1B2567D700EE09DD /* CFNetwork.framework in Frameworks */,
 				43D7459C1B2567C700EE09DD /* AudioToolbox.framework in Frameworks */,
 				43D7459A1B2567BB00EE09DD /* Accounts.framework in Frameworks */,
@@ -272,13 +272,13 @@
 		43D745861B2566F000EE09DD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				43E544C41C267A310031D1B3 /* FBSDKCoreKit.framework */,
+				43E544C21C267A100031D1B3 /* FBSDKLoginKit.framework */,
+				43E544C01C2679930031D1B3 /* FBSDKShareKit.framework */,
 				43D745C21B257D6D00EE09DD /* libsqlite3.0.dylib */,
 				43D745C01B257D6300EE09DD /* libstdc++.6.0.9.dylib */,
 				43D745BE1B257D0A00EE09DD /* Foundation.framework */,
 				43D745BC1B257CC900EE09DD /* ParseCrashReporting.framework */,
-				43D745B71B256FD300EE09DD /* FBSDKShareKit.framework */,
-				43D745B51B256FCC00EE09DD /* FBSDKLoginKit.framework */,
-				43D745B31B256FC600EE09DD /* FBSDKCoreKit.framework */,
 				43D745B11B25684000EE09DD /* libsqlite3.dylib */,
 				43D745AF1B25683400EE09DD /* libz.dylib */,
 				43D745AD1B25682B00EE09DD /* SystemConfiguration.framework */,
@@ -623,6 +623,7 @@
 					"/Users/jeanieconner/Downloads/parse-library-1.7.4",
 					"$(PROJECT_DIR)",
 					/Users/jeanieconner/Documents/FacebookSDK,
+					"$(PROJECT_DIR)/Gatsbi_iOS",
 				);
 				INFOPLIST_FILE = Gatsbi_iOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -655,6 +656,7 @@
 					"/Users/jeanieconner/Downloads/parse-library-1.7.4",
 					"$(PROJECT_DIR)",
 					/Users/jeanieconner/Documents/FacebookSDK,
+					"$(PROJECT_DIR)/Gatsbi_iOS",
 				);
 				INFOPLIST_FILE = Gatsbi_iOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
