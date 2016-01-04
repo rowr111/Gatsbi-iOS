@@ -29,6 +29,18 @@ class Invite {
     {
     }
     
+    func PopulateFromPFObjectInvite(PFObjectInvite:PFObject)
+    {
+        Date = PFObjectInvite["Date"] as! NSDate
+        EndDate = PFObjectInvite["EndDate"] as! NSDate
+        MenuID = PFObjectInvite["MenuID"] as! String
+        //This isn't working right now
+        //Image = PFObjectInvite["Image"] as! UIImage
+        Address = PFObjectInvite["Address"] as! String
+        Title = PFObjectInvite["Title"] as! String
+        Message = PFObjectInvite["Message"] as! String
+    }
+    
     
 }
 
@@ -46,4 +58,5 @@ class UserInviteEvent {
     var Attending:Bool = false
     var Paid:Bool = false
     var Host:Bool = false
+    var GuestCount:Int = 0
 }

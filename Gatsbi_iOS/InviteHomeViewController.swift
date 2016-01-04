@@ -11,7 +11,10 @@ import UIKit
 class InviteHomeViewController: UIViewController, UIPopoverPresentationControllerDelegate {
 
     var myInviteEvents:[UserInviteEvent] = []
+    var myFilteredInviteEvents:[UserInviteEvent] = []
     var myInvites:[Invite] = []
+    var dates:[NSDate] = []
+    var selectedDate: NSDate?
     
 @IBOutlet weak var calendarView: NWCalendarView!
 @IBOutlet weak var menuPopoverButton: UIBarButtonItem!
@@ -22,8 +25,6 @@ class InviteHomeViewController: UIViewController, UIPopoverPresentationControlle
             super.viewDidLoad()
             
             getUserInviteEvents()
-            
-            var dates:[NSDate] = []
             
             for myEvent in self.myInviteEvents
             {
@@ -38,6 +39,7 @@ class InviteHomeViewController: UIViewController, UIPopoverPresentationControlle
             calendarView.layer.borderWidth = 1
             calendarView.layer.borderColor = UIColor.lightGrayColor().CGColor
             calendarView.backgroundColor = UIColor.whiteColor()
+            //print(calendarView.frame.height)
             calendarView.selectionRangeLength = 1
             calendarView.maxMonths = 6
             calendarView.delegate = self
@@ -64,6 +66,7 @@ extension InviteHomeViewController: NWCalendarViewDelegate {
     
     func didSelectDate(fromDate: NSDateComponents, toDate: NSDateComponents) {
         print("Selected date \(fromDate.date!)")
+        selectedDate = fromDate.date!
         //first check if there are any highlighted dates
         if let highlightedDates = self.calendarView.highlightedDates
         {
@@ -73,7 +76,16 @@ extension InviteHomeViewController: NWCalendarViewDelegate {
                 let alertController = UIAlertController(title:nil, message:nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
         
                 let viewInvitesAction = UIAlertAction(title: "View My Invites", style: UIAlertActionStyle.Default, handler: {(alert :UIAlertAction!) in
-                    self.performSegueWithIdentifier("viewInvitesSegue", sender: nil)
+                    self.myFilteredInviteEvents = self.myInviteEvents.filter({return $0.Date >= self.selectedDate && $0.Date <= self.selectedDate!.dateByAddingTimeInterval(NSTimeInterval(60*60*24)) })
+                    
+                    if (self.myFilteredInviteEvents.count > 1)
+                    {
+                        self.performSegueWithIdentifier(("viewMultiInvitesSegue"), sender: nil)
+                    }
+                    else
+                    {
+                        self.performSegueWithIdentifier("viewSingleInviteDetailSegue", sender: nil)
+                    }
                 })
                 alertController.addAction(viewInvitesAction)
         
@@ -121,6 +133,16 @@ extension InviteHomeViewController: NWCalendarViewDelegate {
                         themes.myInvite = Invite()
                         themes.myInvite!.Date = inviteDate!
                 }
+            case "viewSingleInviteDetailSegue":
+                if let mySingleInviteDetail = segue.destinationViewController as? SingleInviteDetailsViewController{
+                    //it should be safe to make the assumption here that there is only one event and it is there
+                    mySingleInviteDetail.myInviteEvent = myFilteredInviteEvents[0]
+                }
+            case "viewMultiInvitesSegue":
+                if let myMultiInvites = segue.destinationViewController as? MultiInviteViewController{
+                    myMultiInvites.myInviteEvents = myFilteredInviteEvents
+                    
+                }
             default: break
                 
             }
@@ -134,8 +156,9 @@ extension InviteHomeViewController: NWCalendarViewDelegate {
     func getUserInviteEvents()
     {
         
-        var myUserInviteEvents:[UserInviteEvent] = []
-        var query = PFQuery(className:"UserInviteEvent")
+        let query = PFQuery(className:"UserInviteEvent")
+        if let _ = PFUser.currentUser()?.email
+        {
         query.whereKey("EmailAddr", equalTo:PFUser.currentUser()!.email!)
         let objects = query.findObjects()
                 print("Successfully retrieved \(objects!.count) events.")
@@ -147,6 +170,7 @@ extension InviteHomeViewController: NWCalendarViewDelegate {
                         myInviteEvent.objectId = object.objectId!!
                         myInviteEvent.InviteObjectID = object["InviteObjectID"] as! String
                         myInviteEvent.RSVPd = object["RSVPd"] as! Bool
+                        myInviteEvent.GuestCount = object["GuestCount"] as! Int
                         if let attending = object["Attending"] as? Bool
                         {
                             myInviteEvent.Attending = attending
@@ -156,7 +180,7 @@ extension InviteHomeViewController: NWCalendarViewDelegate {
                             myInviteEvent.Paid = paid
                         }
                         myInviteEvent.Host = object["Host"] as! Bool
-                        var query2 = PFQuery(className:"Invite")
+                        let query2 = PFQuery(className:"Invite")
                         if let myInvite = query2.getObjectWithId(myInviteEvent.InviteObjectID)
                         {
                                     myInviteEvent.Date = myInvite["Date"] as! NSDate
@@ -166,9 +190,33 @@ extension InviteHomeViewController: NWCalendarViewDelegate {
                     }
                     
                     }
-                }
+        }
+        else
+        {
+            let alertController = UIAlertController(title: "Error", message: "Cannot get calendar events, no email address exists for this user.", preferredStyle: .Alert)
+            
+            let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            alertController.addAction(defaultAction)
+            
+            presentViewController(alertController, animated: true, completion: nil)
+        
+        }
+        
+    }
+    
+    
 
 }
+
+public func <(a: NSDate, b: NSDate) -> Bool {
+    return a.compare(b) == NSComparisonResult.OrderedAscending
+}
+
+public func ==(a: NSDate, b: NSDate) -> Bool {
+    return a.compare(b) == NSComparisonResult.OrderedSame
+}
+
+extension NSDate: Comparable { }
 
 
 
