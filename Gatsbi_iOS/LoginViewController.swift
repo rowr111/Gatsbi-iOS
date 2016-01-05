@@ -19,6 +19,11 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func emailSignUpButton(sender: UIButton) {
+        self.performSegueWithIdentifier("emailSignUpSegue", sender: self)
+    }
+    
+    
     @IBAction func fbLoginClick(sender: UIButton) {
         //modified code and updated to swift 2.1 from this page 
         //http://swiftdeveloperblog.com/parse-login-with-facebook-account-example-in-swift/
@@ -36,7 +41,7 @@ class LoginViewController: UIViewController {
                 }
                 
                 print(user)
-                print("Current user token=\(FBSDKAccessToken.currentAccessToken().tokenString)")
+                print("Current token=\(FBSDKAccessToken.currentAccessToken().tokenString)")
                 print("Current user id \(FBSDKAccessToken.currentAccessToken().userID)")
                 
                 if user!.isNew {
@@ -63,7 +68,11 @@ class LoginViewController: UIViewController {
             
             if(error != nil)
             {
-                print("\(error.localizedDescription)")
+                //Display an alert message
+                let myAlert = UIAlertController(title:"Alert", message:error?.localizedDescription, preferredStyle: UIAlertControllerStyle.Alert);
+                let okAction =  UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil)
+                myAlert.addAction(okAction);
+                self.presentViewController(myAlert, animated:true, completion:nil);
                 return
             }
             
@@ -109,6 +118,16 @@ class LoginViewController: UIViewController {
                     
                     myUser.saveInBackgroundWithBlock({ (success:Bool, error:NSError?) -> Void in
                         
+                        if(error != nil)
+                        {
+                            //Display an alert message
+                            let myAlert = UIAlertController(title:"Alert", message:error?.localizedDescription, preferredStyle: UIAlertControllerStyle.Alert);
+                            let okAction =  UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil)
+                            myAlert.addAction(okAction);
+                            self.presentViewController(myAlert, animated:true, completion:nil);
+                            return
+                        }
+                        
                         if(success){
                             print("User details are now updated")
                         }
@@ -118,5 +137,6 @@ class LoginViewController: UIViewController {
             }
         }
     }
+    
 }
 
