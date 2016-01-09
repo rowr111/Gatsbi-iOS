@@ -20,12 +20,15 @@ class EmailSignUpViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     
+    @IBAction func dismissButton(sender: UIButton) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
     
     @IBAction func SignUpButton(sender: UIButton) {
         //modified code from here: http://www.appcoda.com/login-signup-parse-swift/
         
         var username = self.emailAddressTextField.text
-        var emailaddress = self.emailAddressTextField.text
+        let emailaddress = self.emailAddressTextField.text
         let password = self.passwordTextField.text
         let confirmPassword = self.confirmPasswordTextField.text
 

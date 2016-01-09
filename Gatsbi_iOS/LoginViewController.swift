@@ -28,8 +28,9 @@ class LoginViewController: UIViewController {
         //modified code and updated to swift 2.1 from this page 
         //http://swiftdeveloperblog.com/parse-login-with-facebook-account-example-in-swift/
         
-                PFFacebookUtils.logInInBackgroundWithReadPermissions(["public_profile","email"], block: { (user:PFUser?, error:NSError?) -> Void in
-                    
+        if let accessToken: FBSDKAccessToken = FBSDKAccessToken.currentAccessToken() {
+            PFFacebookUtils.logInInBackgroundWithAccessToken(accessToken, block: {
+                (user: PFUser?, error: NSError?) -> Void in
                 if(error != nil)
                 {
                     //Display an alert message
@@ -39,23 +40,28 @@ class LoginViewController: UIViewController {
                     self.presentViewController(myAlert, animated:true, completion:nil);
                     return
                 }
-                
                 print(user)
                 print("Current token=\(FBSDKAccessToken.currentAccessToken().tokenString)")
                 print("Current user id \(FBSDKAccessToken.currentAccessToken().userID)")
                 
-                if user!.isNew {
-                  self.getFBDetails()
-                }
-                    
-                if(FBSDKAccessToken.currentAccessToken() != nil)
-                {
+                let setViewController = self.storyboard!.instantiateViewControllerWithIdentifier("InviteNavigationController")
+                self.presentViewController(setViewController, animated: false, completion: nil)
+            })
+        } else {
+            let permissions = ["public_profile", "email"]
+            PFFacebookUtils.logInInBackgroundWithReadPermissions(permissions, block: {
+                (user: PFUser?, error: NSError?) -> Void in
+                if let user = user {
+                    if user.isNew {
+                        self.getFBDetails()
+                    }
                     let setViewController = self.storyboard!.instantiateViewControllerWithIdentifier("InviteNavigationController")
                     self.presentViewController(setViewController, animated: false, completion: nil)
+                } else {
+                    print("Uh oh. The user cancelled the Facebook login.")
                 }
-                
-    })
-    
+            })
+        }
 }
 
     func getFBDetails()

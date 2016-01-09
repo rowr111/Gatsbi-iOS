@@ -11,6 +11,7 @@
 		434E4AA91BCA201A00242CBF /* Invite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434E4AA81BCA201A00242CBF /* Invite.swift */; settings = {ASSET_TAGS = (); }; };
 		434E4AAB1BCF6D3600242CBF /* HostAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434E4AAA1BCF6D3600242CBF /* HostAddressViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		434E4AAD1BD0D8CB00242CBF /* InviteTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434E4AAC1BD0D8CB00242CBF /* InviteTimeViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		435EF0C51C40FFC2009AC2CB /* EmailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435EF0C41C40FFC2009AC2CB /* EmailLoginViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		43703BDB1BBE60E0005012AA /* InviteThemesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43703BDA1BBE60E0005012AA /* InviteThemesViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		43703BDD1BC23636005012AA /* InviteThemesCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43703BDC1BC23636005012AA /* InviteThemesCustomCell.swift */; settings = {ASSET_TAGS = (); }; };
 		437FB9411BB67AF400BCEEA8 /* InviteHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437FB9401BB67AF400BCEEA8 /* InviteHomeViewController.swift */; };
@@ -81,6 +82,7 @@
 		434E4AA81BCA201A00242CBF /* Invite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Invite.swift; sourceTree = "<group>"; };
 		434E4AAA1BCF6D3600242CBF /* HostAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostAddressViewController.swift; sourceTree = "<group>"; };
 		434E4AAC1BD0D8CB00242CBF /* InviteTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteTimeViewController.swift; sourceTree = "<group>"; };
+		435EF0C41C40FFC2009AC2CB /* EmailLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailLoginViewController.swift; sourceTree = "<group>"; };
 		43703BDA1BBE60E0005012AA /* InviteThemesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteThemesViewController.swift; sourceTree = "<group>"; };
 		43703BDC1BC23636005012AA /* InviteThemesCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteThemesCustomCell.swift; sourceTree = "<group>"; };
 		437FB9401BB67AF400BCEEA8 /* InviteHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteHomeViewController.swift; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 				43E1D72A1C3905D900A53D41 /* SingleInviteDetailsViewController.swift */,
 				43E1D72C1C390D2800A53D41 /* MultiInviteViewController.swift */,
 				43E1D72E1C3BB03B00A53D41 /* EmailSignUpViewController.swift */,
+				435EF0C41C40FFC2009AC2CB /* EmailLoginViewController.swift */,
 			);
 			path = Gatsbi_iOS;
 			sourceTree = "<group>";
@@ -471,6 +474,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43D745691B25655E00EE09DD /* LoginViewController.swift in Sources */,
+				435EF0C51C40FFC2009AC2CB /* EmailLoginViewController.swift in Sources */,
 				437FB9551BB683E000BCEEA8 /* NWCalendarMonthView.swift in Sources */,
 				43D0576F1BDE00FD000FBA09 /* InvitePicViewController.swift in Sources */,
 				434E4AAD1BD0D8CB00242CBF /* InviteTimeViewController.swift in Sources */,
