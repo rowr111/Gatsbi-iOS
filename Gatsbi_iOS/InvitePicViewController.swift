@@ -49,8 +49,8 @@ class InvitePicViewController : UIViewController, UIImagePickerControllerDelegat
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            let resizedImage: UIImage = pickedImage.resizedImageWithContentMode(UIViewContentMode.ScaleAspectFit, bounds: CGSizeMake(300.0, 300.0), interpolationQuality: CGInterpolationQuality.High)
+        if let pickedImage = info[UIImagePickerControllerEditedImage] as? UIImage {
+            let resizedImage: UIImage = pickedImage.resizedImageWithContentMode(UIViewContentMode.ScaleAspectFit, bounds: CGSizeMake(200.0, 375.0), interpolationQuality: CGInterpolationQuality.High)
             //inviteImageView.contentMode = .ScaleAspectFit
             inviteImageView.image = resizedImage
         }

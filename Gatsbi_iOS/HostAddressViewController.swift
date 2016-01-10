@@ -139,7 +139,7 @@ class HostAddressViewController : UIViewController, CLLocationManagerDelegate, U
                     //self.mapSearch.text = self.myAddress!
                // }
             //}
-            
+            self.mapSearch.endEditing(true)
         }
         
     }

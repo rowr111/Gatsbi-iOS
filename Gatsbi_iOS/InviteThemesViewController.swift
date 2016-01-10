@@ -16,6 +16,25 @@ class InviteThemesViewController : PFQueryTableViewController {
     var orderByColumn: String = "Name"
     var myInvite:Invite?
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+       // self.automaticallyAdjustsScrollViewInsets = false
+        //addHeaderView()
+    }
+    
+    func addHeaderView()
+    {
+    var yPosition:CGFloat = self.navigationController!.navigationBar.frame.origin.y + self.navigationController!.navigationBar.frame.size.height;
+    var mainHeaderView:UIView = UIView()
+    
+    let mainHeaderHeight:CGFloat = 100
+    //mainHeaderView.setValuesForKeysWithDictionary(<#T##keyedValues: [String : AnyObject]##[String : AnyObject]#>)
+    mainHeaderView.frameForAlignmentRect(CGRectMake(0, yPosition, self.view.frame.size.width, mainHeaderHeight))
+    //mainHeaderView.backgroundColor = [UIColor redColor];
+    
+    self.tableView.superview?.addSubview(mainHeaderView)
+    self.tableView.contentInset = UIEdgeInsetsMake(yPosition + mainHeaderHeight, self.tableView.contentInset.left, self.tableView.contentInset.bottom, self.tableView.contentInset.right)
+    }
     
     
     // Initialise the PFQueryTable tableview
@@ -59,6 +78,9 @@ class InviteThemesViewController : PFQueryTableViewController {
         let cellIdentifier:String = "Cell"
         
         let cell:InviteThemesCustomCell? = (tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as? InviteThemesCustomCell?)!
+        cell?.menuDescription.layer.zPosition = 1
+        cell?.menuPrice.layer.zPosition = 2
+        cell?.menuButton.layer.zPosition = 3
         
         if let pfObject = object {
             cell?.menuDescription?.text = pfObject["Name"] as? String
