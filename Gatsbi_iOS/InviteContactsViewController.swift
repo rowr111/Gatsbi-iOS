@@ -12,9 +12,11 @@ import Contacts
 import ContactsUI
 
 class InviteContactsViewController: UIViewController, CNContactPickerDelegate, UITableViewDataSource, UITableViewDelegate {
+    //some various help/methods from http://www.appcoda.com/ios-contacts-framework/
     
     var myInvite:Invite?
     var contacts = [CNContact]()
+
 
     @IBAction func okButton(sender: UIButton) {
           performSegueWithIdentifier("previewSegue", sender: self)
@@ -42,14 +44,19 @@ class InviteContactsViewController: UIViewController, CNContactPickerDelegate, U
     
     @IBAction func pickContactsButton(sender: UIButton) {
     
+        AppDelegate.getAppDelegate().requestForContactsAccess { (accessGranted) -> Void in
+            if accessGranted {
         let controller = CNContactPickerViewController()
         
         controller.delegate = self
         
         controller.predicateForEnablingContact = NSPredicate(format: "emailAddresses.@count > 0", argumentArray: nil)
         
-        navigationController?.presentViewController(controller,
+        self.navigationController?.presentViewController(controller,
             animated: true, completion: nil)
+            }
+        }
+
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -61,6 +68,7 @@ class InviteContactsViewController: UIViewController, CNContactPickerDelegate, U
             myInvite!.InviteContacts[row].Email
         
         return cell
+        
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -83,7 +91,7 @@ class InviteContactsViewController: UIViewController, CNContactPickerDelegate, U
         alertController.addAction(OKAction)
         
         self.presentViewController(alertController, animated: true, completion:nil)
-        
+
     }
 
     
@@ -122,5 +130,8 @@ class InviteContactsViewController: UIViewController, CNContactPickerDelegate, U
             }
         }
     }
+    
+
+
 
 }
