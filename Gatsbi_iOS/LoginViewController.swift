@@ -9,6 +9,8 @@
 import UIKit
 class LoginViewController: UIViewController {
     
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -113,7 +115,7 @@ class LoginViewController: UIViewController {
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
                     
                     // Get Facebook profile picture
-                    let userProfile = "https://graph.facebook.com/" + userId + "/picture?type=large"
+                    let userProfile = "https://graph.facebook.com/" + userId + "/picture?width=300&height=300"
                     let profilePictureUrl = NSURL(string: userProfile)
                     let profilePictureData = NSData(contentsOfURL: profilePictureUrl!)
 

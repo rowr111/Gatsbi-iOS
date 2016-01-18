@@ -16,6 +16,7 @@ class InviteHomeViewController: UIViewController, UIPopoverPresentationControlle
     var dates:[NSDate] = []
     var selectedDate: NSDate?
     
+@IBOutlet weak var profilePic: UIImageView!
 @IBOutlet weak var calendarView: NWCalendarView!
 @IBOutlet weak var menuPopoverButton: UIBarButtonItem!
     
@@ -23,6 +24,7 @@ class InviteHomeViewController: UIViewController, UIPopoverPresentationControlle
         
         override func viewDidLoad() {
             super.viewDidLoad()
+            self.makingRoundedImageProfileWithRoundedBorder()
             
             getUserInviteEvents()
             
@@ -202,6 +204,31 @@ extension InviteHomeViewController: NWCalendarViewDelegate {
         
         }
         
+    }
+    
+    //some notes here: http://www.appcoda.com/ios-programming-circular-image-calayer/
+    private func makingRoundedImageProfileWithRoundedBorder() {
+        // Making a circular image profile.
+        self.profilePic.layer.cornerRadius = self.profilePic.frame.size.width / 2
+        
+        // Making a rounded image profile.
+        //self.profilePic.layer.cornerRadius = 20.0
+        
+        self.profilePic.clipsToBounds = true
+        
+        // Adding a border to the image profile
+        self.profilePic.layer.borderWidth = 10.0
+        self.profilePic.layer.borderColor = UIColor(red:0.831373, green:0.611765 , blue:0.176471 , alpha:1).CGColor
+        
+        if let pfimage = PFUser.currentUser()!.objectForKey("profile_picture") as? PFFile
+        {
+            pfimage.getDataInBackgroundWithBlock({
+                (result, error) in
+                self.profilePic.image = UIImage(data: result!)
+                
+                }
+            )}
+        //else it just goes with the default, currently Gatsbi name with grey background
     }
     
     
