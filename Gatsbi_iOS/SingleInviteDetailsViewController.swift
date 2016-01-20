@@ -35,16 +35,12 @@ class SingleInviteDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if myInvite.Image != nil{
-            self.inviteImage.image = myInvite.Image}
-        else
-        {print("no image found")}
-
-        self.inviteTitleLabel.text = myInvite.Title
         
         loadIcons()
         print(myInviteEvent!.InviteObjectID)
         getInvite()
+        self.inviteImage.image = myInvite.Image
+        self.inviteTitleLabel.text = myInvite.Title
         self.inviteAddress.text = myInvite.Address
         self.inviteMessage.text = myInvite.Message
         self.inviteAddress.text = myInvite.Address
@@ -74,9 +70,9 @@ class SingleInviteDetailsViewController: UIViewController {
     
     func loadIcons()
     {
-        timeIcon.image = IonIcons.imageWithIcon(ion_ios_time, iconColor: UIColor.blackColor(), iconSize: 27, imageSize: CGSizeMake(30, 30))
-        locationIcon.image = IonIcons.imageWithIcon(ion_ios_location, iconColor: UIColor.blackColor(), iconSize: 27, imageSize: CGSizeMake(30, 30))
-        messageIcon.image = IonIcons.imageWithIcon(ion_ios_paper, iconColor: UIColor.blackColor(), iconSize: 27, imageSize: CGSizeMake(30, 30))
-        guestsIcon.image = IonIcons.imageWithIcon(ion_ios_people, iconColor: UIColor.blackColor(), iconSize: 27, imageSize: CGSizeMake(30, 30))
+        timeIcon.image = IonIcons.imageWithIcon(ion_ios_time, iconColor: UIColor.whiteColor(), iconSize: 27, imageSize: CGSizeMake(30, 30))
+        locationIcon.image = IonIcons.imageWithIcon(ion_ios_location, iconColor: UIColor.whiteColor(), iconSize: 27, imageSize: CGSizeMake(30, 30))
+        messageIcon.image = IonIcons.imageWithIcon(ion_ios_paper, iconColor: UIColor.whiteColor(), iconSize: 27, imageSize: CGSizeMake(30, 30))
+        guestsIcon.image = IonIcons.imageWithIcon(ion_ios_people, iconColor: UIColor.whiteColor(), iconSize: 27, imageSize: CGSizeMake(30, 30))
     }
 }
