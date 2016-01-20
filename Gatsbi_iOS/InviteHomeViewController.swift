@@ -162,10 +162,10 @@ extension InviteHomeViewController: NWCalendarViewDelegate {
         if let _ = PFUser.currentUser()?.email
         {
         query.whereKey("EmailAddr", equalTo:PFUser.currentUser()!.email!)
-        let objects = query.findObjects()
-                print("Successfully retrieved \(objects!.count) events.")
+            if let objects = query.findObjects() {
+                print("Successfully retrieved \(objects.count) events.")
                 // Do something with the found objects
-                if let objects = objects {
+                //if let objects = objects {
                    for object in objects {
                         let myInviteEvent = UserInviteEvent()
                         print(object.objectId)
@@ -191,7 +191,8 @@ extension InviteHomeViewController: NWCalendarViewDelegate {
                         self.myInviteEvents.append(myInviteEvent)
                     }
                     
-                    }
+                    //}
+            }
         }
         else
         {

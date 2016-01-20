@@ -13,33 +13,49 @@ class SingleInviteDetailsViewController: UIViewController {
     
     var myInviteEvent:UserInviteEvent?
     var myInvite:Invite = Invite()
+    
+    @IBAction func dismissButton(sender: UIButton) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    @IBOutlet weak var timeIcon: UIImageView!
+    @IBOutlet weak var locationIcon: UIImageView!
+    @IBOutlet weak var messageIcon: UIImageView!
+    @IBOutlet weak var guestsIcon: UIImageView!
+    
     @IBOutlet weak var inviteImage: UIImageView!
     @IBOutlet weak var inviteDateRange: UILabel!
-    @IBOutlet weak var inviteHostStatus: UILabel!
-    @IBOutlet weak var inviteAddress: UITextView!
-    @IBOutlet weak var inviteMessage: UITextView!
-    @IBOutlet weak var invitePaymentStatus: UILabel!
-    @IBOutlet weak var inviteRSVPGuestCount: UILabel!
+    @IBOutlet weak var inviteAddress: UILabel!
+    @IBOutlet weak var inviteMessage: UILabel!
+    
+    @IBOutlet weak var inviteTitleLabel: UILabel!
+
     @IBAction func inviteRSVPStatus(sender: UIButton) {
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if myInvite.Image != nil{
+            self.inviteImage.image = myInvite.Image}
+        else
+        {print("no image found")}
+
+        self.inviteTitleLabel.text = myInvite.Title
+        
+        loadIcons()
         print(myInviteEvent!.InviteObjectID)
         getInvite()
         self.inviteAddress.text = myInvite.Address
-        self.inviteMessage.textContainer.lineFragmentPadding = 0
         self.inviteMessage.text = myInvite.Message
-        self.inviteAddress.textContainer.lineFragmentPadding = 0
         self.inviteAddress.text = myInvite.Address
-        self.inviteRSVPGuestCount.text = "Guests in RSVP: \(myInviteEvent!.GuestCount)"
-        self.inviteHostStatus.text = "Host: \(myInviteEvent!.Host)"
         
         let formatter = NSDateFormatter()
         formatter.dateStyle = NSDateFormatterStyle.LongStyle
         formatter.timeStyle = .ShortStyle
         
+
         self.inviteDateRange.text = "\(formatter.stringFromDate(myInvite.Date)) to \r\n\(formatter.stringFromDate(myInvite.EndDate))"
+        self.inviteDateRange.sizeToFit()
         
     }
     
@@ -54,5 +70,13 @@ class SingleInviteDetailsViewController: UIViewController {
         {
             myInvite.PopulateFromPFObjectInvite(myInviteObject)
         }
+    }
+    
+    func loadIcons()
+    {
+        timeIcon.image = IonIcons.imageWithIcon(ion_ios_time, iconColor: UIColor.blackColor(), iconSize: 27, imageSize: CGSizeMake(30, 30))
+        locationIcon.image = IonIcons.imageWithIcon(ion_ios_location, iconColor: UIColor.blackColor(), iconSize: 27, imageSize: CGSizeMake(30, 30))
+        messageIcon.image = IonIcons.imageWithIcon(ion_ios_paper, iconColor: UIColor.blackColor(), iconSize: 27, imageSize: CGSizeMake(30, 30))
+        guestsIcon.image = IonIcons.imageWithIcon(ion_ios_people, iconColor: UIColor.blackColor(), iconSize: 27, imageSize: CGSizeMake(30, 30))
     }
 }

@@ -34,8 +34,12 @@ class Invite {
         Date = PFObjectInvite["Date"] as! NSDate
         EndDate = PFObjectInvite["EndDate"] as! NSDate
         MenuID = PFObjectInvite["MenuID"] as! String
-        //This isn't working right now
-        //Image = PFObjectInvite["Image"] as! UIImage
+        if let pfimage = PFObjectInvite["Image"] as? PFFile
+        {
+            //doing this synchronously bc we must have it to return the complete obj
+            let pfimagedata = pfimage.getData()
+            Image = UIImage(data: pfimagedata!)
+        }
         Address = PFObjectInvite["Address"] as! String
         Title = PFObjectInvite["Title"] as! String
         Message = PFObjectInvite["Message"] as! String
