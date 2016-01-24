@@ -63,6 +63,7 @@
 		43E544C11C2679930031D1B3 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43E544C01C2679930031D1B3 /* FBSDKShareKit.framework */; settings = {ASSET_TAGS = (); }; };
 		43E544C31C267A100031D1B3 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43E544C21C267A100031D1B3 /* FBSDKLoginKit.framework */; settings = {ASSET_TAGS = (); }; };
 		43E544C51C267A310031D1B3 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43E544C41C267A310031D1B3 /* FBSDKCoreKit.framework */; settings = {ASSET_TAGS = (); }; };
+		43E6C4EE1C52326C007E8CF7 /* InviteRSVPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E6C4ED1C52326C007E8CF7 /* InviteRSVPViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		9A002100B822E7F50B00C792 /* libPods-Gatsbi_iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B3E761140824F00E82ADB3C /* libPods-Gatsbi_iOS.a */; };
 /* End PBXBuildFile section */
 
@@ -140,6 +141,7 @@
 		43E544C01C2679930031D1B3 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = Gatsbi_iOS/FBSDKShareKit.framework; sourceTree = "<group>"; };
 		43E544C21C267A100031D1B3 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = Gatsbi_iOS/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		43E544C41C267A310031D1B3 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = Gatsbi_iOS/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		43E6C4ED1C52326C007E8CF7 /* InviteRSVPViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteRSVPViewController.swift; sourceTree = "<group>"; };
 		6B3E761140824F00E82ADB3C /* libPods-Gatsbi_iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Gatsbi_iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		720144B8E04B7E5D51EA892F /* Pods-Gatsbi_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gatsbi_iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gatsbi_iOS/Pods-Gatsbi_iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -250,6 +252,7 @@
 				43E1D72C1C390D2800A53D41 /* MultiInviteViewController.swift */,
 				43E1D72E1C3BB03B00A53D41 /* EmailSignUpViewController.swift */,
 				435EF0C41C40FFC2009AC2CB /* EmailLoginViewController.swift */,
+				43E6C4ED1C52326C007E8CF7 /* InviteRSVPViewController.swift */,
 			);
 			path = Gatsbi_iOS;
 			sourceTree = "<group>";
@@ -483,6 +486,7 @@
 				4395E1A51BFC53EA00EFADA3 /* InvitePreviewViewController.swift in Sources */,
 				437FB9521BB683E000BCEEA8 /* NWCalendarMenuView.swift in Sources */,
 				437FB9411BB67AF400BCEEA8 /* InviteHomeViewController.swift in Sources */,
+				43E6C4EE1C52326C007E8CF7 /* InviteRSVPViewController.swift in Sources */,
 				437FB9561BB683E000BCEEA8 /* NWCalendarView.swift in Sources */,
 				437FB9511BB683E000BCEEA8 /* NWCalendarDayView.swift in Sources */,
 				434E4AA71BC799FE00242CBF /* MenuViewController.swift in Sources */,

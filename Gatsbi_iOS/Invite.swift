@@ -39,6 +39,7 @@ class Invite {
             //doing this synchronously bc we must have it to return the complete obj
             let pfimagedata = pfimage.getData()
             Image = UIImage(data: pfimagedata!)
+            print(Image?.size)
         }
         Address = PFObjectInvite["Address"] as! String
         Title = PFObjectInvite["Title"] as! String

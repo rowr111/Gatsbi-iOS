@@ -18,6 +18,8 @@ class SingleInviteDetailsViewController: UIViewController {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    @IBOutlet weak var rsvpNoButton: UIButton!
+    @IBOutlet weak var rsvpYesButton: UIButton!
     @IBOutlet weak var timeIcon: UIImageView!
     @IBOutlet weak var locationIcon: UIImageView!
     @IBOutlet weak var messageIcon: UIImageView!
@@ -57,6 +59,7 @@ class SingleInviteDetailsViewController: UIViewController {
         self.inviteDateRange.sizeToFit()
         
         loadAttendeeList()
+        highlightRSVPButtons()
         
     }
     
@@ -111,11 +114,27 @@ class SingleInviteDetailsViewController: UIViewController {
                 {
                     if (attending)
                     {
-                        goingCount = goingCount + 1
-                        if goingCount == 1
-                        { goingList = emailaddr }
+                        if let guestCount = inviteEvent["GuestCount"] as? Int
+                        {
+                            goingCount = goingCount + guestCount
+                            if guestCount > 1
+                            {
+                                emailaddr = emailaddr + " (\(guestCount))"
+                            }
+                            if goingCount == guestCount
+                            { goingList = emailaddr }
+                            else
+                            { goingList = "\(goingList)\r\n\(emailaddr)" }
+                        }
                         else
-                        { goingList = "\(goingList)\r\n\(emailaddr)" }
+                        {
+                            goingCount = goingCount + 1
+                            if goingCount == 1
+                            { goingList = emailaddr }
+                            else
+                            { goingList = "\(goingList)\r\n\(emailaddr)" }
+                        }
+
                     }
                     else
                     {
@@ -142,5 +161,84 @@ class SingleInviteDetailsViewController: UIViewController {
                 self.notGoingList.text = notGoingList
             }
         }
+    }
+    
+    @IBAction func noRSVPButton(sender: UIButton) {
+        if let _ = self.myInviteEvent?.RSVPd
+        {
+            if self.myInviteEvent!.Attending == true
+            {
+                saveNoRSVPtoParse()
+                declinePopup()
+            }
+            //else if it's already no, do nothing..
+        }
+        else
+        {
+            saveNoRSVPtoParse()
+            declinePopup()
+        }
+    }
+    
+    @IBAction func yesRSVPButton(sender: UIButton) {
+        performSegueWithIdentifier("rsvpSegue", sender: nil)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let identifier = segue.identifier
+        {
+            switch identifier
+            {
+            case "rsvpSegue":
+                if let vc = segue.destinationViewController as? InviteRSVPViewController
+                {
+                    vc.myInvite = self.myInvite
+                    vc.myInviteEvent = self.myInviteEvent
+                    
+                }
+            default: break
+            }
+        }
+    }
+    
+    func saveNoRSVPtoParse()
+    {
+        var query = PFQuery(className:"UserInviteEvent")
+        if let parseInviteEvent = query.getObjectWithId(myInviteEvent!.objectId) {
+                parseInviteEvent["Attending"] = false
+                parseInviteEvent["RSVPd"] = true
+                parseInviteEvent["GuestCount"] = 1
+                parseInviteEvent.saveInBackground()
+            }
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func declinePopup()
+    {
+        let alertController = UIAlertController(title: "RSVP Status: No", message: "You have declined this invitation.", preferredStyle: .Alert)
+        
+        let OKAction = UIAlertAction(title: "OK", style: .Default) { (action:UIAlertAction!) in
+            print("you have pressed OK button");
+        }
+        alertController.addAction(OKAction)
+        self.presentViewController(alertController, animated: true, completion:nil)
+    }
+    
+    func highlightRSVPButtons()
+    {
+        if let attending = myInviteEvent?.Attending
+        {
+            if attending == true
+            {
+                rsvpYesButton.setTitleColor(UIColor.blueColor(), forState: .Normal)
+                rsvpNoButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
+            }
+            else
+            {
+                rsvpNoButton.setTitleColor(UIColor.blueColor(), forState: .Normal)
+                rsvpYesButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
+            }
+        }
+    
     }
 }
