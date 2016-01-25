@@ -171,24 +171,28 @@ extension InviteHomeViewController: NWCalendarViewDelegate {
                         print(object.objectId)
                         myInviteEvent.objectId = object.objectId!!
                         myInviteEvent.InviteObjectID = object["InviteObjectID"] as! String
-                        myInviteEvent.RSVPd = object["RSVPd"] as! Bool
-                        myInviteEvent.GuestCount = object["GuestCount"] as! Int
-                        if let attending = object["Attending"] as? Bool
-                        {
-                            myInviteEvent.Attending = attending
-                        }
-                        if let paid = object["Paid"] as? Bool
-                        {
-                            myInviteEvent.Paid = paid
-                        }
-                        myInviteEvent.Host = object["Host"] as! Bool
                         let query2 = PFQuery(className:"Invite")
                         if let myInvite = query2.getObjectWithId(myInviteEvent.InviteObjectID)
                         {
-                                    myInviteEvent.Date = myInvite["Date"] as! NSDate
+                            
+                            let checkdate =  myInvite["Date"] as! NSDate
+                            if checkdate >= NSCalendar.currentCalendar().startOfDayForDate(NSDate())
+                            {
+                                myInviteEvent.Date = myInvite["Date"] as! NSDate
+                                myInviteEvent.RSVPd = object["RSVPd"] as! Bool
+                                myInviteEvent.GuestCount = object["GuestCount"] as! Int
+                                if let attending = object["Attending"] as? Bool
+                                {
+                                    myInviteEvent.Attending = attending
+                                }
+                                if let paid = object["Paid"] as? Bool
+                                {
+                                    myInviteEvent.Paid = paid
+                                }
+                                myInviteEvent.Host = object["Host"] as! Bool
+                                self.myInviteEvents.append(myInviteEvent)
+                            }
                         }
-
-                        self.myInviteEvents.append(myInviteEvent)
                     }
                     
                     //}

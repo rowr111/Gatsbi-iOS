@@ -616,7 +616,7 @@
                                 <rect key="frame" x="330" y="28" width="25" height="25"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <state key="normal" title="x">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="dismissButton:" destination="aew-Sm-vLu" eventType="touchUpInside" id="16W-M7-q45"/>

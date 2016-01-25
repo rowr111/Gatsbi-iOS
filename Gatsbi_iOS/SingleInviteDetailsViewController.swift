@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class SingleInviteDetailsViewController: UIViewController {
+class SingleInviteDetailsViewController: UIViewController, InviteRSVPViewControllerDelegate {
     
     var myInviteEvent:UserInviteEvent?
     var myInvite:Invite = Invite()
@@ -194,6 +194,7 @@ class SingleInviteDetailsViewController: UIViewController {
                 {
                     vc.myInvite = self.myInvite
                     vc.myInviteEvent = self.myInviteEvent
+                    vc.delegate = self
                     
                 }
             default: break
@@ -240,5 +241,13 @@ class SingleInviteDetailsViewController: UIViewController {
             }
         }
     
+    }
+    
+    func myVCDidFinish(controller: InviteRSVPViewController, done: Bool, guestcount:Int) {
+        if done == true
+        {
+            loadAttendeeList()
+            self.myInviteEvent!.GuestCount = guestcount
+        }
     }
 }

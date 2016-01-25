@@ -9,7 +9,15 @@
 import Foundation
 import UIKit
 
+//learn about delegates here:
+//http://makeapppie.com/2014/07/01/swift-swift-using-segues-and-delegates-in-navigation-controllers-part-1-the-template/
+
+protocol InviteRSVPViewControllerDelegate{
+    func myVCDidFinish(controller:InviteRSVPViewController,done:Bool, guestcount:Int)
+}
+
 class InviteRSVPViewController: UIViewController {
+    var delegate:InviteRSVPViewControllerDelegate? = nil
     var myInviteEvent:UserInviteEvent?
     var myInvite:Invite = Invite()
     @IBOutlet weak var rsvpCount: UITextField!
@@ -31,6 +39,9 @@ class InviteRSVPViewController: UIViewController {
                     parseInviteEvent["GuestCount"] = number
                     parseInviteEvent.saveInBackground()
                     self.dismissViewControllerAnimated(true, completion: nil)
+                    if (delegate != nil) {
+                        delegate!.myVCDidFinish(self, done: true, guestcount: number)
+                    }
                 }
             }
         }
