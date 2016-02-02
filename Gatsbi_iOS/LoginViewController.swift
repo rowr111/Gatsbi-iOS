@@ -124,23 +124,26 @@ class LoginViewController: UIViewController {
                         myUser.setObject(profileFileObject, forKey: "profile_picture")
                     }
                     
-                    myUser.saveInBackgroundWithBlock({ (success:Bool, error:NSError?) -> Void in
-                        
-                        if(error != nil)
+                    var errorN: NSError?
+                    if (myUser.save(&errorN) == true)
+                    {
+                        print("User details are now updated")
+                    }
+                    else
+                    {
+                        var errorMessage = "There was an error saving user information."
+                        if(errorN != nil)
                         {
+                            errorMessage = errorN!.localizedDescription
+                        }
                             //Display an alert message
-                            let myAlert = UIAlertController(title:"Alert", message:error?.localizedDescription, preferredStyle: UIAlertControllerStyle.Alert);
+                            let myAlert = UIAlertController(title:"Alert", message:errorMessage, preferredStyle: UIAlertControllerStyle.Alert);
                             let okAction =  UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil)
                             myAlert.addAction(okAction);
                             self.presentViewController(myAlert, animated:true, completion:nil);
                             return
-                        }
-                        
-                        if(success){
-                            print("User details are now updated")
-                        }
-                        
-                    })
+                    }
+    
                 }
             }
         }

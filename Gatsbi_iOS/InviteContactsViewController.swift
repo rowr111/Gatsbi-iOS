@@ -35,8 +35,11 @@ class InviteContactsViewController: UIViewController, CNContactPickerDelegate, U
                     let newinvite = InviteContact()
                     newinvite.Name = contacts[index].givenName + " " + contacts[index].familyName
                     newinvite.Email = emailAddress.value as! String
+                    if (isValidEmail(newinvite.Email))
+                    {
                     myInvite?.InviteContacts.append(newinvite)
                         print(emailAddress.value)
+                    }
                 }
             }
             contactsTable.reloadData()
@@ -58,6 +61,43 @@ class InviteContactsViewController: UIViewController, CNContactPickerDelegate, U
         }
 
     }
+    
+    
+    @IBAction func manuallyEnterButton(sender: UIButton) {
+        let alert = UIAlertController(title: "Invite Contact", message: "Enter email address", preferredStyle: .Alert)
+
+        alert.addTextFieldWithConfigurationHandler({ (nameField) -> Void in
+            nameField.placeholder = "Name"
+        })
+        alert.addTextFieldWithConfigurationHandler({ (emailField) -> Void in
+            emailField.placeholder = "Email Address"
+            emailField.keyboardType = .EmailAddress
+        })
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action:UIAlertAction!) in
+            print("you have pressed the Cancel button");
+        }
+        alert.addAction(cancelAction)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
+            let newinvite = InviteContact()
+            newinvite.Name = alert.textFields![0].text!
+            newinvite.Email = alert.textFields![1].text!
+            if (self.isValidEmail(newinvite.Email))
+            {
+            self.myInvite?.InviteContacts.append(newinvite)
+            print(alert.textFields![1].text!)
+            self.contactsTable.reloadData()
+            }
+            else
+            {
+                self.presentInvalidEmailAlert()
+            }
+        }))
+
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = contactsTable.dequeueReusableCellWithIdentifier("contactCell", forIndexPath: indexPath) as UITableViewCell
@@ -131,7 +171,25 @@ class InviteContactsViewController: UIViewController, CNContactPickerDelegate, U
         }
     }
     
+    func isValidEmail(testStr:String) -> Bool {
+        // println("validate calendar: \(testStr)")
+        let emailRegEx = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
+        
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailTest.evaluateWithObject(testStr)
+    }
 
 
+    func presentInvalidEmailAlert()
+    {
+        let alertController = UIAlertController(title: "Invalid Email Address", message: "Not a valid email format.", preferredStyle: .Alert)
+        
+        let OKAction = UIAlertAction(title: "OK", style: .Default) { (action:UIAlertAction!) in
+            print("you have pressed OK button");
+        }
+        alertController.addAction(OKAction)
+        
+        self.presentViewController(alertController, animated: true, completion:nil)
+    }
 
 }

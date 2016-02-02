@@ -1585,7 +1585,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Dbc-8w-ybr">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Dbc-8w-ybr">
                                 <rect key="frame" x="0.0" y="125" width="375" height="385"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -1624,34 +1624,60 @@
                                     <action selector="okButton:" destination="1Mx-UI-Qtr" eventType="touchUpInside" id="aFa-sx-XoR"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C7G-Ij-47i">
-                                <rect key="frame" x="132" y="72" width="111" height="30"/>
-                                <color key="backgroundColor" red="0.78823529410000004" green="0.5450980392" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lfL-Dc-too">
+                                <rect key="frame" x="71" y="87" width="233" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C7G-Ij-47i">
+                                        <rect key="frame" x="0.0" y="0.0" width="111" height="30"/>
+                                        <color key="backgroundColor" red="0.78823529410000004" green="0.5450980392" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="111" id="6dk-xI-xR2"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <state key="normal" title="Pick Contacts">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pickContactsButton:" destination="4eA-wM-aSh" eventType="touchUpInside" id="wbA-mZ-sgW"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3sh-4c-cZo">
+                                        <rect key="frame" x="111" y="0.0" width="122" height="30"/>
+                                        <color key="backgroundColor" red="0.72941176470000002" green="0.28627450980000002" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="122" id="Q3s-5f-y88"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <state key="normal" title="Manually Enter">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="manuallyEnterButton:" destination="4eA-wM-aSh" eventType="touchUpInside" id="LHg-Bb-W4d"/>
+                                            <action selector="pickContactsButton:" destination="4eA-wM-aSh" eventType="touchUpInside" id="IWr-v2-lxP"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="111" id="HK4-WW-kf3"/>
+                                    <constraint firstItem="C7G-Ij-47i" firstAttribute="leading" secondItem="lfL-Dc-too" secondAttribute="leading" id="DY3-DI-1eH"/>
+                                    <constraint firstAttribute="trailing" secondItem="3sh-4c-cZo" secondAttribute="trailing" id="ci7-dU-Xtw"/>
+                                    <constraint firstItem="3sh-4c-cZo" firstAttribute="leading" secondItem="C7G-Ij-47i" secondAttribute="trailing" id="pUF-9w-1NX"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                <state key="normal" title="Pick Contacts">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="pickContactsButton:" destination="4eA-wM-aSh" eventType="touchUpInside" id="wbA-mZ-sgW"/>
-                                </connections>
-                            </button>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.67450980390000004" green="0.60392156860000001" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Dbc-8w-ybr" firstAttribute="top" secondItem="C7G-Ij-47i" secondAttribute="bottom" constant="23" id="8PR-vC-efj"/>
                             <constraint firstItem="dvD-Mr-tLQ" firstAttribute="leading" secondItem="J9t-1N-Qzm" secondAttribute="trailing" constant="8" symbolic="YES" id="9tQ-7j-iXj"/>
                             <constraint firstAttribute="trailing" secondItem="Dbc-8w-ybr" secondAttribute="trailing" id="AKt-rs-dUs"/>
-                            <constraint firstItem="C7G-Ij-47i" firstAttribute="centerX" secondItem="Dbc-8w-ybr" secondAttribute="centerX" id="C35-3t-CKs"/>
                             <constraint firstItem="dvD-Mr-tLQ" firstAttribute="centerY" secondItem="J9t-1N-Qzm" secondAttribute="centerY" id="JeM-yc-iQ4"/>
-                            <constraint firstItem="C7G-Ij-47i" firstAttribute="top" secondItem="rvU-ip-w4q" secondAttribute="bottom" constant="8" symbolic="YES" id="M79-u2-Uhc"/>
                             <constraint firstItem="J9t-1N-Qzm" firstAttribute="top" secondItem="Dbc-8w-ybr" secondAttribute="bottom" constant="8" symbolic="YES" id="QkG-Sp-2fz"/>
+                            <constraint firstItem="lfL-Dc-too" firstAttribute="top" secondItem="rvU-ip-w4q" secondAttribute="bottom" constant="67" id="VjE-IO-jKf"/>
                             <constraint firstItem="Dbc-8w-ybr" firstAttribute="leading" secondItem="AcR-3u-tTu" secondAttribute="leading" id="c4G-YJ-ylG"/>
                             <constraint firstItem="dvD-Mr-tLQ" firstAttribute="top" secondItem="Dbc-8w-ybr" secondAttribute="bottom" constant="16" id="cXt-Vv-w4Z"/>
                             <constraint firstItem="J9t-1N-Qzm" firstAttribute="centerX" secondItem="Dbc-8w-ybr" secondAttribute="centerX" id="iec-jd-8iF"/>
+                            <constraint firstItem="Dbc-8w-ybr" firstAttribute="top" secondItem="lfL-Dc-too" secondAttribute="bottom" constant="8" id="k0U-2W-gDp"/>
                             <constraint firstItem="g5u-hz-Lsp" firstAttribute="top" secondItem="J9t-1N-Qzm" secondAttribute="bottom" constant="100" id="qsJ-5w-rzj"/>
+                            <constraint firstItem="lfL-Dc-too" firstAttribute="centerX" secondItem="Dbc-8w-ybr" secondAttribute="centerX" id="vh7-IK-wCN"/>
+                            <constraint firstItem="J9t-1N-Qzm" firstAttribute="top" secondItem="Dbc-8w-ybr" secondAttribute="bottom" constant="8" id="w25-Qp-bYE"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
