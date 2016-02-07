@@ -93,7 +93,7 @@ extension InviteHomeViewController: NWCalendarViewDelegate {
         
                 let newInviteAction = UIAlertAction(title: "Create New Invite", style: UIAlertActionStyle.Default, handler: {(alert :UIAlertAction!) in
                     self.inviteDate = fromDate.date!
-                    self.performSegueWithIdentifier("segueThemes", sender: nil)
+                    self.performSegueWithIdentifier("inviteCreationViewSegue", sender: nil)
                 })
                 alertController.addAction(newInviteAction)
                 
@@ -106,13 +106,13 @@ extension InviteHomeViewController: NWCalendarViewDelegate {
             else
             {
                 inviteDate = fromDate.date!
-                performSegueWithIdentifier("segueThemes", sender: nil)
+                performSegueWithIdentifier("inviteCreationViewSegue", sender: nil)
             }
         }
         else
         {
             inviteDate = fromDate.date!
-            performSegueWithIdentifier("segueThemes", sender: nil)
+            performSegueWithIdentifier("inviteCreationViewSegue", sender: nil)
         }
     }
     
@@ -129,11 +129,11 @@ extension InviteHomeViewController: NWCalendarViewDelegate {
                         ppc.delegate = self
                     }
                 }
-            case "segueThemes":
-                    if let themes = segue.destinationViewController as? InviteThemesViewController{
+            case "inviteCreationViewSegue":
+                    if let newInvite = segue.destinationViewController as? InviteCreationViewController{
                         //create a new invite, hooray!
-                        themes.myInvite = Invite()
-                        themes.myInvite!.Date = inviteDate!
+                        newInvite.myInvite = Invite()
+                        newInvite.myInvite!.Date = inviteDate!
                 }
             case "viewSingleInviteDetailSegue":
                 if let mySingleInviteDetail = segue.destinationViewController as? SingleInviteDetailsViewController{

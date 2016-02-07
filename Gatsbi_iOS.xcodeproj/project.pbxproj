@@ -64,6 +64,7 @@
 		43E544C31C267A100031D1B3 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43E544C21C267A100031D1B3 /* FBSDKLoginKit.framework */; settings = {ASSET_TAGS = (); }; };
 		43E544C51C267A310031D1B3 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43E544C41C267A310031D1B3 /* FBSDKCoreKit.framework */; settings = {ASSET_TAGS = (); }; };
 		43E6C4EE1C52326C007E8CF7 /* InviteRSVPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E6C4ED1C52326C007E8CF7 /* InviteRSVPViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		43E8B4291C66BD0D00CF5BA5 /* InviteCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E8B4281C66BD0D00CF5BA5 /* InviteCreationViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		9A002100B822E7F50B00C792 /* libPods-Gatsbi_iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B3E761140824F00E82ADB3C /* libPods-Gatsbi_iOS.a */; };
 /* End PBXBuildFile section */
 
@@ -142,6 +143,7 @@
 		43E544C21C267A100031D1B3 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = Gatsbi_iOS/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		43E544C41C267A310031D1B3 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = Gatsbi_iOS/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		43E6C4ED1C52326C007E8CF7 /* InviteRSVPViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteRSVPViewController.swift; sourceTree = "<group>"; };
+		43E8B4281C66BD0D00CF5BA5 /* InviteCreationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteCreationViewController.swift; sourceTree = "<group>"; };
 		6B3E761140824F00E82ADB3C /* libPods-Gatsbi_iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Gatsbi_iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		720144B8E04B7E5D51EA892F /* Pods-Gatsbi_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gatsbi_iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gatsbi_iOS/Pods-Gatsbi_iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -228,6 +230,7 @@
 		43D745631B25655E00EE09DD /* Gatsbi_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				43E8B4271C66ACA300CF5BA5 /* CustomCells */,
 				439B1D661BC77A2F000709C2 /* menuPopover.swift */,
 				437FB9441BB6837E00BCEEA8 /* NWCalendar */,
 				43D745661B25655E00EE09DD /* AppDelegate.swift */,
@@ -238,7 +241,6 @@
 				437FB9401BB67AF400BCEEA8 /* InviteHomeViewController.swift */,
 				437FB9421BB6808A00BCEEA8 /* Helpers.swift */,
 				43703BDA1BBE60E0005012AA /* InviteThemesViewController.swift */,
-				43703BDC1BC23636005012AA /* InviteThemesCustomCell.swift */,
 				434E4AA61BC799FE00242CBF /* MenuViewController.swift */,
 				434E4AA81BCA201A00242CBF /* Invite.swift */,
 				434E4AAA1BCF6D3600242CBF /* HostAddressViewController.swift */,
@@ -253,6 +255,7 @@
 				43E1D72E1C3BB03B00A53D41 /* EmailSignUpViewController.swift */,
 				435EF0C41C40FFC2009AC2CB /* EmailLoginViewController.swift */,
 				43E6C4ED1C52326C007E8CF7 /* InviteRSVPViewController.swift */,
+				43E8B4281C66BD0D00CF5BA5 /* InviteCreationViewController.swift */,
 			);
 			path = Gatsbi_iOS;
 			sourceTree = "<group>";
@@ -321,6 +324,14 @@
 			children = (
 			);
 			name = images;
+			sourceTree = "<group>";
+		};
+		43E8B4271C66ACA300CF5BA5 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				43703BDC1BC23636005012AA /* InviteThemesCustomCell.swift */,
+			);
+			name = CustomCells;
 			sourceTree = "<group>";
 		};
 		CBBAF438FF7211497F7FFCDC /* Pods */ = {
@@ -480,6 +491,7 @@
 				435EF0C51C40FFC2009AC2CB /* EmailLoginViewController.swift in Sources */,
 				437FB9551BB683E000BCEEA8 /* NWCalendarMonthView.swift in Sources */,
 				43D0576F1BDE00FD000FBA09 /* InvitePicViewController.swift in Sources */,
+				43E8B4291C66BD0D00CF5BA5 /* InviteCreationViewController.swift in Sources */,
 				434E4AAD1BD0D8CB00242CBF /* InviteTimeViewController.swift in Sources */,
 				4395E1A31BF5B57B00EFADA3 /* InviteContactsViewController.swift in Sources */,
 				437FB9501BB683E000BCEEA8 /* NWCalendarCache.swift in Sources */,
