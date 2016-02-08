@@ -45,7 +45,7 @@ class EmailLoginViewController: UIViewController {
             spinner.stopAnimating()
             if ((user) != nil) {
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    let setViewController = self.storyboard!.instantiateViewControllerWithIdentifier("InviteNavigationController")
+                    let setViewController = self.storyboard!.instantiateViewControllerWithIdentifier("InviteHomeViewController")
                     self.presentViewController(setViewController, animated: false, completion: nil)
                 })
                 

@@ -46,7 +46,7 @@ class LoginViewController: UIViewController {
                 print("Current token=\(FBSDKAccessToken.currentAccessToken().tokenString)")
                 print("Current user id \(FBSDKAccessToken.currentAccessToken().userID)")
                 
-                let setViewController = self.storyboard!.instantiateViewControllerWithIdentifier("InviteNavigationController")
+                let setViewController = self.storyboard!.instantiateViewControllerWithIdentifier("InviteHomeViewController")
                 self.presentViewController(setViewController, animated: false, completion: nil)
             })
         } else {
@@ -57,7 +57,7 @@ class LoginViewController: UIViewController {
                     if user.isNew {
                         self.getFBDetails()
                     }
-                    let setViewController = self.storyboard!.instantiateViewControllerWithIdentifier("InviteNavigationController")
+                    let setViewController = self.storyboard!.instantiateViewControllerWithIdentifier("InviteHomeViewController")
                     self.presentViewController(setViewController, animated: false, completion: nil)
                 } else {
                     print("Uh oh. The user cancelled the Facebook login.")

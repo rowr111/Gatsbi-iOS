@@ -9,7 +9,13 @@
 import Foundation
 import UIKit
 
+protocol InviteTimeViewControllerDelegate{
+    func timeVCDidFinish(controller:InviteTimeViewController, date:NSDate, endDate:NSDate)
+}
+
 class InviteTimeViewController : UIViewController {
+
+    var delegate:InviteTimeViewControllerDelegate? = nil
     
     var myInvite:Invite?
     
@@ -33,9 +39,10 @@ class InviteTimeViewController : UIViewController {
         }
         else
         {
-            myInvite!.Date = startDateTimePicker.date
-            myInvite!.EndDate = endDateTimePicker.date
-            performSegueWithIdentifier("invitePicSegue", sender: self)
+            if (delegate != nil) {
+                delegate!.timeVCDidFinish(self, date: startDateTimePicker.date, endDate: endDateTimePicker.date)
+            }
+            //navigationController?.popToRootViewControllerAnimated(true)
         }
     }
     
@@ -47,22 +54,6 @@ class InviteTimeViewController : UIViewController {
         endDateTimePicker.date = myInvite!.Date.dateByAddingTimeInterval((suggestedStartTime*60*60)+(inviteTimeHours*60*60))
     }
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let identifier = segue.identifier
-        {
-            switch identifier
-            {
-            case "invitePicSegue":
-                print("segueing to the invite photo")
-                if let picController = segue.destinationViewController as? InvitePicViewController{
-                    //pass along the invite, including the date and selected menu, hooray!
-                    picController.myInvite = myInvite!
-                }
-                
-            default: break
-            }
-        }
-    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

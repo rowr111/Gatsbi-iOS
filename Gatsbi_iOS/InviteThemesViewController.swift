@@ -123,7 +123,7 @@ class InviteThemesViewController : PFQueryTableViewController {
         {
             switch identifier
             {
-            case "menuSegue":
+            case "menuDetailsSegue":
                 print("trying to segue")
                 if let menu = segue.destinationViewController as? MenuViewController{
                     //pass along the invite, including the date and selected menu, hooray!
@@ -136,6 +136,8 @@ class InviteThemesViewController : PFQueryTableViewController {
                     menu.myInvite?.PricePP = cell.menuPrice.text!
                     menu.myInvite?.RecipeList = cell.RecipeList
                     menu.myInvite?.MenuImage = cell.menuImage?.image
+                    let n: Int! = self.navigationController?.viewControllers.count
+                    menu.delegate = self.navigationController?.viewControllers[n-2] as! InviteCreationViewController
                     print(menu.myInvite?.MenuID)
                     print(menu.myInvite?.Date)
                 }

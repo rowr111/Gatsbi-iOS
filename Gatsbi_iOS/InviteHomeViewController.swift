@@ -133,7 +133,7 @@ extension InviteHomeViewController: NWCalendarViewDelegate {
                     if let newInvite = segue.destinationViewController as? InviteCreationViewController{
                         //create a new invite, hooray!
                         newInvite.myInvite = Invite()
-                        newInvite.myInvite!.Date = inviteDate!
+                        newInvite.myInvite.Date = inviteDate!
                 }
             case "viewSingleInviteDetailSegue":
                 if let mySingleInviteDetail = segue.destinationViewController as? SingleInviteDetailsViewController{

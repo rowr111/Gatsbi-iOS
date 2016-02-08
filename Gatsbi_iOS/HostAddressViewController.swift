@@ -10,7 +10,12 @@ import Foundation
 import UIKit
 import MapKit
 
+protocol HostAddressViewControllerDelegate{
+    func addressVCDidFinish(controller:HostAddressViewController, address:String)
+}
+
 class HostAddressViewController : UIViewController, CLLocationManagerDelegate, UISearchBarDelegate {
+    var delegate:HostAddressViewControllerDelegate? = nil
     
     var myInvite:Invite?
     var myAddress:String?
@@ -31,7 +36,9 @@ class HostAddressViewController : UIViewController, CLLocationManagerDelegate, U
         let OKAction = UIAlertAction(title: "OK", style: .Default) { (action:UIAlertAction!) in
             print("you have pressed OK button");
             self.myAddress = self.myAddressArray.joinWithSeparator(" ")
-            self.performSegueWithIdentifier("timeSegue", sender: self)
+            if (self.delegate != nil) {
+                self.delegate!.addressVCDidFinish(self, address: self.myAddress!)
+            }
         }
         alertController.addAction(OKAction)
         
@@ -142,24 +149,6 @@ class HostAddressViewController : UIViewController, CLLocationManagerDelegate, U
             self.mapSearch.endEditing(true)
         }
         
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let identifier = segue.identifier
-        {
-            switch identifier
-            {
-            case "timeSegue":
-                print("let's do the time warp again")
-                if let timeController = segue.destinationViewController as? InviteTimeViewController{
-                    self.myInvite!.Address = self.myAddress!
-                    //pass along the invite, including the date and selected menu, hooray!
-                    timeController.myInvite = myInvite!
-                }
-         
-            default: break
-                   }
-        }
     }
     
     override func didReceiveMemoryWarning() {
