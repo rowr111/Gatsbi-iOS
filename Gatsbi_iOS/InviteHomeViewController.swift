@@ -8,13 +8,15 @@
 
 import UIKit
 
-class InviteHomeViewController: UIViewController, UIPopoverPresentationControllerDelegate {
+class InviteHomeViewController: UIViewController, UIPopoverPresentationControllerDelegate, InviteCreationViewControllerDelegate {
 
     var myInviteEvents:[UserInviteEvent] = []
     var myFilteredInviteEvents:[UserInviteEvent] = []
     var myInvites:[Invite] = []
     var dates:[NSDate] = []
     var selectedDate: NSDate?
+    var inviteChoice: Invite = Invite()
+    var userInviteEventChoice: UserInviteEvent?
     
 @IBOutlet weak var profilePic: UIImageView!
 @IBOutlet weak var calendarView: NWCalendarView!
@@ -27,28 +29,37 @@ class InviteHomeViewController: UIViewController, UIPopoverPresentationControlle
             self.makingRoundedImageProfileWithRoundedBorder()
             
             getUserInviteEvents()
-            
-            for myEvent in self.myInviteEvents
-            {
-                // doing some conversion here because myEvent.Date will not midnight
-                dates.append(NSCalendar.currentCalendar().startOfDayForDate(myEvent.Date))
-            }
-
-            calendarView.highlightedDates = dates
-            print(calendarView.highlightedDates!.count)
-            
-            
-            calendarView.layer.borderWidth = 1
-            calendarView.layer.borderColor = UIColor.lightGrayColor().CGColor
-            calendarView.backgroundColor = UIColor.whiteColor()
-            //print(calendarView.frame.height)
-            calendarView.selectionRangeLength = 1
-            calendarView.maxMonths = 6
-            calendarView.delegate = self
-            calendarView.createCalendar()
+            loadCalendar()
             
             //set the popover button's image
             menuPopoverButton.image = IonIcons.imageWithIcon(ion_navicon_round, iconColor: UIColor.whiteColor(), iconSize: 40.0, imageSize: CGSizeMake(70.0, 70.0))
+    }
+    
+    func loadCalendar()
+    {
+        for myEvent in self.myInviteEvents
+        {
+            // doing some conversion here because myEvent.Date will not midnight
+            let myEventDate = NSCalendar.currentCalendar().startOfDayForDate(myEvent.Date)
+            if !dates.contains(myEventDate)
+            {
+                dates.append(myEventDate)
+            }
+        }
+        
+        calendarView.highlightedDates = dates
+        print(calendarView.highlightedDates!.count)
+        
+        
+        calendarView.layer.borderWidth = 1
+        calendarView.layer.borderColor = UIColor.lightGrayColor().CGColor
+        calendarView.backgroundColor = UIColor.whiteColor()
+        //print(calendarView.frame.height)
+        calendarView.selectionRangeLength = 1
+        calendarView.maxMonths = 6
+        calendarView.delegate = self
+        calendarView.createCalendar()
+    
     }
     
     override func didReceiveMemoryWarning() {
@@ -76,21 +87,27 @@ extension InviteHomeViewController: NWCalendarViewDelegate {
             if (highlightedDates.contains(fromDate.date!))
             {
                 let alertController = UIAlertController(title:nil, message:nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
-        
-                let viewInvitesAction = UIAlertAction(title: "View My Invites", style: UIAlertActionStyle.Default, handler: {(alert :UIAlertAction!) in
-                    self.myFilteredInviteEvents = self.myInviteEvents.filter({return $0.Date >= self.selectedDate && $0.Date <= self.selectedDate!.dateByAddingTimeInterval(NSTimeInterval(60*60*24)) })
-                    
-                    if (self.myFilteredInviteEvents.count > 1)
+                
+                self.myFilteredInviteEvents = self.myInviteEvents.filter({return $0.Date >= self.selectedDate && $0.Date <= self.selectedDate!.dateByAddingTimeInterval(NSTimeInterval(60*60*24)) })
+                
+                for eachUserInviteEvent in self.myFilteredInviteEvents
+                {
+                    //get the invite title
+                    let query = PFQuery(className:"Invite")
+                    if let myInviteObject = query.getObjectWithId(eachUserInviteEvent.InviteObjectID)
                     {
-                        self.performSegueWithIdentifier(("viewMultiInvitesSegue"), sender: nil)
+
+                        self.inviteChoice.PopulateFromPFObjectInvite(myInviteObject)
+                        let viewInvitesAction = UIAlertAction(title: inviteChoice.Title, style: UIAlertActionStyle.Default, handler: {(alert :UIAlertAction!) in
+                            self.userInviteEventChoice = eachUserInviteEvent
+                            self.performSegueWithIdentifier("viewSingleInviteDetailSegue", sender: nil)
+                        })
+                        alertController.addAction(viewInvitesAction)
+
                     }
-                    else
-                    {
-                        self.performSegueWithIdentifier("viewSingleInviteDetailSegue", sender: nil)
-                    }
-                })
-                alertController.addAction(viewInvitesAction)
-        
+                
+                }
+                
                 let newInviteAction = UIAlertAction(title: "Create New Invite", style: UIAlertActionStyle.Default, handler: {(alert :UIAlertAction!) in
                     self.inviteDate = fromDate.date!
                     self.performSegueWithIdentifier("inviteCreationViewSegue", sender: nil)
@@ -130,19 +147,20 @@ extension InviteHomeViewController: NWCalendarViewDelegate {
                     }
                 }
             case "inviteCreationViewSegue":
-                    if let newInvite = segue.destinationViewController as? InviteCreationViewController{
+                    if let navVC = segue.destinationViewController as? UINavigationController {
+                     if let newInvite = navVC.viewControllers.first as? InviteCreationViewController{
                         //create a new invite, hooray!
                         newInvite.myInvite = Invite()
                         newInvite.myInvite.Date = inviteDate!
+                        newInvite.delegate = self
+                        print(newInvite.myInvite.Date)
+                        }
                 }
             case "viewSingleInviteDetailSegue":
                 if let mySingleInviteDetail = segue.destinationViewController as? SingleInviteDetailsViewController{
                     //it should be safe to make the assumption here that there is only one event and it is there
-                    mySingleInviteDetail.myInviteEvent = myFilteredInviteEvents[0]
-                }
-            case "viewMultiInvitesSegue":
-                if let myMultiInvites = segue.destinationViewController as? MultiInviteViewController{
-                    myMultiInvites.myInviteEvents = myFilteredInviteEvents
+                    mySingleInviteDetail.myInviteEvent = userInviteEventChoice
+                    //mySingleInviteDetail.myInvite = inviteChoice
                     
                 }
             default: break
@@ -174,7 +192,7 @@ extension InviteHomeViewController: NWCalendarViewDelegate {
                         let query2 = PFQuery(className:"Invite")
                         if let myInvite = query2.getObjectWithId(myInviteEvent.InviteObjectID)
                         {
-                            
+                            print(myInvite.objectId)
                             let checkdate =  myInvite["Date"] as! NSDate
                             if checkdate >= NSCalendar.currentCalendar().startOfDayForDate(NSDate())
                             {
@@ -236,7 +254,58 @@ extension InviteHomeViewController: NWCalendarViewDelegate {
         //else it just goes with the default, currently Gatsbi name with grey background
     }
     
+    func inviteCreationVCDidFinish(controller: InviteCreationViewController, creatorInviteEventID: String) {
+        AddUserInviteEvent(creatorInviteEventID)
+
+        for myEvent in self.myInviteEvents
+        {
+            if myEvent.objectId == creatorInviteEventID
+                {
+                    let myEventDate = NSCalendar.currentCalendar().startOfDayForDate(myEvent.Date)
+                    if !dates.contains(myEventDate)
+                    {
+                        dates.append(myEventDate)
+                    }
+            }
+        }
+        calendarView.highlightedDates = dates
+        controller.dismissViewControllerAnimated(true, completion: nil)
+        //self.viewDidLoad()
+        //loadCalendar()
+    }
     
+    func AddUserInviteEvent(InviteEventObjectID:String)
+    {
+        let query = PFQuery(className:"UserInviteEvent")
+        if let object = query.getObjectWithId(InviteEventObjectID)
+        {
+            let myInviteEvent = UserInviteEvent()
+            myInviteEvent.objectId = object.objectId!
+            myInviteEvent.InviteObjectID = object["InviteObjectID"] as! String
+            let query2 = PFQuery(className:"Invite")
+            if let myInvite = query2.getObjectWithId(myInviteEvent.InviteObjectID)
+            {
+                print(myInvite.objectId)
+                let checkdate =  myInvite["Date"] as! NSDate
+                if checkdate >= NSCalendar.currentCalendar().startOfDayForDate(NSDate())
+                {
+                    myInviteEvent.Date = myInvite["Date"] as! NSDate
+                    myInviteEvent.RSVPd = object["RSVPd"] as! Bool
+                    myInviteEvent.GuestCount = object["GuestCount"] as! Int
+                    if let attending = object["Attending"] as? Bool
+                    {
+                        myInviteEvent.Attending = attending
+                    }
+                    if let paid = object["Paid"] as? Bool
+                    {
+                        myInviteEvent.Paid = paid
+                    }
+                    myInviteEvent.Host = object["Host"] as! Bool
+                    self.myInviteEvents.append(myInviteEvent)
+                }
+            }
+        }
+    }
 
 }
 

@@ -9,9 +9,13 @@
 import Foundation
 import UIKit
 
+protocol InvitePicViewControllerDelegate{
+    func imageVCDidFinish(controller:InvitePicViewController, image: UIImage)
+}
 
 class InvitePicViewController : UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    var delegate:InvitePicViewControllerDelegate? = nil
     var myInvite:Invite?
     
     @IBOutlet weak var inviteImageView: UIImageView!
@@ -22,7 +26,9 @@ class InvitePicViewController : UIViewController, UIImagePickerControllerDelegat
         if let validImage = self.inviteImageView.image
         {
             self.myInvite!.Image = validImage
-            self.performSegueWithIdentifier("titleSegue", sender: self)
+            if (self.delegate != nil) {
+                self.delegate!.imageVCDidFinish(self, image: validImage)
+            }
         }
         else
         {
@@ -57,32 +63,11 @@ class InvitePicViewController : UIViewController, UIImagePickerControllerDelegat
         
         dismissViewControllerAnimated(true, completion: nil)
     }
-
-    
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let identifier = segue.identifier
-        {
-            switch identifier
-            {
-            case "titleSegue":
-                if let titleController = segue.destinationViewController as? InviteTitleViewController{
-                    self.myInvite!.Image = inviteImageView.image!
-                    //pass along the invite, including the new invite pic!
-                    titleController.myInvite = myInvite!
-                }
-                
-            default: break
-            }
-        }
-    }
+
 
 }

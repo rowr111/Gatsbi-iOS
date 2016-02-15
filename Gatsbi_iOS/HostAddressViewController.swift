@@ -21,28 +21,30 @@ class HostAddressViewController : UIViewController, CLLocationManagerDelegate, U
     var myAddress:String?
     var myAddressArray:[String] = []
     var isValidAddress:Bool = false
+    var searchCompleted:Bool = false
     
     @IBOutlet weak var mapSearch: UISearchBar!
 
     @IBOutlet weak var mapView: MKMapView!
     @IBAction func goButton(sender: UIButton) {
-        let alertController = UIAlertController(title: "Confirm Host Address", message: myAddressArray.joinWithSeparator("\n"), preferredStyle: .Alert)
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action:UIAlertAction!) in
-            print("you have pressed the Cancel button");
-        }
-        alertController.addAction(cancelAction)
-        
-        let OKAction = UIAlertAction(title: "OK", style: .Default) { (action:UIAlertAction!) in
-            print("you have pressed OK button");
-            self.myAddress = self.myAddressArray.joinWithSeparator(" ")
-            if (self.delegate != nil) {
-                self.delegate!.addressVCDidFinish(self, address: self.myAddress!)
+        //check and see if there is an address, if not, do search behind the scenes
+        if (myAddress == nil)
+        {
+            if (mapSearch.text != "")
+            {
+                self.searchBarSearchButtonClicked(self.mapSearch)
+                confirmHostAddress()
+            }
+            else
+            {
+                alertTextNeeded()
             }
         }
-        alertController.addAction(OKAction)
-        
-        self.presentViewController(alertController, animated: true, completion:nil)
+        else
+        {
+            confirmHostAddress()
+        }
     }
     
     //some mappy variables
@@ -102,8 +104,9 @@ class HostAddressViewController : UIViewController, CLLocationManagerDelegate, U
     {
         localSearchRequest = MKLocalSearchRequest()
         localSearchRequest.naturalLanguageQuery = mapSearch.text
+        print(mapSearch.text)
         localSearch = MKLocalSearch(request: localSearchRequest)
-        localSearch.startWithCompletionHandler { (localSearchResponse, error) -> Void in
+        localSearch.startWithCompletionHandler {(localSearchResponse, mapSearchError) -> Void in
             
             if localSearchResponse == nil{
                 let alertController = UIAlertController(title: nil, message: "Address Not Found", preferredStyle: UIAlertControllerStyle.Alert)
@@ -146,13 +149,48 @@ class HostAddressViewController : UIViewController, CLLocationManagerDelegate, U
                     //self.mapSearch.text = self.myAddress!
                // }
             //}
+            self.searchCompleted = true
             self.mapSearch.endEditing(true)
+            return
         }
-        
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    //http://www.raywenderlich.com/95014/geofencing-ios-swift
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        self.mapView.showsUserLocation = (status == .AuthorizedAlways)
     }
+    
+    func alertTextNeeded()
+    {
+        let alertController = UIAlertController(title: "Address Missing", message: "Please enter an address.", preferredStyle: .Alert)
+        
+        let OKAction = UIAlertAction(title: "OK", style: .Default) { (action:UIAlertAction!) in
+        }
+        alertController.addAction(OKAction)
+        
+        self.presentViewController(alertController, animated: true, completion:nil)
+    }
+    
+    func confirmHostAddress()
+    {
+        let alertController = UIAlertController(title: "Confirm Host Address", message: myAddressArray.joinWithSeparator("\n"), preferredStyle: .Alert)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action:UIAlertAction!) in
+            print("you have pressed the Cancel button");
+        }
+        alertController.addAction(cancelAction)
+        
+        let OKAction = UIAlertAction(title: "OK", style: .Default) { (action:UIAlertAction!) in
+            print("you have pressed OK button");
+            self.myAddress = self.myAddressArray.joinWithSeparator(" ")
+            if (self.delegate != nil) {
+                self.delegate!.addressVCDidFinish(self, address: self.myAddress!)
+            }
+        }
+        alertController.addAction(OKAction)
+        
+        self.presentViewController(alertController, animated: true, completion:nil)
+    }
+    
 }
 

@@ -11,15 +11,23 @@ import UIKit
 import Contacts
 import ContactsUI
 
+protocol InviteContactsViewControllerDelegate{
+    func contactsVCDidFinish(controller:InviteContactsViewController)
+}
+
 class InviteContactsViewController: UIViewController, CNContactPickerDelegate, UITableViewDataSource, UITableViewDelegate {
     //some various help/methods from http://www.appcoda.com/ios-contacts-framework/
+    
+    var delegate:InviteContactsViewControllerDelegate? = nil
     
     var myInvite:Invite?
     var contacts = [CNContact]()
 
 
     @IBAction func okButton(sender: UIButton) {
-          performSegueWithIdentifier("previewSegue", sender: self)
+        if (self.delegate != nil) {
+            self.delegate!.contactsVCDidFinish(self)
+        }
     }
     
     @IBOutlet weak var contactsTable: UITableView!
@@ -133,7 +141,6 @@ class InviteContactsViewController: UIViewController, CNContactPickerDelegate, U
         self.presentViewController(alertController, animated: true, completion:nil)
 
     }
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -152,23 +159,6 @@ class InviteContactsViewController: UIViewController, CNContactPickerDelegate, U
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let identifier = segue.identifier
-        {
-            switch identifier
-            {
-            case "previewSegue":
-                print("segueing to the preview")
-                if let previewController = segue.destinationViewController as? InvitePreviewViewController{
-                    //pass along the invite, including the date and selected menu, hooray!
-                    previewController.myInvite = myInvite!
-                }
-                
-            default: break
-            }
-        }
     }
     
     func isValidEmail(testStr:String) -> Bool {

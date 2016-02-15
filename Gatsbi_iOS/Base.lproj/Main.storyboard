@@ -448,7 +448,6 @@
                         <outlet property="calendarView" destination="LS3-Vx-g4D" id="IAt-Ed-zGF"/>
                         <outlet property="menuPopoverButton" destination="0pk-Sm-sAV" id="zSU-oV-1Wg"/>
                         <outlet property="profilePic" destination="dYS-gj-X8w" id="pqO-qN-Hd3"/>
-                        <segue destination="qlS-o3-ZWL" kind="show" identifier="viewMultiInvitesSegue" id="vmG-mK-FAd"/>
                         <segue destination="aew-Sm-vLu" kind="presentation" identifier="viewSingleInviteDetailSegue" modalTransitionStyle="coverVertical" id="eTS-Lx-R3X"/>
                         <segue destination="pQI-xf-Wr0" kind="show" identifier="inviteCreationViewSegue" id="pxf-jf-Oqv"/>
                     </connections>
@@ -813,33 +812,6 @@
             </objects>
             <point key="canvasLocation" x="22.5" y="2693.5"/>
         </scene>
-        <!--Multi Invite View Controller-->
-        <scene sceneID="v9L-NQ-oBm">
-            <objects>
-                <viewController storyboardIdentifier="Multi Invite View" id="qlS-o3-ZWL" customClass="MultiInviteViewController" customModule="Gatsbi_iOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="JyY-ZU-ojQ"/>
-                        <viewControllerLayoutGuide type="bottom" id="yai-vF-da7"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Aa4-Wf-bxZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="multi-view" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jfg-yT-hgf">
-                                <rect key="frame" x="139" y="37" width="96" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qYa-bn-Njc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-98.5" y="1743.5"/>
-        </scene>
         <!--InviteCreationNavigationViewController-->
         <scene sceneID="SWh-jw-Gf4">
             <objects>
@@ -867,7 +839,6 @@
         <!--New Invite-->
         <scene sceneID="CNA-VP-Do6">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Q0V-oI-DDV" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="erB-a8-VZu" customClass="InviteCreationViewController" customModule="Gatsbi_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jbO-JP-FzP"/>
@@ -900,6 +871,9 @@
                                         <state key="normal" title="Choose Invite Image">
                                             <color key="titleColor" red="0.72941176470000002" green="0.74117647060000003" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="imageButton:" destination="erB-a8-VZu" eventType="touchUpInside" id="3IC-1F-na0"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="myf-0e-mf3">
                                         <rect key="frame" x="0.0" y="199" width="375" height="1"/>
@@ -929,6 +903,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" restorationIdentifier="InviteGuestsPickerButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f3n-lZ-KPg">
                                         <rect key="frame" x="0.0" y="499" width="375" height="44"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="contactsSegue:" destination="erB-a8-VZu" eventType="touchUpInside" id="bD0-Y7-9Fl"/>
+                                        </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YBZ-DM-oBo">
                                         <rect key="frame" x="8" y="386" width="30" height="30"/>
@@ -997,6 +974,9 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Invite Guests" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O3B-be-s7t">
                                         <rect key="frame" x="46" y="510" width="321" height="21"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="dXe-U9-sqd"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -1147,14 +1127,19 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="qW0-0N-uFK">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="saveButton:" destination="erB-a8-VZu" id="R7Q-dC-GMJ"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="guestsIcon" destination="hIA-Ao-Aah" id="2rA-HH-nfF"/>
+                        <outlet property="imageButton" destination="pUp-zL-pov" id="4x4-Ia-moy"/>
                         <outlet property="inviteAddress" destination="km3-sx-6YM" id="kyT-uI-UWQ"/>
                         <outlet property="inviteDateRange" destination="PFV-Kc-VcU" id="Wx7-ZH-eyW"/>
+                        <outlet property="invitedGuests" destination="O3B-be-s7t" id="HIs-s2-f1v"/>
                         <outlet property="locationIcon" destination="o0a-vh-S6i" id="wdR-N0-hXT"/>
                         <outlet property="menuChoice" destination="YVQ-Qh-l1T" id="Po1-cL-Twi"/>
                         <outlet property="messageIcon" destination="YBZ-DM-oBo" id="S8E-3g-Hzh"/>
@@ -1164,10 +1149,13 @@
                         <segue destination="l55-Wz-FzL" kind="show" identifier="timeSegue" id="vbN-Yj-FhP"/>
                         <segue destination="FvZ-oC-6RZ" kind="show" identifier="addressSegue" id="9fO-e7-7en"/>
                         <segue destination="xdY-HV-kB8" kind="show" identifier="menuSegue" id="UUU-ni-TAF"/>
+                        <segue destination="bXk-DP-w4J" kind="show" identifier="imageSegue" id="7Gd-A2-0iq"/>
+                        <segue destination="4eA-wM-aSh" kind="show" identifier="contactsSegue" id="TAw-UB-Tss"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q0V-oI-DDV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="992.5" y="1794.5"/>
+            <point key="canvasLocation" x="992.5" y="1583.5"/>
         </scene>
         <!--Invite Themes View Controller-->
         <scene sceneID="ntX-G3-Uqx">
@@ -1571,7 +1559,7 @@
                         <viewControllerLayoutGuide type="bottom" id="PvB-tj-oWR"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="V5i-oD-0D3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jlg-61-MGV">
@@ -1684,108 +1672,11 @@
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="inviteImageView" destination="gRE-4J-zmb" id="rCa-Ba-DED"/>
-                        <segue destination="1Mx-UI-Qtr" kind="show" identifier="titleSegue" id="Ooq-3D-CLV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fKQ-dV-pnk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3571.5" y="984.5"/>
-        </scene>
-        <!--Invite Title View Controller-->
-        <scene sceneID="KaL-fn-aDE">
-            <objects>
-                <viewController id="1Mx-UI-Qtr" customClass="InviteTitleViewController" customModule="Gatsbi_iOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Z6B-gk-410"/>
-                        <viewControllerLayoutGuide type="bottom" id="pNa-JQ-IaJ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="h0c-MA-3pM">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Invite Title:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dC7-Cd-aJ5">
-                                <rect key="frame" x="16" y="8" width="93" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="93" id="Ehi-lG-SJQ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r2P-vg-Tv2">
-                                <rect key="frame" x="16" y="37" width="343" height="30"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="MEd-RI-Dyq"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Invite Message Body:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKP-Dx-F3N">
-                                <rect key="frame" x="16" y="75" width="183" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="183" id="GgT-uQ-kJV"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ebF-BO-dbf">
-                                <rect key="frame" x="16" y="104" width="343" height="195"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sT6-NQ-7RK">
-                                <rect key="frame" x="164" y="380" width="49" height="49"/>
-                                <state key="normal" image="Gatsbi_CheckButton">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="goButton:" destination="l55-Wz-FzL" eventType="touchUpInside" id="dsE-Jr-8zd"/>
-                                    <action selector="okButton:" destination="1Mx-UI-Qtr" eventType="touchUpInside" id="25w-4H-n9A"/>
-                                    <action selector="okButton:" destination="bXk-DP-w4J" eventType="touchUpInside" id="upc-y0-rEy"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="OK!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GqK-TC-oA2">
-                                <rect key="frame" x="221" y="388" width="53" height="33"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="53" id="F6u-uo-3LK"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="0.67450980390000004" green="0.60392156860000001" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="aKP-Dx-F3N" firstAttribute="leading" secondItem="h0c-MA-3pM" secondAttribute="leadingMargin" id="0PA-0G-c40"/>
-                            <constraint firstItem="dC7-Cd-aJ5" firstAttribute="leading" secondItem="r2P-vg-Tv2" secondAttribute="leading" id="9ZA-th-YvM"/>
-                            <constraint firstItem="GqK-TC-oA2" firstAttribute="centerY" secondItem="sT6-NQ-7RK" secondAttribute="centerY" id="Ch5-Ik-mcY"/>
-                            <constraint firstItem="r2P-vg-Tv2" firstAttribute="top" secondItem="dC7-Cd-aJ5" secondAttribute="bottom" constant="8" symbolic="YES" id="F4n-gs-NWV"/>
-                            <constraint firstItem="aKP-Dx-F3N" firstAttribute="top" secondItem="r2P-vg-Tv2" secondAttribute="bottom" constant="8" symbolic="YES" id="ReB-Dw-odh"/>
-                            <constraint firstItem="sT6-NQ-7RK" firstAttribute="top" secondItem="ebF-BO-dbf" secondAttribute="bottom" constant="17" id="WXn-HB-yhX"/>
-                            <constraint firstItem="dC7-Cd-aJ5" firstAttribute="top" secondItem="Z6B-gk-410" secondAttribute="bottom" constant="8" symbolic="YES" id="Xnu-Mq-bur"/>
-                            <constraint firstItem="ebF-BO-dbf" firstAttribute="leading" secondItem="aKP-Dx-F3N" secondAttribute="leading" id="eQF-gG-bSB"/>
-                            <constraint firstItem="pNa-JQ-IaJ" firstAttribute="top" secondItem="ebF-BO-dbf" secondAttribute="bottom" constant="304" id="gCn-TV-OyV"/>
-                            <constraint firstItem="sT6-NQ-7RK" firstAttribute="centerX" secondItem="h0c-MA-3pM" secondAttribute="centerX" id="lJn-eW-q4B"/>
-                            <constraint firstItem="r2P-vg-Tv2" firstAttribute="trailing" secondItem="h0c-MA-3pM" secondAttribute="trailingMargin" id="pIp-40-dBX"/>
-                            <constraint firstItem="GqK-TC-oA2" firstAttribute="leading" secondItem="sT6-NQ-7RK" secondAttribute="trailing" constant="8" symbolic="YES" id="sDK-Jw-y5v"/>
-                            <constraint firstItem="r2P-vg-Tv2" firstAttribute="trailing" secondItem="ebF-BO-dbf" secondAttribute="trailing" id="the-Ar-A5Q"/>
-                            <constraint firstItem="GqK-TC-oA2" firstAttribute="top" secondItem="ebF-BO-dbf" secondAttribute="bottom" constant="25" id="v4F-F9-Lw8"/>
-                            <constraint firstItem="aKP-Dx-F3N" firstAttribute="leading" secondItem="r2P-vg-Tv2" secondAttribute="leading" id="w4G-3v-uvG"/>
-                            <constraint firstItem="ebF-BO-dbf" firstAttribute="top" secondItem="aKP-Dx-F3N" secondAttribute="bottom" constant="8" symbolic="YES" id="zbB-gb-dTP"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="inviteText" destination="ebF-BO-dbf" id="AQi-0B-O88"/>
-                        <outlet property="inviteTitle" destination="r2P-vg-Tv2" id="tDx-FS-xP3"/>
-                        <segue destination="4eA-wM-aSh" kind="show" identifier="contactsSegue" id="DaM-iq-KyX"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MCY-qj-c5F" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4257" y="985"/>
+            <point key="canvasLocation" x="1473.5" y="984.5"/>
         </scene>
         <!--Contacts-->
         <scene sceneID="7Ca-lz-oDN">
@@ -1796,10 +1687,10 @@
                         <viewControllerLayoutGuide type="bottom" id="g5u-hz-Lsp"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="AcR-3u-tTu">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Dbc-8w-ybr">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Dbc-8w-ybr">
                                 <rect key="frame" x="0.0" y="125" width="375" height="385"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -1817,13 +1708,13 @@
                                     <outlet property="delegate" destination="4eA-wM-aSh" id="uUA-Hj-ck2"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OK!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dvD-Mr-tLQ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="OK!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dvD-Mr-tLQ">
                                 <rect key="frame" x="220" y="526" width="34" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J9t-1N-Qzm">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J9t-1N-Qzm">
                                 <rect key="frame" x="163" y="518" width="49" height="49"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="49" id="tNI-kk-l0G"/>
@@ -1835,10 +1726,9 @@
                                     <action selector="goButton:" destination="l55-Wz-FzL" eventType="touchUpInside" id="Hxp-VD-zo7"/>
                                     <action selector="okButton:" destination="bXk-DP-w4J" eventType="touchUpInside" id="I51-Jc-PzU"/>
                                     <action selector="okButton:" destination="4eA-wM-aSh" eventType="touchUpInside" id="Zkd-bd-obi"/>
-                                    <action selector="okButton:" destination="1Mx-UI-Qtr" eventType="touchUpInside" id="aFa-sx-XoR"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lfL-Dc-too">
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lfL-Dc-too">
                                 <rect key="frame" x="71" y="87" width="233" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C7G-Ij-47i">
@@ -1897,119 +1787,11 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="contactsTable" destination="Dbc-8w-ybr" id="yYi-Ni-Bf8"/>
-                        <segue destination="WTR-3s-Ecc" kind="show" identifier="previewSegue" id="odZ-bE-c7t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wfa-zE-jlk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4797.5" y="984.5"/>
-        </scene>
-        <!--Preview-->
-        <scene sceneID="qZZ-ca-PFz">
-            <objects>
-                <viewController storyboardIdentifier="Preview" title="Preview" id="WTR-3s-Ecc" customClass="InvitePreviewViewController" customModule="Gatsbi_iOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="QqF-f5-XTX"/>
-                        <viewControllerLayoutGuide type="bottom" id="L52-0J-flN"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="HRo-PB-Qdg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="OK!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ex-GL-8Dj">
-                                <rect key="frame" x="220" y="611" width="53" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="53" id="Asg-JW-hMc"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a9c-sD-m5f">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="301"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rlT-Iv-pjE">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="301"/>
-                                    </imageView>
-                                    <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" text="Jeanie's Super Awesome Party" translatesAutoresizingMaskIntoConstraints="NO" id="c7G-5O-kUC">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="301"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="40"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9R7-Vv-adC">
-                                <rect key="frame" x="163" y="598" width="49" height="49"/>
-                                <state key="normal" image="Gatsbi_CheckButton">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="goButton:" destination="l55-Wz-FzL" eventType="touchUpInside" id="uly-Cp-Cfk"/>
-                                    <action selector="okButton:" destination="1Mx-UI-Qtr" eventType="touchUpInside" id="IwR-cC-j2i"/>
-                                    <action selector="okButton:" destination="bXk-DP-w4J" eventType="touchUpInside" id="gDG-Em-wsB"/>
-                                    <action selector="okButton:" destination="WTR-3s-Ecc" eventType="touchUpInside" id="jkM-KQ-r7f"/>
-                                    <action selector="okButton:" destination="4eA-wM-aSh" eventType="touchUpInside" id="oeJ-JP-LgK"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="0.67450980390000004" green="0.60392156860000001" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="0Ex-GL-8Dj" firstAttribute="centerY" secondItem="9R7-Vv-adC" secondAttribute="centerY" id="0yx-kE-IPH"/>
-                            <constraint firstItem="L52-0J-flN" firstAttribute="top" secondItem="0Ex-GL-8Dj" secondAttribute="bottom" constant="28" id="g6z-tz-efU"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="0Ex-GL-8Dj" secondAttribute="trailing" constant="86" id="gAs-3Z-TVC"/>
-                            <constraint firstItem="0Ex-GL-8Dj" firstAttribute="leading" secondItem="9R7-Vv-adC" secondAttribute="trailing" constant="8" symbolic="YES" id="oyR-Io-Y8T"/>
-                        </constraints>
-                    </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <connections>
-                        <outlet property="inviteImage" destination="rlT-Iv-pjE" id="IGb-aU-a4q"/>
-                        <outlet property="inviteTitle" destination="c7G-5O-kUC" id="cKz-N0-gFm"/>
-                        <segue destination="3oU-ar-JM4" kind="show" identifier="confirmPaySegue" id="vaG-L2-LCY"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4qq-db-NQW" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5356.5" y="984.5"/>
-        </scene>
-        <!--Confirm and Pay-->
-        <scene sceneID="Wnc-3R-CrR">
-            <objects>
-                <viewController storyboardIdentifier="Confirm and Pay" title="Confirm and Pay" id="3oU-ar-JM4" customClass="InviteConfirmPayViewController" customModule="Gatsbi_iOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="8OG-oa-OSY"/>
-                        <viewControllerLayoutGuide type="bottom" id="9nU-d2-hT3"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="gQA-i4-4V5">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="OGW-14-qAP">
-                                <rect key="frame" x="0.0" y="8" width="375" height="128"/>
-                                <string key="text">The final step - confirm and send your invitation with payment information - you and your guests will not be charged until enough people have RSVP'd to have a party (6 or more). </string>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eKt-Hl-TzB">
-                                <rect key="frame" x="0.0" y="144" width="375" height="30"/>
-                                <state key="normal" title="Confirm and Send Invitation"/>
-                                <connections>
-                                    <action selector="payButton:" destination="3oU-ar-JM4" eventType="touchUpInside" id="WHp-W5-6uV"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="0.67450980390000004" green="0.60392156860000001" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <connections>
-                        <segue destination="emX-YZ-Pm6" kind="show" identifier="homeSegue" id="XiG-ya-clX"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vsA-03-dFT" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5932.5" y="984.5"/>
+            <point key="canvasLocation" x="2017.5" y="812.5"/>
         </scene>
     </scenes>
     <resources>
