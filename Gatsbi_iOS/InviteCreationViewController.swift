@@ -105,8 +105,8 @@ class InviteCreationViewController : UIViewController, InviteTimeViewControllerD
                     mc.myInvite = myInvite
                 }
             case "imageSegue":
-                if let ic = segue.destinationViewController as? InvitePicViewController{
-                    ic.myInvite = myInvite
+                if let ic = segue.destinationViewController as? InvitePicViewController{                    ic.myInvite = myInvite
+
                     ic.delegate = self
                 }
             case "contactsSegue":

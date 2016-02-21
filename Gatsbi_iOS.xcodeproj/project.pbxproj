@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		434DA66C1C799A15003339FA /* GKCropBorderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 434DA6611C799A15003339FA /* GKCropBorderView.m */; settings = {ASSET_TAGS = (); }; };
+		434DA66D1C799A15003339FA /* GKImageCropOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 434DA6631C799A15003339FA /* GKImageCropOverlayView.m */; settings = {ASSET_TAGS = (); }; };
+		434DA66E1C799A15003339FA /* GKImageCropView.m in Sources */ = {isa = PBXBuildFile; fileRef = 434DA6651C799A15003339FA /* GKImageCropView.m */; settings = {ASSET_TAGS = (); }; };
+		434DA66F1C799A15003339FA /* GKImageCropViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 434DA6671C799A15003339FA /* GKImageCropViewController.m */; settings = {ASSET_TAGS = (); }; };
+		434DA6701C799A15003339FA /* GKImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 434DA6691C799A15003339FA /* GKImagePicker.m */; settings = {ASSET_TAGS = (); }; };
+		434DA6711C799A15003339FA /* GKResizeableCropOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 434DA66B1C799A15003339FA /* GKResizeableCropOverlayView.m */; settings = {ASSET_TAGS = (); }; };
+		434DA67A1C799BA7003339FA /* PLCameraSheetButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 434DA6721C799BA7003339FA /* PLCameraSheetButton.png */; settings = {ASSET_TAGS = (); }; };
+		434DA67B1C799BA7003339FA /* PLCameraSheetButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 434DA6731C799BA7003339FA /* PLCameraSheetButton@2x.png */; settings = {ASSET_TAGS = (); }; };
+		434DA67C1C799BA7003339FA /* PLCameraSheetButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 434DA6741C799BA7003339FA /* PLCameraSheetButtonPressed.png */; settings = {ASSET_TAGS = (); }; };
+		434DA67D1C799BA7003339FA /* PLCameraSheetButtonPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 434DA6751C799BA7003339FA /* PLCameraSheetButtonPressed@2x.png */; settings = {ASSET_TAGS = (); }; };
+		434DA67E1C799BA7003339FA /* PLCameraSheetDoneButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 434DA6761C799BA7003339FA /* PLCameraSheetDoneButton.png */; settings = {ASSET_TAGS = (); }; };
+		434DA67F1C799BA7003339FA /* PLCameraSheetDoneButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 434DA6771C799BA7003339FA /* PLCameraSheetDoneButton@2x.png */; settings = {ASSET_TAGS = (); }; };
+		434DA6801C799BA7003339FA /* PLCameraSheetDoneButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 434DA6781C799BA7003339FA /* PLCameraSheetDoneButtonPressed.png */; settings = {ASSET_TAGS = (); }; };
+		434DA6811C799BA7003339FA /* PLCameraSheetDoneButtonPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 434DA6791C799BA7003339FA /* PLCameraSheetDoneButtonPressed@2x.png */; settings = {ASSET_TAGS = (); }; };
 		434E4AA71BC799FE00242CBF /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434E4AA61BC799FE00242CBF /* MenuViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		434E4AA91BCA201A00242CBF /* Invite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434E4AA81BCA201A00242CBF /* Invite.swift */; settings = {ASSET_TAGS = (); }; };
 		434E4AAB1BCF6D3600242CBF /* HostAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434E4AAA1BCF6D3600242CBF /* HostAddressViewController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -80,6 +94,27 @@
 
 /* Begin PBXFileReference section */
 		2CD6E6B413295BDCDBADB4F3 /* Pods-Gatsbi_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gatsbi_iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gatsbi_iOS/Pods-Gatsbi_iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		434DA6151C7995ED003339FA /* GKImagePicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GKImagePicker.h; path = Gatsbi_iOS/GKClasses/GKImagePicker.h; sourceTree = "<group>"; };
+		434DA6601C799A04003339FA /* GKCropBorderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKCropBorderView.h; sourceTree = "<group>"; };
+		434DA6611C799A15003339FA /* GKCropBorderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKCropBorderView.m; sourceTree = "<group>"; };
+		434DA6621C799A15003339FA /* GKImageCropOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKImageCropOverlayView.h; sourceTree = "<group>"; };
+		434DA6631C799A15003339FA /* GKImageCropOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKImageCropOverlayView.m; sourceTree = "<group>"; };
+		434DA6641C799A15003339FA /* GKImageCropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKImageCropView.h; sourceTree = "<group>"; };
+		434DA6651C799A15003339FA /* GKImageCropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKImageCropView.m; sourceTree = "<group>"; };
+		434DA6661C799A15003339FA /* GKImageCropViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKImageCropViewController.h; sourceTree = "<group>"; };
+		434DA6671C799A15003339FA /* GKImageCropViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKImageCropViewController.m; sourceTree = "<group>"; };
+		434DA6681C799A15003339FA /* GKImagePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKImagePicker.h; sourceTree = "<group>"; };
+		434DA6691C799A15003339FA /* GKImagePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKImagePicker.m; sourceTree = "<group>"; };
+		434DA66A1C799A15003339FA /* GKResizeableCropOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKResizeableCropOverlayView.h; sourceTree = "<group>"; };
+		434DA66B1C799A15003339FA /* GKResizeableCropOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKResizeableCropOverlayView.m; sourceTree = "<group>"; };
+		434DA6721C799BA7003339FA /* PLCameraSheetButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PLCameraSheetButton.png; sourceTree = "<group>"; };
+		434DA6731C799BA7003339FA /* PLCameraSheetButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PLCameraSheetButton@2x.png"; sourceTree = "<group>"; };
+		434DA6741C799BA7003339FA /* PLCameraSheetButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PLCameraSheetButtonPressed.png; sourceTree = "<group>"; };
+		434DA6751C799BA7003339FA /* PLCameraSheetButtonPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PLCameraSheetButtonPressed@2x.png"; sourceTree = "<group>"; };
+		434DA6761C799BA7003339FA /* PLCameraSheetDoneButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PLCameraSheetDoneButton.png; sourceTree = "<group>"; };
+		434DA6771C799BA7003339FA /* PLCameraSheetDoneButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PLCameraSheetDoneButton@2x.png"; sourceTree = "<group>"; };
+		434DA6781C799BA7003339FA /* PLCameraSheetDoneButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PLCameraSheetDoneButtonPressed.png; sourceTree = "<group>"; };
+		434DA6791C799BA7003339FA /* PLCameraSheetDoneButtonPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PLCameraSheetDoneButtonPressed@2x.png"; sourceTree = "<group>"; };
 		434E4AA61BC799FE00242CBF /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		434E4AA81BCA201A00242CBF /* Invite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Invite.swift; sourceTree = "<group>"; };
 		434E4AAA1BCF6D3600242CBF /* HostAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostAddressViewController.swift; sourceTree = "<group>"; };
@@ -190,6 +225,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		434DA6101C798C09003339FA /* imagepicker */ = {
+			isa = PBXGroup;
+			children = (
+				434DA62A1C7998BD003339FA /* GKImages */,
+				434DA6171C799893003339FA /* GKClasses */,
+			);
+			name = imagepicker;
+			sourceTree = "<group>";
+		};
+		434DA6171C799893003339FA /* GKClasses */ = {
+			isa = PBXGroup;
+			children = (
+				434DA6601C799A04003339FA /* GKCropBorderView.h */,
+				434DA6611C799A15003339FA /* GKCropBorderView.m */,
+				434DA6621C799A15003339FA /* GKImageCropOverlayView.h */,
+				434DA6631C799A15003339FA /* GKImageCropOverlayView.m */,
+				434DA6641C799A15003339FA /* GKImageCropView.h */,
+				434DA6651C799A15003339FA /* GKImageCropView.m */,
+				434DA6661C799A15003339FA /* GKImageCropViewController.h */,
+				434DA6671C799A15003339FA /* GKImageCropViewController.m */,
+				434DA6681C799A15003339FA /* GKImagePicker.h */,
+				434DA6691C799A15003339FA /* GKImagePicker.m */,
+				434DA66A1C799A15003339FA /* GKResizeableCropOverlayView.h */,
+				434DA66B1C799A15003339FA /* GKResizeableCropOverlayView.m */,
+			);
+			name = GKClasses;
+			sourceTree = "<group>";
+		};
+		434DA62A1C7998BD003339FA /* GKImages */ = {
+			isa = PBXGroup;
+			children = (
+				434DA6721C799BA7003339FA /* PLCameraSheetButton.png */,
+				434DA6731C799BA7003339FA /* PLCameraSheetButton@2x.png */,
+				434DA6741C799BA7003339FA /* PLCameraSheetButtonPressed.png */,
+				434DA6751C799BA7003339FA /* PLCameraSheetButtonPressed@2x.png */,
+				434DA6761C799BA7003339FA /* PLCameraSheetDoneButton.png */,
+				434DA6771C799BA7003339FA /* PLCameraSheetDoneButton@2x.png */,
+				434DA6781C799BA7003339FA /* PLCameraSheetDoneButtonPressed.png */,
+				434DA6791C799BA7003339FA /* PLCameraSheetDoneButtonPressed@2x.png */,
+			);
+			name = GKImages;
+			sourceTree = "<group>";
+		};
 		437FB9441BB6837E00BCEEA8 /* NWCalendar */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,6 +308,7 @@
 		43D745631B25655E00EE09DD /* Gatsbi_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				434DA6101C798C09003339FA /* imagepicker */,
 				43E8B4271C66ACA300CF5BA5 /* CustomCells */,
 				439B1D661BC77A2F000709C2 /* menuPopover.swift */,
 				437FB9441BB6837E00BCEEA8 /* NWCalendar */,
@@ -290,6 +369,7 @@
 		43D745861B2566F000EE09DD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				434DA6151C7995ED003339FA /* GKImagePicker.h */,
 				43D417CA1C4F8B1B005158A7 /* ParseFacebookUtilsV4.framework */,
 				43D417C81C4F8AED005158A7 /* ParseUI.framework */,
 				43D417C61C4F8AE4005158A7 /* Bolts.framework */,
@@ -434,9 +514,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				437FB94E1BB683E000BCEEA8 /* Images in Resources */,
+				434DA67B1C799BA7003339FA /* PLCameraSheetButton@2x.png in Resources */,
+				434DA67D1C799BA7003339FA /* PLCameraSheetButtonPressed@2x.png in Resources */,
+				434DA67C1C799BA7003339FA /* PLCameraSheetButtonPressed.png in Resources */,
+				434DA6811C799BA7003339FA /* PLCameraSheetDoneButtonPressed@2x.png in Resources */,
+				434DA6801C799BA7003339FA /* PLCameraSheetDoneButtonPressed.png in Resources */,
 				43D7456C1B25655E00EE09DD /* Main.storyboard in Resources */,
 				43D745711B25655E00EE09DD /* LaunchScreen.xib in Resources */,
 				43D7456E1B25655E00EE09DD /* Images.xcassets in Resources */,
+				434DA67A1C799BA7003339FA /* PLCameraSheetButton.png in Resources */,
+				434DA67E1C799BA7003339FA /* PLCameraSheetDoneButton.png in Resources */,
+				434DA67F1C799BA7003339FA /* PLCameraSheetDoneButton@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +576,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43D745691B25655E00EE09DD /* LoginViewController.swift in Sources */,
+				434DA6711C799A15003339FA /* GKResizeableCropOverlayView.m in Sources */,
 				435EF0C51C40FFC2009AC2CB /* EmailLoginViewController.swift in Sources */,
 				437FB9551BB683E000BCEEA8 /* NWCalendarMonthView.swift in Sources */,
 				43D0576F1BDE00FD000FBA09 /* InvitePicViewController.swift in Sources */,
@@ -499,7 +588,9 @@
 				437FB9521BB683E000BCEEA8 /* NWCalendarMenuView.swift in Sources */,
 				437FB9411BB67AF400BCEEA8 /* InviteHomeViewController.swift in Sources */,
 				43E6C4EE1C52326C007E8CF7 /* InviteRSVPViewController.swift in Sources */,
+				434DA66C1C799A15003339FA /* GKCropBorderView.m in Sources */,
 				437FB9561BB683E000BCEEA8 /* NWCalendarView.swift in Sources */,
+				434DA66F1C799A15003339FA /* GKImageCropViewController.m in Sources */,
 				437FB9511BB683E000BCEEA8 /* NWCalendarDayView.swift in Sources */,
 				434E4AA71BC799FE00242CBF /* MenuViewController.swift in Sources */,
 				439B1D671BC77A2F000709C2 /* menuPopover.swift in Sources */,
@@ -510,7 +601,10 @@
 				434E4AA91BCA201A00242CBF /* Invite.swift in Sources */,
 				434E4AAB1BCF6D3600242CBF /* HostAddressViewController.swift in Sources */,
 				43D745671B25655E00EE09DD /* AppDelegate.swift in Sources */,
+				434DA66E1C799A15003339FA /* GKImageCropView.m in Sources */,
+				434DA6701C799A15003339FA /* GKImagePicker.m in Sources */,
 				437FB9431BB6808A00BCEEA8 /* Helpers.swift in Sources */,
+				434DA66D1C799A15003339FA /* GKImageCropOverlayView.m in Sources */,
 				437FB9541BB683E000BCEEA8 /* NWCalendarMonthSelectorView.swift in Sources */,
 				43E1D72F1C3BB03B00A53D41 /* EmailSignUpViewController.swift in Sources */,
 				43703BDD1BC23636005012AA /* InviteThemesCustomCell.swift in Sources */,
@@ -646,6 +740,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CD6E6B413295BDCDBADB4F3 /* Pods-Gatsbi_iOS.debug.xcconfig */;
 			buildSettings = {
+				"ARCHS[sdk=*]" = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
