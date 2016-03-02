@@ -14,7 +14,7 @@ protocol InviteCreationViewControllerDelegate{
 }
 
 
-class InviteCreationViewController : UIViewController, InviteTimeViewControllerDelegate, HostAddressViewControllerDelegate, MenuViewControllerDelegate, InvitePicViewControllerDelegate, InviteContactsViewControllerDelegate {
+class InviteCreationViewController : UIViewController, InviteTimeViewControllerDelegate, HostAddressViewControllerDelegate, MenuViewControllerDelegate, InvitePicViewControllerDelegate, InviteContactsViewControllerDelegate, UITextViewDelegate {
     
     var delegate:InviteCreationViewControllerDelegate? = nil
     
@@ -24,11 +24,19 @@ class InviteCreationViewController : UIViewController, InviteTimeViewControllerD
     override func viewDidLoad() {
         super.viewDidLoad()
         loadIcons()
+        messageTextView.delegate = self
+        messageTextView.text = "Add Invite Message"
+        messageTextView.textContainer.lineFragmentPadding = 0;
+        
+        //add an indent to the add title text:
+        let paddingView = UIView(frame: CGRectMake(0, 0, 15, self.titleTextField.frame.height))
+        titleTextField.leftView = paddingView
+        titleTextField.leftViewMode = UITextFieldViewMode.Always
     }
     
     @IBAction func saveButton(sender: UIBarButtonItem) {
         self.myInvite.Title = titleTextField.text!
-        self.myInvite.Message = titleTextField.text!
+        self.myInvite.Message = messageTextView.text!
         let complete = VerifyInviteComplete()
         if complete == true
         {
@@ -45,7 +53,7 @@ class InviteCreationViewController : UIViewController, InviteTimeViewControllerD
     }
     
     @IBOutlet weak var titleTextField: UITextField!
-    @IBOutlet weak var messageTextField: UITextField!
+    @IBOutlet weak var messageTextView: UITextView!
     @IBOutlet weak var timeIcon: UIImageView!
     @IBOutlet weak var locationIcon: UIImageView!
     @IBOutlet weak var messageIcon: UIImageView!
@@ -56,6 +64,7 @@ class InviteCreationViewController : UIViewController, InviteTimeViewControllerD
     @IBOutlet weak var inviteAddress: UILabel!
     @IBOutlet weak var menuChoice: UILabel!
     @IBOutlet weak var invitedGuests: UILabel!
+    @IBOutlet weak var menuIcon: UIImageView!
     
     @IBAction func timeButton(sender: UIButton) {
         self.performSegueWithIdentifier("timeSegue", sender: self)
@@ -82,6 +91,8 @@ class InviteCreationViewController : UIViewController, InviteTimeViewControllerD
         locationIcon.image = IonIcons.imageWithIcon(ion_ios_location, iconColor: UIColor.whiteColor(), iconSize: 27, imageSize: CGSizeMake(30, 30))
         messageIcon.image = IonIcons.imageWithIcon(ion_ios_paper, iconColor: UIColor.whiteColor(), iconSize: 27, imageSize: CGSizeMake(30, 30))
         guestsIcon.image = IonIcons.imageWithIcon(ion_ios_people, iconColor: UIColor.whiteColor(), iconSize: 27, imageSize: CGSizeMake(30, 30))
+        menuIcon.image = IonIcons.imageWithIcon(ion_ios_cart, iconColor: UIColor.whiteColor(), iconSize: 27, imageSize: CGSizeMake(30,30))
+        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -219,4 +230,15 @@ class InviteCreationViewController : UIViewController, InviteTimeViewControllerD
         return complete
     
     }
+    
+    func textViewDidBeginEditing(textView: UITextView) {
+        if textView.text == "Add Invite Message"
+        { textView.text = nil}
+    }
+    
+    //func textViewDidEndEditing(textView: UITextView) {
+      //  if textView.text.isEmpty {
+        //    textView.text = "Add Invite Message"
+       // }
+    //}
 }
