@@ -27,12 +27,19 @@ class InviteCreationViewController : UIViewController, InviteTimeViewControllerD
         messageTextView.delegate = self
         messageTextView.text = "Add Invite Message"
         messageTextView.textContainer.lineFragmentPadding = 0;
+        //let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+       // messageTextView.addGestureRecognizer(tap)
         
         //add an indent to the add title text:
         let paddingView = UIView(frame: CGRectMake(0, 0, 15, self.titleTextField.frame.height))
         titleTextField.leftView = paddingView
         titleTextField.leftViewMode = UITextFieldViewMode.Always
     }
+    
+   // func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+  ////      view.resignFirstResponder()
+ //   }
     
     @IBAction func saveButton(sender: UIBarButtonItem) {
         self.myInvite.Title = titleTextField.text!
@@ -235,6 +242,12 @@ class InviteCreationViewController : UIViewController, InviteTimeViewControllerD
         if textView.text == "Add Invite Message"
         { textView.text = nil}
     }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?){
+        view.endEditing(true)
+        super.touchesBegan(touches, withEvent: event)
+    }
+
     
     //func textViewDidEndEditing(textView: UITextView) {
       //  if textView.text.isEmpty {

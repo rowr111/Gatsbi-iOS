@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import Parse
-import Bolts
 import Contacts
 
 @UIApplicationMain
@@ -19,7 +17,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        Parse.setApplicationId("As1EaEcN4TEh5BmrnVnehMPcmNrqkcOSdSXbA9vP", clientKey:"47ZLllneeOM6V8YJVKhyRgsPxNilOsVTRAhfgeQr")
+        //Parse.setApplicationId("As1EaEcN4TEh5BmrnVnehMPcmNrqkcOSdSXbA9vP", clientKey:"47ZLllneeOM6V8YJVKhyRgsPxNilOsVTRAhfgeQr")
+        Parse.setLogLevel(.Info);
+        
+        let config = ParseClientConfiguration(block: {
+            (ParseMutableClientConfiguration) -> Void in
+
+            ParseMutableClientConfiguration.applicationId = "As1EaEcN4TEh5BmrnVnehMPcmNrqkcOSdSXbA9vP";
+            ParseMutableClientConfiguration.clientKey = "47ZLllneeOM6V8YJVKhyRgsPxNilOsVTRAhfgeQr";
+            ParseMutableClientConfiguration.server = "https://evening-beach-99377.herokuapp.com/";
+        });
+        
+        Parse.initializeWithConfiguration(config);
+
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions)
         
