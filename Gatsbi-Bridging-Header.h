@@ -13,7 +13,6 @@
 #import "Gatsbi_iOS/GKImageCropViewController.h"
 #import "Gatsbi_iOS/GKResizeableCropOverlayView.h"
 #import <Parse/Parse.h>
-#import <Parse/ParseClientConfiguration.h>
 #import <ParseUI/ParseUI.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
