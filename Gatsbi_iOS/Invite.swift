@@ -37,8 +37,8 @@ class Invite {
         if let pfimage = PFObjectInvite["Image"] as? PFFile
         {
             //doing this synchronously bc we must have it to return the complete obj
-            let pfimagedata = pfimage.getData()
-            Image = UIImage(data: pfimagedata!)
+            let pfimagedata = try! pfimage.getData()
+            Image = UIImage(data: pfimagedata)
             print(Image?.size)
         }
         Address = PFObjectInvite["Address"] as! String
@@ -58,10 +58,9 @@ class Invite {
         masterInvite["MenuID"] = self.MenuID
         let imageFile = PFFile(data: UIImageJPEGRepresentation(self.Image!, 1.0)!)
         masterInvite["Image"] = imageFile
-        var myNSError: NSError? = nil
-        let masterInviteSaved = masterInvite.save(&myNSError)
-        if masterInviteSaved == true
-            {
+        do
+        {
+                try masterInvite.save()
                 // The object has been saved.
                 print("Invite saved in parse, GUID: " + masterInvite.objectId!)
                 
@@ -75,17 +74,16 @@ class Invite {
                 creatorInviteEvent["Attending"] = true
                 creatorInviteEvent["GuestCount"] = 1
                 
-                var myInviteNSError: NSError? = nil
-                let creatorInviteEventSaved = creatorInviteEvent.save(&myInviteNSError)
-                if creatorInviteEventSaved == true
+                do
                 {
+                    try creatorInviteEvent.save()
                     // The object has been saved.
                     creatorInviteEventID = creatorInviteEvent.objectId!
                     print("userInviteEvent saved in parse, GUID: " + creatorInviteEvent.objectId!)
                 }
-                else
+                catch let er as NSError
                 {
-                    print("error saving to parse: " + (myInviteNSError?.description)!)
+                    print("error saving to parse: " + (er.description))
                 }
                 
                 //now save all into the individual UserInviteEvents
@@ -99,26 +97,24 @@ class Invite {
                         userInviteEvent["RSVPd"] = false
                         userInviteEvent["Host"] = false
                         userInviteEvent["GuestCount"] = 1
-                        
-                        var myUserInviteEventNSError: NSError? = nil
-                        let userInviteEventSaved = userInviteEvent.save(&myUserInviteEventNSError)
-                        if userInviteEventSaved == true
+                        do
                         {
+                            try userInviteEvent.save()
                             // The object has been saved.
                             print("userInviteEvent saved in parse, GUID: " + userInviteEvent.objectId!)
                         }
-                        else
+                        catch let er as NSError
                         {
                             // There was a problem, check error.description
-                            print("error saving to parse: " + (myUserInviteEventNSError?.description)!)
+                            print("error saving to parse: " + (er.description))
                         }
                             
                     }
                 }
             }
-    else {
+    catch let er as NSError {
             // There was a problem, check error.description
-            print("error saving to parse: " + (myNSError.debugDescription))
+            print("error saving to parse: " + (er.debugDescription))
         }
         return creatorInviteEventID
     }

@@ -121,21 +121,16 @@ class LoginViewController: UIViewController {
 
                     if(profilePictureData != nil){
                         let profileFileObject = PFFile(data:profilePictureData!)
-                        myUser.setObject(profileFileObject, forKey: "profile_picture")
+                        myUser.setObject(profileFileObject!, forKey: "profile_picture")
                     }
                     
-                    var errorN: NSError?
-                    if (myUser.save(&errorN) == true)
-                    {
+                    do {
+                        try myUser.save()
                         print("User details are now updated")
                     }
-                    else
+                    catch let er as NSError
                     {
-                        var errorMessage = "There was an error saving user information."
-                        if(errorN != nil)
-                        {
-                            errorMessage = errorN!.localizedDescription
-                        }
+                        let errorMessage = er.localizedDescription
                             //Display an alert message
                             let myAlert = UIAlertController(title:"Alert", message:errorMessage, preferredStyle: UIAlertControllerStyle.Alert);
                             let okAction =  UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil)

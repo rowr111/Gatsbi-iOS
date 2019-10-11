@@ -37,19 +37,19 @@ extension UIImage {
         cornerRadius:Int,
         interpolationQuality quality:CGInterpolationQuality
         ) -> UIImage {
-            var resizedImage:UIImage = self.resizedImageWithContentMode(
+            let resizedImage:UIImage = self.resizedImageWithContentMode(
                 .ScaleAspectFill,
                 bounds: CGSizeMake(CGFloat(thumbnailSize), CGFloat(thumbnailSize)),
                 interpolationQuality: quality
             )
-            var cropRect:CGRect = CGRectMake(
+            let cropRect:CGRect = CGRectMake(
                 round((resizedImage.size.width - CGFloat(thumbnailSize))/2),
                 round((resizedImage.size.height - CGFloat(thumbnailSize))/2),
                 CGFloat(thumbnailSize),
                 CGFloat(thumbnailSize)
             )
             
-            var croppedImage:UIImage = resizedImage.croppedImage(cropRect)
+            let croppedImage:UIImage = resizedImage.croppedImage(cropRect)
             return croppedImage
     }
     
@@ -111,13 +111,13 @@ extension UIImage {
         drawTransposed transpose:Bool,
         interpolationQuality quality:CGInterpolationQuality
         ) -> UIImage {
-            var newRect:CGRect = CGRectIntegral(CGRectMake(0, 0, newSize.width, newSize.height))
-            var transposedRect:CGRect = CGRectMake(0, 0, newRect.size.height, newRect.size.width)
-            var imageRef:CGImageRef = self.CGImage!
+            let newRect:CGRect = CGRectIntegral(CGRectMake(0, 0, newSize.width, newSize.height))
+            let transposedRect:CGRect = CGRectMake(0, 0, newRect.size.height, newRect.size.width)
+            let imageRef:CGImageRef = self.CGImage!
             
             
             // build a context that's the same dimensions as the new size
-            var bitmap:CGContextRef = CGBitmapContextCreate(
+            let bitmap:CGContextRef = CGBitmapContextCreate(
                 nil,
                 Int(newRect.size.width),
                 Int(newRect.size.height),
@@ -137,8 +137,8 @@ extension UIImage {
             CGContextDrawImage(bitmap, transpose ? transposedRect : newRect, imageRef)
             
             // get the resized image from the context and a UIImage
-            var newImageRef:CGImageRef = CGBitmapContextCreateImage(bitmap)!
-            var newImage:UIImage = UIImage(CGImage: newImageRef)
+            let newImageRef:CGImageRef = CGBitmapContextCreateImage(bitmap)!
+            let newImage:UIImage = UIImage(CGImage: newImageRef)
             
             return newImage
     }

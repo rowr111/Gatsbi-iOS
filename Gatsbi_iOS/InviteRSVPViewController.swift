@@ -32,8 +32,10 @@ class InviteRSVPViewController: UIViewController {
         {
         if (number >= 1)
             {
-                var query = PFQuery(className:"UserInviteEvent")
-                if let parseInviteEvent = query.getObjectWithId(myInviteEvent!.objectId) {
+                let query = PFQuery(className:"UserInviteEvent")
+                let parseInviteEvent = try! query.getObjectWithId(myInviteEvent!.objectId)
+                if parseInviteEvent.objectId == myInviteEvent!.objectId
+                {
                     parseInviteEvent["Attending"] = true
                     parseInviteEvent["RSVPd"] = true
                     parseInviteEvent["GuestCount"] = number

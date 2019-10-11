@@ -125,26 +125,30 @@ static CGRect GKScaleRect(CGRect rect, CGFloat scale)
     return visibleRect = GKScaleRect(visibleRect, sizeScale);
 }
 
--(CGRect)_calcVisibleRectForCropArea{
+//changes from git
+
+//-(CGRect)_calcVisibleRectForCropArea{
     //scaled width/height in regards of real width to crop width
-    CGFloat scaleWidth = self.imageToCrop.size.width / self.cropSize.width;
-    CGFloat scaleHeight = self.imageToCrop.size.height / self.cropSize.height;
-    CGFloat scale = 0.0f;
-    
-    if (self.cropSize.width > self.cropSize.height) {
-        scale = (self.imageToCrop.size.width < self.imageToCrop.size.height ?
-                 MAX(scaleWidth, scaleHeight) :
-                 MIN(scaleWidth, scaleHeight));
-    }else{
-        scale = (self.imageToCrop.size.width < self.imageToCrop.size.height ?
-                 MIN(scaleWidth, scaleHeight) :
-                 MAX(scaleWidth, scaleHeight));
-    }
+ //   CGFloat scaleWidth = self.imageToCrop.size.width / self.cropSize.width;
+   // CGFloat scaleHeight = self.imageToCrop.size.height / self.cropSize.height;
+   // CGFloat scale = 0.0f;
+
+    //extract visible rect from scrollview and scale it
+  //  CGRect visibleRect = [scrollView convertRect:scrollView.bounds toView:imageView];
+  //  return visibleRect = GKScaleRect(visibleRect, scale);
+//}
+
+//new cropping function from git
+- (CGRect)_calcVisibleRectForCropArea
+{
+    CGFloat scale = self.imageView.image.size.width / self.imageView.frame.size.width;
+    scale *= self.scrollView.zoomScale;
+
     //extract visible rect from scrollview and scale it
     CGRect visibleRect = [scrollView convertRect:scrollView.bounds toView:imageView];
-    return visibleRect = GKScaleRect(visibleRect, scale);
+    visibleRect = GKScaleRect(visibleRect, scale);
+    return visibleRect;
 }
-
 
 - (CGAffineTransform)_orientationTransformedRectOfImage:(UIImage *)img
 {
@@ -174,6 +178,8 @@ static CGRect GKScaleRect(CGRect rect, CGFloat scale)
 {
     self = [super initWithFrame:frame];
     if (self) {
+        //added from git commits
+        self.clipsToBounds = YES;
 
         self.userInteractionEnabled = YES;
         self.backgroundColor = [UIColor blackColor];

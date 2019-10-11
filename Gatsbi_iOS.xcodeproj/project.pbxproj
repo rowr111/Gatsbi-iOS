@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4318B0DB1C88286D0078C1ED /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4318B0DA1C88286D0078C1ED /* ParseFacebookUtilsV4.framework */; settings = {ASSET_TAGS = (); }; };
-		4318B0DD1C8828900078C1ED /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4318B0DC1C8828900078C1ED /* ParseUI.framework */; settings = {ASSET_TAGS = (); }; };
-		4318B0DF1C8828AC0078C1ED /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4318B0DE1C8828AC0078C1ED /* Bolts.framework */; settings = {ASSET_TAGS = (); }; };
-		4318B0E31C882B670078C1ED /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4318B0E21C882B670078C1ED /* Parse.framework */; settings = {ASSET_TAGS = (); }; };
+		4318B0E91C8831FD0078C1ED /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4318B0E81C8831FD0078C1ED /* ParseFacebookUtilsV4.framework */; settings = {ASSET_TAGS = (); }; };
+		4318B0EE1C897AEF0078C1ED /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4318B0ED1C897AEF0078C1ED /* Parse.framework */; settings = {ASSET_TAGS = (); }; };
+		4318B0F01C897AFF0078C1ED /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4318B0EF1C897AFF0078C1ED /* ParseUI.framework */; settings = {ASSET_TAGS = (); }; };
+		4318B0F21C897B1C0078C1ED /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4318B0F11C897B1C0078C1ED /* Bolts.framework */; settings = {ASSET_TAGS = (); }; };
 		434DA66C1C799A15003339FA /* GKCropBorderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 434DA6611C799A15003339FA /* GKCropBorderView.m */; settings = {ASSET_TAGS = (); }; };
 		434DA66D1C799A15003339FA /* GKImageCropOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 434DA6631C799A15003339FA /* GKImageCropOverlayView.m */; settings = {ASSET_TAGS = (); }; };
 		434DA66E1C799A15003339FA /* GKImageCropView.m in Sources */ = {isa = PBXBuildFile; fileRef = 434DA6651C799A15003339FA /* GKImageCropView.m */; settings = {ASSET_TAGS = (); }; };
@@ -94,10 +94,10 @@
 
 /* Begin PBXFileReference section */
 		2CD6E6B413295BDCDBADB4F3 /* Pods-Gatsbi_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gatsbi_iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gatsbi_iOS/Pods-Gatsbi_iOS.debug.xcconfig"; sourceTree = "<group>"; };
-		4318B0DA1C88286D0078C1ED /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
-		4318B0DC1C8828900078C1ED /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
-		4318B0DE1C8828AC0078C1ED /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		4318B0E21C882B670078C1ED /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		4318B0E81C8831FD0078C1ED /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
+		4318B0ED1C897AEF0078C1ED /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		4318B0EF1C897AFF0078C1ED /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		4318B0F11C897B1C0078C1ED /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		434DA6151C7995ED003339FA /* GKImagePicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GKImagePicker.h; path = Gatsbi_iOS/GKClasses/GKImagePicker.h; sourceTree = "<group>"; };
 		434DA6601C799A04003339FA /* GKCropBorderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKCropBorderView.h; sourceTree = "<group>"; };
 		434DA6611C799A15003339FA /* GKCropBorderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKCropBorderView.m; sourceTree = "<group>"; };
@@ -190,11 +190,9 @@
 			files = (
 				43D745C31B257D6D00EE09DD /* libsqlite3.0.dylib in Frameworks */,
 				43D745C11B257D6300EE09DD /* libstdc++.6.0.9.dylib in Frameworks */,
-				4318B0DB1C88286D0078C1ED /* ParseFacebookUtilsV4.framework in Frameworks */,
 				43D745BF1B257D0A00EE09DD /* Foundation.framework in Frameworks */,
 				43D745AA1B25681400EE09DD /* Social.framework in Frameworks */,
 				43D745B21B25684000EE09DD /* libsqlite3.dylib in Frameworks */,
-				4318B0DD1C8828900078C1ED /* ParseUI.framework in Frameworks */,
 				43D745B01B25683400EE09DD /* libz.dylib in Frameworks */,
 				43D745AE1B25682B00EE09DD /* SystemConfiguration.framework in Frameworks */,
 				43E544C11C2679930031D1B3 /* FBSDKShareKit.framework in Frameworks */,
@@ -203,14 +201,16 @@
 				43D745BD1B257CC900EE09DD /* ParseCrashReporting.framework in Frameworks */,
 				43D745A41B2567F900EE09DD /* MobileCoreServices.framework in Frameworks */,
 				43D745A21B2567E800EE09DD /* CoreLocation.framework in Frameworks */,
-				4318B0DF1C8828AC0078C1ED /* Bolts.framework in Frameworks */,
 				43E544C51C267A310031D1B3 /* FBSDKCoreKit.framework in Frameworks */,
+				4318B0E91C8831FD0078C1ED /* ParseFacebookUtilsV4.framework in Frameworks */,
+				4318B0F21C897B1C0078C1ED /* Bolts.framework in Frameworks */,
+				4318B0EE1C897AEF0078C1ED /* Parse.framework in Frameworks */,
 				43E544C31C267A100031D1B3 /* FBSDKLoginKit.framework in Frameworks */,
 				43D745A01B2567DD00EE09DD /* CoreGraphics.framework in Frameworks */,
 				43D7459E1B2567D700EE09DD /* CFNetwork.framework in Frameworks */,
 				43D7459C1B2567C700EE09DD /* AudioToolbox.framework in Frameworks */,
 				43D7459A1B2567BB00EE09DD /* Accounts.framework in Frameworks */,
-				4318B0E31C882B670078C1ED /* Parse.framework in Frameworks */,
+				4318B0F01C897AFF0078C1ED /* ParseUI.framework in Frameworks */,
 				9A002100B822E7F50B00C792 /* libPods-Gatsbi_iOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -369,10 +369,10 @@
 		43D745861B2566F000EE09DD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4318B0E21C882B670078C1ED /* Parse.framework */,
-				4318B0DE1C8828AC0078C1ED /* Bolts.framework */,
-				4318B0DC1C8828900078C1ED /* ParseUI.framework */,
-				4318B0DA1C88286D0078C1ED /* ParseFacebookUtilsV4.framework */,
+				4318B0F11C897B1C0078C1ED /* Bolts.framework */,
+				4318B0EF1C897AFF0078C1ED /* ParseUI.framework */,
+				4318B0ED1C897AEF0078C1ED /* Parse.framework */,
+				4318B0E81C8831FD0078C1ED /* ParseFacebookUtilsV4.framework */,
 				434DA6151C7995ED003339FA /* GKImagePicker.h */,
 				43E544C41C267A310031D1B3 /* FBSDKCoreKit.framework */,
 				43E544C21C267A100031D1B3 /* FBSDKLoginKit.framework */,
@@ -747,10 +747,10 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/jeanieconner/Downloads/parse-library-1.7.4",
-					"$(PROJECT_DIR)",
 					/Users/jeanieconner/Documents/FacebookSDK,
 					"$(PROJECT_DIR)/Gatsbi_iOS",
+					"/Users/jeanieconner/Desktop/iOSprojects/Gatsbi_iOS/parse-library-1.12.0",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Gatsbi_iOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -780,10 +780,10 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/jeanieconner/Downloads/parse-library-1.7.4",
-					"$(PROJECT_DIR)",
 					/Users/jeanieconner/Documents/FacebookSDK,
 					"$(PROJECT_DIR)/Gatsbi_iOS",
+					"/Users/jeanieconner/Desktop/iOSprojects/Gatsbi_iOS/parse-library-1.12.0",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Gatsbi_iOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

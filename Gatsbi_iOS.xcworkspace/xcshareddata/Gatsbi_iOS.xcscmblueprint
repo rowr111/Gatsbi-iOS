@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "D5EE33D9EEAB5CD21BFF204B4CC1CD8DF0D64805",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "F17204345BA1EFE800B96008A55D96025E2CDBC9" : 0,
+    "D5EE33D9EEAB5CD21BFF204B4CC1CD8DF0D64805" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "DE4C6125-80F8-4D65-885B-227F11D68A66",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "F17204345BA1EFE800B96008A55D96025E2CDBC9" : "..\/..\/..\/GitHub\/GKImagePicker",
+    "D5EE33D9EEAB5CD21BFF204B4CC1CD8DF0D64805" : "Gatsbi_iOS\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Gatsbi_iOS",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Gatsbi_iOS.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/rowr111\/Gatsbi_iOS.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D5EE33D9EEAB5CD21BFF204B4CC1CD8DF0D64805"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/gekitz\/GKImagePicker.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "F17204345BA1EFE800B96008A55D96025E2CDBC9"
+    }
+  ]
+}

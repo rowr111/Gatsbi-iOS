@@ -24,8 +24,8 @@ class InviteThemesViewController : PFQueryTableViewController {
     
     func addHeaderView()
     {
-    var yPosition:CGFloat = self.navigationController!.navigationBar.frame.origin.y + self.navigationController!.navigationBar.frame.size.height;
-    var mainHeaderView:UIView = UIView()
+    let yPosition:CGFloat = self.navigationController!.navigationBar.frame.origin.y + self.navigationController!.navigationBar.frame.size.height;
+    let mainHeaderView:UIView = UIView()
     
     let mainHeaderHeight:CGFloat = 100
     //mainHeaderView.setValuesForKeysWithDictionary(<#T##keyedValues: [String : AnyObject]##[String : AnyObject]#>)

@@ -44,7 +44,7 @@ class SingleInviteDetailsViewController: UIViewController, InviteRSVPViewControl
         
         loadIcons()
         print(myInviteEvent!.InviteObjectID)
-        getInvite()
+        try! getInvite()
         self.inviteImage.image = myInvite.Image
         self.inviteTitleLabel.text = myInvite.Title
         self.inviteAddress.text = myInvite.Address
@@ -58,7 +58,7 @@ class SingleInviteDetailsViewController: UIViewController, InviteRSVPViewControl
         self.inviteDateRange.text = "\(formatter.stringFromDate(myInvite.Date)) to \r\n\(formatter.stringFromDate(myInvite.EndDate))"
         self.inviteDateRange.sizeToFit()
         
-        loadAttendeeList()
+        try! loadAttendeeList()
         highlightRSVPButtons()
         
     }
@@ -67,10 +67,11 @@ class SingleInviteDetailsViewController: UIViewController, InviteRSVPViewControl
         super.didReceiveMemoryWarning()
     }
     
-    func getInvite()
+    func getInvite() throws
     {
         let query = PFQuery(className:"Invite")
-        if let myInviteObject = query.getObjectWithId(myInviteEvent!.InviteObjectID)
+        let myInviteObject = try query.getObjectWithId(myInviteEvent!.InviteObjectID)
+        if myInviteObject.objectId == myInviteEvent!.InviteObjectID
         {
             myInvite.PopulateFromPFObjectInvite(myInviteObject)
         }
@@ -84,7 +85,7 @@ class SingleInviteDetailsViewController: UIViewController, InviteRSVPViewControl
         guestsIcon.image = IonIcons.imageWithIcon(ion_ios_people, iconColor: UIColor.whiteColor(), iconSize: 27, imageSize: CGSizeMake(30, 30))
     }
     
-    func loadAttendeeList()
+    func loadAttendeeList() throws
     {
         var goingCount:Int = 0
         var notGoingCount:Int = 0
@@ -96,7 +97,9 @@ class SingleInviteDetailsViewController: UIViewController, InviteRSVPViewControl
         
         let query = PFQuery(className:"UserInviteEvent")
         query.whereKey("InviteObjectID", equalTo: self.myInviteEvent!.InviteObjectID)
-        if let objects = query.findObjects() {
+        let objects = try query.findObjects()
+        if (objects.count > 0)
+        {
             print("found \(objects.count) number of invites")
             for inviteEvent in objects {
                 if let myemailaddr=inviteEvent["EmailAddr"] as? String
@@ -168,14 +171,14 @@ class SingleInviteDetailsViewController: UIViewController, InviteRSVPViewControl
         {
             if self.myInviteEvent!.Attending == true
             {
-                saveNoRSVPtoParse()
+                try! saveNoRSVPtoParse()
                 declinePopup()
             }
             //else if it's already no, do nothing..
         }
         else
         {
-            saveNoRSVPtoParse()
+            try! saveNoRSVPtoParse()
             declinePopup()
         }
     }
@@ -204,8 +207,10 @@ class SingleInviteDetailsViewController: UIViewController, InviteRSVPViewControl
     
     func saveNoRSVPtoParse()
     {
-        var query = PFQuery(className:"UserInviteEvent")
-        if let parseInviteEvent = query.getObjectWithId(myInviteEvent!.objectId) {
+        let query = PFQuery(className:"UserInviteEvent")
+        let parseInviteEvent = try! query.getObjectWithId(myInviteEvent!.objectId)
+        if parseInviteEvent.objectId == myInviteEvent!.objectId
+        {
                 parseInviteEvent["Attending"] = false
                 parseInviteEvent["RSVPd"] = true
                 parseInviteEvent["GuestCount"] = 1
@@ -246,7 +251,7 @@ class SingleInviteDetailsViewController: UIViewController, InviteRSVPViewControl
     func myVCDidFinish(controller: InviteRSVPViewController, done: Bool, guestcount:Int) {
         if done == true
         {
-            loadAttendeeList()
+            try! loadAttendeeList()
             self.myInviteEvent!.GuestCount = guestcount
         }
     }

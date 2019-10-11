@@ -66,16 +66,17 @@ class InvitePicViewController : UIViewController, UIImagePickerControllerDelegat
         self.myGKImagePicker.imagePickerController.dismissViewControllerAnimated(true, completion: nil)
         
     }
-    @IBAction func useDefaultPhotoButton(sender: UIButton) {
+    @IBAction func useDefaultPhotoButton(sender: UIButton) throws {
         if myInvite!.MenuID != ""
         {
             let query = PFQuery(className: "Menu")
-            if let myMenu = query.getObjectWithId(myInvite!.MenuID)
+            let myMenu = try query.getObjectWithId(myInvite!.MenuID)
+            if myMenu.objectId == myInvite!.MenuID
             {
                 if let pfimage = myMenu["DefaultInviteImage"] as? PFFile
                 {
-                    let pfimagedata = pfimage.getData()
-                    inviteImageView.image = UIImage(data: pfimagedata!)
+                    let pfimagedata = try pfimage.getData()
+                    inviteImageView.image = UIImage(data: pfimagedata)
                 }
                 else
                 {

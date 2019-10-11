@@ -20,19 +20,22 @@ class InviteHomeViewController: UIViewController, UIPopoverPresentationControlle
     
 @IBOutlet weak var profilePic: UIImageView!
 @IBOutlet weak var calendarView: NWCalendarView!
-@IBOutlet weak var menuPopoverButton: UIBarButtonItem!
+//@IBOutlet weak var menuPopoverButton: UIBarButtonItem!
+    @IBOutlet weak var gatsbiGImage: UIImageView!
     
+    @IBOutlet weak var menuPopoverButton: UIButton!
     var inviteDate: NSDate?
         
         override func viewDidLoad() {
             super.viewDidLoad()
             self.makingRoundedImageProfileWithRoundedBorder()
             
-            getUserInviteEvents()
+            try! getUserInviteEvents()
             loadCalendar()
             
             //set the popover button's image
-            menuPopoverButton.image = IonIcons.imageWithIcon(ion_navicon_round, iconColor: UIColor.whiteColor(), iconSize: 40.0, imageSize: CGSizeMake(70.0, 70.0))
+            let naviconimage = IonIcons.imageWithIcon(ion_navicon_round, iconColor: UIColor.whiteColor(), iconSize: 40.0, imageSize: CGSizeMake(70.0, 70.0))
+            menuPopoverButton.setBackgroundImage(naviconimage, forState: .Normal)
     }
     
     func loadCalendar()
@@ -94,7 +97,8 @@ extension InviteHomeViewController: NWCalendarViewDelegate {
                 {
                     //get the invite title
                     let query = PFQuery(className:"Invite")
-                    if let myInviteObject = query.getObjectWithId(eachUserInviteEvent.InviteObjectID)
+                    let myInviteObject = try! query.getObjectWithId(eachUserInviteEvent.InviteObjectID)
+                    if myInviteObject.objectId == eachUserInviteEvent.InviteObjectID
                     {
 
                         self.inviteChoice.PopulateFromPFObjectInvite(myInviteObject)
@@ -173,24 +177,26 @@ extension InviteHomeViewController: NWCalendarViewDelegate {
         return UIModalPresentationStyle.None
     }
     
-    func getUserInviteEvents()
+    func getUserInviteEvents() throws
     {
         
         let query = PFQuery(className:"UserInviteEvent")
         if let _ = PFUser.currentUser()?.email
         {
         query.whereKey("EmailAddr", equalTo:PFUser.currentUser()!.email!)
-            if let objects = query.findObjects() {
+            let objects = try! query.findObjects()
+            if (objects.count > 0)
+            {
                 print("Successfully retrieved \(objects.count) events.")
                 // Do something with the found objects
-                //if let objects = objects {
                    for object in objects {
                         let myInviteEvent = UserInviteEvent()
                         print(object.objectId)
-                        myInviteEvent.objectId = object.objectId!!
+                        myInviteEvent.objectId = object.objectId!
                         myInviteEvent.InviteObjectID = object["InviteObjectID"] as! String
                         let query2 = PFQuery(className:"Invite")
-                        if let myInvite = query2.getObjectWithId(myInviteEvent.InviteObjectID)
+                        let myInvite = try! query2.getObjectWithId(myInviteEvent.InviteObjectID)
+                        if myInvite.objectId == myInviteEvent.InviteObjectID
                         {
                             print(myInvite.objectId)
                             let checkdate =  myInvite["Date"] as! NSDate
@@ -212,8 +218,7 @@ extension InviteHomeViewController: NWCalendarViewDelegate {
                             }
                         }
                     }
-                    
-                    //}
+
             }
         }
         else
@@ -254,8 +259,8 @@ extension InviteHomeViewController: NWCalendarViewDelegate {
         //else it just goes with the default, currently Gatsbi name with grey background
     }
     
-    func inviteCreationVCDidFinish(controller: InviteCreationViewController, creatorInviteEventID: String) {
-        AddUserInviteEvent(creatorInviteEventID)
+    func inviteCreationVCDidFinish(controller: InviteCreationViewController, creatorInviteEventID: String)  {
+        try! AddUserInviteEvent(creatorInviteEventID)
 
         for myEvent in self.myInviteEvents
         {
@@ -274,16 +279,19 @@ extension InviteHomeViewController: NWCalendarViewDelegate {
         //loadCalendar()
     }
     
-    func AddUserInviteEvent(InviteEventObjectID:String)
+    func AddUserInviteEvent(InviteEventObjectID:String) throws
     {
         let query = PFQuery(className:"UserInviteEvent")
-        if let object = query.getObjectWithId(InviteEventObjectID)
+        let object = try! query.getObjectWithId(InviteEventObjectID)
+        
+        if object.objectId == InviteEventObjectID
         {
             let myInviteEvent = UserInviteEvent()
             myInviteEvent.objectId = object.objectId!
             myInviteEvent.InviteObjectID = object["InviteObjectID"] as! String
             let query2 = PFQuery(className:"Invite")
-            if let myInvite = query2.getObjectWithId(myInviteEvent.InviteObjectID)
+            let myInvite = try! query2.getObjectWithId(myInviteEvent.InviteObjectID)
+            if myInvite.objectId == myInviteEvent.InviteObjectID
             {
                 print(myInvite.objectId)
                 let checkdate =  myInvite["Date"] as! NSDate
